@@ -65,7 +65,8 @@ namespace Game3 {
 	              Game.Content.Load<Model> (@"Models/Tank/tank"),
 	              ((Game1)Game).GraphicsDevice,
 	              ((Game1)Game).camera,
-                  ((Game1)Game).graphics);
+                  ((Game1)Game).graphics,
+                  ((Game1)Game).uiManager);
 
 			models.Add(playerTank);
 
@@ -148,6 +149,7 @@ namespace Game3 {
                 model.Draw(((Game1)Game).device, ((Game1)Game).camera);
             }
             base.Draw(gameTime);
+            ((Game1)Game).uiManager.Draw(gameTime);
         }
 
     }

@@ -15,6 +15,7 @@ namespace Game3 {
         public GraphicsDeviceManager graphics { get; }
 
         ModelManager modelManager;
+        public UIManager uiManager;
 
         Matrix world = Matrix.CreateTranslation(0, 0, 0);     
         Matrix view = Matrix.CreateLookAt(new Vector3(0, 2, 3), new Vector3(0, 0, 0), new Vector3(0, 1, 0));
@@ -38,6 +39,7 @@ namespace Game3 {
 
             modelManager = new ModelManager(this);
             Components.Add(modelManager);
+            uiManager = new UIManager(this);
 
             //world.Translation = new Vector3(world)
 

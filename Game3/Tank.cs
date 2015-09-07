@@ -48,6 +48,7 @@ namespace Game3 {
 
         state currentState = state.Resting;
         direction currentDirection;
+        UIManager uiManager;
 
         float maxMoveSpeed = 9f;
         float turboSpeed = 1f;
@@ -75,12 +76,12 @@ namespace Game3 {
             unset
         }
 
-        public Tank(Model model, GraphicsDevice device, Camera camera, GraphicsDeviceManager graphics)
+        public Tank(Model model, GraphicsDevice device, Camera camera, GraphicsDeviceManager graphics, UIManager uiManager)
             : base(model) {
 
             this.name = name;
             graphicsDeviceManager = graphics;
-
+            this.uiManager = uiManager;
             mousePick = new MousePick(device, camera);
 
             boneTransforms = new Matrix[model.Bones.Count];
@@ -297,6 +298,7 @@ namespace Game3 {
                 if (this.velocity < this.maxMoveSpeed) {
                     this.velocity += this.velocityIncrementor;
                 }
+                uiManager.playerEnergy -= .11f;
             }
        
         }
