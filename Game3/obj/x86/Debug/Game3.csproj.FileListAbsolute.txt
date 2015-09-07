@@ -1,0 +1,483 @@
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\3SNe_0.xnb
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\Ground.xnb
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_back_0.xnb
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_front_0.xnb
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_left_0.xnb
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_right_0.xnb
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_top_0.xnb
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\skybox.xnb
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\sanddf_0.xnb
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\Game3.exe
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\Game3.pdb
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\SharpDX.dll
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.xml
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\SharpDX.xml
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\obj\x86\Debug\Game3.exe
+C:\Users\Kyron\Documents\Visual Studio 2015\Projects\Game3\Game3\obj\x86\Debug\Game3.pdb
+F:\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\3SNe_0.xnb
+F:\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\Ground.xnb
+F:\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_back_0.xnb
+F:\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_front_0.xnb
+F:\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_left_0.xnb
+F:\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_right_0.xnb
+F:\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_top_0.xnb
+F:\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\skybox.xnb
+F:\Game3\Game3\bin\Windows\Debug\Game3.exe
+F:\Game3\Game3\bin\Windows\Debug\Game3.pdb
+F:\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.dll
+F:\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+F:\Game3\Game3\bin\Windows\Debug\SharpDX.dll
+F:\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.dll
+F:\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.dll
+F:\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.dll
+F:\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.dll
+F:\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.dll
+F:\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.dll
+F:\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.dll
+F:\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.xml
+F:\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+F:\Game3\Game3\bin\Windows\Debug\SharpDX.xml
+F:\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.xml
+F:\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.xml
+F:\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.xml
+F:\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.xml
+F:\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.xml
+F:\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.xml
+F:\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.xml
+F:\Game3\Game3\obj\x86\Debug\Game3.exe
+F:\Game3\Game3\obj\x86\Debug\Game3.pdb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\obj\x86\Debug\Game3.exe
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\obj\x86\Debug\Game3.pdb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\3SNe_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\Ground.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_back_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_front_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_left_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_right_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_top_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\skybox.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Game3.exe
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Game3.pdb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\obj\x86\Debug\Game3.csprojResolveAssemblyReference.cache
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\sanddf_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\obj\x86\Debug\Game3.exe
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\obj\x86\Debug\Game3.pdb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\3SNe_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\Ground.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\sanddf_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_back_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_front_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_left_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_right_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_top_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\skybox.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Game3.exe
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\Game3.pdb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab4\Game3\Game3\obj\x86\Debug\Game3.csprojResolveAssemblyReference.cache
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\obj\x86\Debug\Game3.exe
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\obj\x86\Debug\Game3.pdb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\3SNe_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\Ground.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\sanddf_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_back_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_front_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_left_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_right_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_top_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\skybox.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Game3.exe
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Game3.pdb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\obj\x86\Debug\Game3.csprojResolveAssemblyReference.cache
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\engine_diff_tex_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\tank.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\turret_alt_diff_tex_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\obj\x86\Debug\Game3.exe
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\obj\x86\Debug\Game3.pdb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\3SNe_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\Ground.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\sanddf_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_back_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_front_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_left_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_right_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_top_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\skybox.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\engine_diff_tex_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\tank.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\turret_alt_diff_tex_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Game3.exe
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Game3.pdb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\obj\x86\Debug\Game3.csprojResolveAssemblyReference.cache
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\Game3\Game3\bin\Windows\Debug\Content\MyFont.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\TURNIN\11636329_lab05\Game3\Game3\obj\x86\Debug\Game3.exe
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\TURNIN\11636329_lab05\Game3\Game3\obj\x86\Debug\Game3.pdb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\TURNIN\Game3\Game3\obj\x86\Debug\Game3.exe
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab5\TURNIN\Game3\Game3\obj\x86\Debug\Game3.pdb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\obj\x86\Debug\Game3.exe
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\obj\x86\Debug\Game3.pdb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\3SNe_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\Ground.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\sanddf_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_back_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_front_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_left_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_right_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_top_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\skybox.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\engine_diff_tex_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\tank.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\turret_alt_diff_tex_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\MyFont.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Game3.exe
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Game3.pdb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\obj\x86\Debug\Game3.csprojResolveAssemblyReference.cache
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\obj\x86\Debug\Game3.exe
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\obj\x86\Debug\Game3.pdb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\3SNe_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\Ground.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\sanddf_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_back_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_front_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_left_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_right_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_top_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\skybox.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\engine_diff_tex_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\tank.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\turret_alt_diff_tex_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Content\MyFont.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Game3.exe
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\Game3.pdb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Game3\Game3\obj\x86\Debug\Game3.csprojResolveAssemblyReference.cache
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\obj\x86\Debug\Game3.exe
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\obj\x86\Debug\Game3.pdb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\3SNe_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_back_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_front_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_left_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_right_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_top_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\skybox.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\engine_diff_tex_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\tank.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\turret_alt_diff_tex_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\MyFont.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Game3.exe
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Game3.pdb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\obj\x86\Debug\Game3.csprojResolveAssemblyReference.cache
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\Ground.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\obj\x86\Debug\Game3.exe
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\obj\x86\Debug\Game3.pdb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\3SNe_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\Ground.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_back_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_front_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_left_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_right_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_top_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\skybox.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\engine_diff_tex_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\tank.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\turret_alt_diff_tex_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\MyFont.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Game3.exe
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Game3.pdb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\obj\x86\Debug\Game3.csprojResolveAssemblyReference.cache
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Crate\crate_0.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Crate\crate.xnb
+C:\Users\philt\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1\Game3\Game3\bin\Windows\Debug\Content\Models\Car\Cartest3.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\obj\x86\Debug\Game3.exe
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\obj\x86\Debug\Game3.pdb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\Content\Models\Car\Cartest3.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\Content\Models\Crate\crate.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\Content\Models\Crate\crate_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\3SNe_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\Content\Models\Ground\Ground.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_back_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_front_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_left_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_right_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_top_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\Content\Models\Skybox\skybox.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\engine_diff_tex_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\tank.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\Content\Models\Tank\turret_alt_diff_tex_0.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\Content\MyFont.xnb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\Game3.exe
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\Game3.pdb
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\SharpDX.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\MonoGame.Framework.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\SharpDX.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs\Lab6\Assignment1 (1)\Game3\Game3\obj\x86\Debug\Game3.csprojResolveAssemblyReference.cache
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\obj\x86\Debug\Game3.exe
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\obj\x86\Debug\Game3.pdb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\obj\x86\Debug\Game3.csprojResolveAssemblyReference.cache
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Car\Cartest3.xnb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Crate\crate.xnb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Crate\crate_0.xnb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Ground\3SNe_0.xnb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Ground\Ground.xnb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_back_0.xnb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_front_0.xnb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_left_0.xnb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_right_0.xnb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_top_0.xnb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Skybox\skybox.xnb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Tank\engine_diff_tex_0.xnb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Tank\tank.xnb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Tank\turret_alt_diff_tex_0.xnb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\MyFont.xnb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Game3.exe
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Game3.pdb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\MonoGame.Framework.dll
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\SharpDX.dll
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\SharpDX.XAudio2.dll
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\SharpDX.Direct3D11.dll
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\SharpDX.DXGI.dll
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\SharpDX.Direct2D1.dll
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\SharpDX.XInput.dll
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\SharpDX.RawInput.dll
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\SharpDX.Direct3D9.dll
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\MonoGame.Framework.xml
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\SharpDX.xml
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\SharpDX.XAudio2.xml
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\SharpDX.Direct3D11.xml
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\SharpDX.DXGI.xml
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\SharpDX.Direct2D1.xml
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\SharpDX.XInput.xml
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\SharpDX.RawInput.xml
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\SharpDX.Direct3D9.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Cartest3.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Crate\crate.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Crate\crate_0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\3SNe_0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\Ground.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_back_0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_front_0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_left_0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_right_0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_top_0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\skybox.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Tank\engine_diff_tex_0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Tank\tank.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Tank\turret_alt_diff_tex_0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\MyFont.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Game3.exe
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Game3.pdb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\MonoGame.Framework.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XAudio2.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D11.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.DXGI.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct2D1.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XInput.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.RawInput.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D9.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\MonoGame.Framework.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XAudio2.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D11.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.DXGI.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct2D1.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XInput.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.RawInput.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D9.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\obj\x86\Debug\Game3.csprojResolveAssemblyReference.cache
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\obj\x86\Debug\Game3.exe
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\obj\x86\Debug\Game3.pdb

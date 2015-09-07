@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Game3\Game3.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Game3\Enemy.cs">
+    <Files>
+      <File FileName="Game3\Game1.cs" Line="25" Column="25" />
+      <File FileName="Game3\ModelManager.cs" Line="37" Column="8" />
+      <File FileName="Game3\Enemy.cs" Line="146" Column="15" />
+      <File FileName="Game3\Camera.cs" Line="67" Column="15" />
+      <File FileName="Game3\Tank.cs" Line="42" Column="28" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

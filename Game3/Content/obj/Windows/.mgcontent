@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>Z:/Documents/@@Working/Repositories/UTS/game-programming-assignment/Game3/Content/Models/Crate/crate.dae</File>
+    <File>Z:/Documents/@@Working/Repositories/UTS/game-programming-assignment/Game3/Content/Models/Car/Cartest3.dae</File>
+  </SourceFiles>
+</SourceFileCollection>
