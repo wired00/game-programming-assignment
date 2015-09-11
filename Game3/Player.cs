@@ -120,11 +120,11 @@ namespace Game3 {
             if (newPosition != currentPlayerPosition) {
                 rotation = RotateToFace(newPosition, currentPlayerPosition, Vector3.Up); // rotate to the future position
             }
-
-            health = MAX_HEALTH;
+            
             uiManager.playerHealth = this.health;
+            uiManager.playerEnergy = this.energy;
 
-            if (!isMoving() && audioManager.idleLoop.State != SoundState.Playing) {
+            if (!isMoving() && audioManager.idleLoop.State != SoundState.Playing && energy > 0) {
                 audioManager.accelerate.Pause();
                 audioManager.idleLoop.Play();
             }
@@ -180,92 +180,121 @@ namespace Game3 {
 		/// 
 		private void HandleMovement(float elapsedTime) {
             newPosition = translation.Translation;
+            if (energy > 0)
+            {
+                if (Keyboard.GetState().IsKeyDown(Keys.A) && Keyboard.GetState().IsKeyDown(Keys.W))
+                {
+                    currentState = state.Moving;
+                    HandleAcceleration();
 
-            if (Keyboard.GetState().IsKeyDown(Keys.A) && Keyboard.GetState().IsKeyDown(Keys.W)) {
-                currentState = state.Moving;
-                HandleAcceleration();
+                    newPosition.X -= velocity * turboSpeed;
+                    newPosition.Z -= velocity * turboSpeed;
 
-                newPosition.X -= velocity * turboSpeed;
-                newPosition.Z -= velocity * turboSpeed;
+                    //HandleRotateWheels(elapsedTime);
+                    currentDirection = direction.left_up;
+                }
+                else if (Keyboard.GetState().IsKeyDown(Keys.A) && Keyboard.GetState().IsKeyDown(Keys.S))
+                {
+                    currentState = state.Moving;
+                    HandleAcceleration();
 
-                //HandleRotateWheels(elapsedTime);
-                currentDirection = direction.left_up;
-            } else if (Keyboard.GetState().IsKeyDown(Keys.A) && Keyboard.GetState().IsKeyDown(Keys.S)) {
-                currentState = state.Moving;
-                HandleAcceleration();
-
-                newPosition.X -= velocity * turboSpeed;
-                newPosition.Z += velocity * turboSpeed;
+                    newPosition.X -= velocity * turboSpeed;
+                    newPosition.Z += velocity * turboSpeed;
 
 
-                //HandleRotateWheels(elapsedTime);
-                currentDirection = direction.left_down;
+                    //HandleRotateWheels(elapsedTime);
+                    currentDirection = direction.left_down;
 
-            } else if (Keyboard.GetState().IsKeyDown(Keys.D) && Keyboard.GetState().IsKeyDown(Keys.W)) {
-                currentState = state.Moving;
-                HandleAcceleration();
+                }
+                else if (Keyboard.GetState().IsKeyDown(Keys.D) && Keyboard.GetState().IsKeyDown(Keys.W))
+                {
+                    currentState = state.Moving;
+                    HandleAcceleration();
 
-                newPosition.X += velocity * turboSpeed;
-                newPosition.Z -= velocity * turboSpeed;
+                    newPosition.X += velocity * turboSpeed;
+                    newPosition.Z -= velocity * turboSpeed;
 
-                //HandleRotateWheels(elapsedTime);
-                currentDirection = direction.right_up;
+                    //HandleRotateWheels(elapsedTime);
+                    currentDirection = direction.right_up;
 
-            } else if (Keyboard.GetState().IsKeyDown(Keys.D) && Keyboard.GetState().IsKeyDown(Keys.S)) {
-                currentState = state.Moving;
-                HandleAcceleration();
+                }
+                else if (Keyboard.GetState().IsKeyDown(Keys.D) && Keyboard.GetState().IsKeyDown(Keys.S))
+                {
+                    currentState = state.Moving;
+                    HandleAcceleration();
 
-                newPosition.X += velocity * turboSpeed;
-                newPosition.Z += velocity * turboSpeed;
+                    newPosition.X += velocity * turboSpeed;
+                    newPosition.Z += velocity * turboSpeed;
 
-                //HandleRotateWheels(elapsedTime);
-                currentDirection = direction.right_down;
+                    //HandleRotateWheels(elapsedTime);
+                    currentDirection = direction.right_down;
 
-            } else if (Keyboard.GetState().IsKeyDown(Keys.A)) {
-                currentState = state.Moving;
-                HandleAcceleration();
+                }
+                else if (Keyboard.GetState().IsKeyDown(Keys.A))
+                {
+                    currentState = state.Moving;
+                    HandleAcceleration();
 
-                newPosition.X -= velocity * turboSpeed;
-                
-               // HandleRotateWheels(elapsedTime);
-                currentDirection = direction.left;
+                    newPosition.X -= velocity * turboSpeed;
 
-            } else if (Keyboard.GetState().IsKeyDown(Keys.D)) {
-                currentState = state.Moving;
-                HandleAcceleration();
+                    // HandleRotateWheels(elapsedTime);
+                    currentDirection = direction.left;
 
-                newPosition.X += velocity * turboSpeed;
-                //HandleRotateWheels(elapsedTime);
-                currentDirection = direction.right;
+                }
+                else if (Keyboard.GetState().IsKeyDown(Keys.D))
+                {
+                    currentState = state.Moving;
+                    HandleAcceleration();
 
-            }  else if (Keyboard.GetState().IsKeyDown(Keys.W)) {
-                currentState = state.Moving;
-                HandleAcceleration();
+                    newPosition.X += velocity * turboSpeed;
+                    //HandleRotateWheels(elapsedTime);
+                    currentDirection = direction.right;
 
-                newPosition.Z -= velocity * turboSpeed;
-                //HandleRotateWheels(elapsedTime);
-                currentDirection = direction.up;
+                }
+                else if (Keyboard.GetState().IsKeyDown(Keys.W))
+                {
+                    currentState = state.Moving;
+                    HandleAcceleration();
 
-            } else if (Keyboard.GetState().IsKeyDown(Keys.S)) {
-                currentState = state.Moving;
-                HandleAcceleration();
+                    newPosition.Z -= velocity * turboSpeed;
+                    //HandleRotateWheels(elapsedTime);
+                    currentDirection = direction.up;
 
-                newPosition.Z += velocity * turboSpeed;
-                //HandleRotateWheels(elapsedTime);
-                currentDirection = direction.back;
+                }
+                else if (Keyboard.GetState().IsKeyDown(Keys.S))
+                {
+                    currentState = state.Moving;
+                    HandleAcceleration();
 
-            } else {
+                    newPosition.Z += velocity * turboSpeed;
+                    //HandleRotateWheels(elapsedTime);
+                    currentDirection = direction.back;
+
+                }
+                else
+                {
+                    currentState = state.Slowing;
+                }
+
+                // turbo boost if space bar held down
+                if (Keyboard.GetState().IsKeyDown(Keys.Space))
+                {
+                    turboSpeed = 2f;
+                    currentState = state.Boosting;
+                }
+                else
+                {
+                    turboSpeed = 1f;
+                    //currentState = state.Moving;
+                }
+            }
+            else {
                 currentState = state.Slowing;
-            }
-
-            // turbo boost if space bar held down
-            if (Keyboard.GetState().IsKeyDown(Keys.Space)) {
-                turboSpeed = 2f;
-                currentState = state.Boosting;
-            } else {
-                turboSpeed = 1f;
-                //currentState = state.Moving;
-            }
+                energy = 0f;
+                audioManager.boost.Pause();
+                audioManager.accelerate.Pause();
+                audioManager.idleLoop.Pause();
+           }
         }
 
         private void MovementClamp() {
@@ -298,7 +327,6 @@ namespace Game3 {
                     this.velocity += VELOCITY_INCREMENTOR;
                 }
                 energy -= .11f;
-                uiManager.playerEnergy = energy;
                 if (audioManager.accelerate.State != SoundState.Playing)
                 {
                     audioManager.accelerate.Play();

@@ -82,7 +82,9 @@ namespace Game3 {
 
                 if (playerModel.isBoosting())
                 {
-                    enemyModel.health = enemyModel.health - Enemy.MAX_HEALTH;
+                    playerModel.energy -= enemyModel.health/3;
+                    enemyModel.health = enemyModel.health - enemyModel.health;
+                    playerModel.health = playerModel.health - 5;
                 }
                 else
                 {
@@ -101,6 +103,7 @@ namespace Game3 {
 
                 if (playerModel.health <= 0) {
                     audioManager.enemyDeath.Play();
+                    playerModel.health = 0;
                     playerModel.currentDrawState = BasicModel.drawState.remove;
                 }
             }
