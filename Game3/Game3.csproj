@@ -51,6 +51,7 @@
     <Compile Include="Skybox.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="SplashScreen.cs" />
     <Compile Include="UIManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +153,12 @@
     </Content>
     <Content Include="Content\Models\Battery\BatteryTexture_0.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\SplashScreenFontLarge.spritefont">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\SplashScreenFont.spritefont">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Models\Car\CarModel2.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -22,6 +22,46 @@ namespace Game3 {
         Matrix view = Matrix.CreateLookAt(new Vector3(0, 2, 3), new Vector3(0, 0, 0), new Vector3(0, 1, 0));
         Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), 800f / 480f, 0.01f, 100f);
 
+        // Splash Screen
+        public enum GameState { START, PLAY, LEVEL_CHANGE, END}
+        GameState currentGameState = GameState.START;
+
+        public void ChangeGameState (GameState state, int level)
+        {
+            currentGameState = state;
+
+            switch (currentGameState)
+            {
+                case GameState.LEVEL_CHANGE:
+                    splashScreen.SetData("Level " + (level + 1),
+                        GameState.LEVEL_CHANGE);
+                    modelManager.Enabled = false;
+                    modelManager.Visible = false;
+                    splashScreen.Enabled = true;
+                    splashScreen.Visible = true;
+                    break;
+
+                case GameState.PLAY:
+                    modelManager.Enabled = true;
+                    modelManager.Visible = true;
+                    splashScreen.Enabled = false;
+                    splashScreen.Visible = false;
+                    break;
+
+                case GameState.END:
+                    splashScreen.SetData("Game Over.\nLevel: " + "\nScore: " + score, GameState.END);
+                    modelManager.Enabled = false;
+                    modelManager.Visible = false;
+                    splashScreen.Enabled = true;
+                    splashScreen.Visible = true;
+                    break;
+
+            }
+        }
+
+        SplashScreen splashScreen;
+        int score = 0;
+
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -39,13 +79,23 @@ namespace Game3 {
             Components.Add(camera);
 
             modelManager = new ModelManager(this);
+            modelManager.Enabled = false; // for when splash screen is enabled
+            modelManager.Visible = false; // for when splash screen is enabled
             Components.Add(modelManager);
+
+
             uiManager = new UIManager(this);
+            
             audioManager = new AudioManager(this);
 
             //world.Translation = new Vector3(world)
 
             this.IsMouseVisible = true;
+
+            // Splash screen component
+            splashScreen = new SplashScreen(this);
+            Components.Add(splashScreen);
+            splashScreen.SetData("Welcome to Car Demolition!", currentGameState);
 
             base.Initialize();
         }
