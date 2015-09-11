@@ -13,6 +13,8 @@ namespace Game3 {
         public static int MAX_HEALTH = 100;
 
 		Player playerTank;
+
+        UIManager uiManager;
         
         public int health { get; set; }
 
@@ -52,7 +54,7 @@ namespace Game3 {
 
         }
 
-		public Enemy(Model model, GraphicsDevice device, Camera camera, Vector3 position, Player playerTank)
+		public Enemy(Model model, GraphicsDevice device, Camera camera, Vector3 position, Player playerTank, UIManager uiManager)
             : base(model) {
 
 			translation.Translation = position;
@@ -75,6 +77,8 @@ namespace Game3 {
             health = MAX_HEALTH;
             Random rng = new Random();
             other = new Vector3(rng.Next(-300, 300), 0, rng.Next(-250, 250));
+
+            this.uiManager = uiManager;
         }
 
         public override void Update(GameTime gameTime) {
@@ -83,6 +87,9 @@ namespace Game3 {
             Vector3 currentTankPosition = translation.Translation;
 
             Vector3? targetPlayer = GetNearestPlayer();
+
+            //Console.WriteLine("seekOther: " + seekingOther + ", " + "moveCount: " + moveCount);
+
 
             if (seekingOther)
             {
@@ -114,14 +121,13 @@ namespace Game3 {
                 }
                 else
                 {
-
                     HandleTankRotation((Vector3)targetPlayer, currentTankPosition);
                     HandleSeek((Vector3)targetPlayer, currentTankPosition, gameTime);
                 }
             }
 
             MovementClamp();
-            CheckMovement();
+            //CheckMovement();
 
             // change enemy model red to signify damage
             if (health < MAX_HEALTH) {
@@ -259,15 +265,19 @@ namespace Game3 {
         }
 
         internal void CheckMovement() {
-            if (lastPos.HasValue && Vector3.Distance((Vector3)lastPos, this.translation.Translation) < 10f && health < MAX_HEALTH)
-            {
-                moveCount++;
-                if (moveCount >= 30)
-                {
-                    moveCount = 0;
-                    seekingOther = true;
+
+            if (lastPos.HasValue) {
+                float distanceFromLastPosition = Vector3.Distance((Vector3)lastPos, this.translation.Translation);
+                if ((distanceFromLastPosition < 5f && distanceFromLastPosition > 3.5f) && health < MAX_HEALTH) {
+                    Console.WriteLine(Vector3.Distance((Vector3)lastPos, this.translation.Translation));
+                    moveCount++;
+                    if (moveCount >= 30) {
+                        moveCount = 0;
+                        seekingOther = true;
+                    }
                 }
             }
+
             lastPos = this.translation.Translation;
         }
 

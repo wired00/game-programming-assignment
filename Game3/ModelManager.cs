@@ -13,51 +13,27 @@ namespace Game3 {
 
         float secondsSinceLastItem = 0;
 
+        UIManager uiManager;
+        Game game;
+
         public ModelManager(Game game) : base(game) {
-           
+            this.game = game;
         }
 
         public override void Initialize() {
             collisionHandler = new CollisionHandler(((Game1)Game).audioManager);
+            uiManager = new UIManager(game);
             base.Initialize();
         }
 
         protected override void LoadContent() {
-
-            models.Add(new Pickup(
-                Game.Content.Load<Model > (@"Models/Battery/BatteryModel"),
-                new Vector3(300,30,100))
-			);
-            models.Add(new Pickup(
-                Game.Content.Load<Model > (@"Models/Battery/BatteryModel"),
-                new Vector3(-100, 30, 100))
-            );
-
-            //models.Add(new Pickup(
-            //    Game.Content.Load<Model>(@"Models/Car/Cartest3"),
-            //    new Vector3(-0, 100, 0))
-            //);
-
-            models.Add(new Pickup(
-                Game.Content.Load<Model > (@"Models/Battery/BatteryModel"),
-                new Vector3(300, 30, 200))
-            );
-
-
+            Random rnd = new Random();
             models.Add(new Pickup(
                 Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
-                new Vector3(400, 30, 50))
-            );
-
+                new Vector3(rnd.Next(-400, 400), 30, rnd.Next(-350, 250))));
             models.Add(new Pickup(
                 Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
-                new Vector3(200, 30, -200))
-            );
-
-            models.Add(new Pickup(
-                Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
-                new Vector3(50, 30, -100))
-            );
+                new Vector3(rnd.Next(-400, 400), 30, rnd.Next(-350, 250))));
 
             models.Add(new Ground(
                 Game.Content.Load<Model>(@"Models/Ground/Ground"))
@@ -80,15 +56,18 @@ namespace Game3 {
 				((Game1)Game).GraphicsDevice,
 				((Game1)Game).camera,
 				new Vector3 (500, 0, -400),
-				playerModel
+				playerModel,
+                uiManager
 				));
 
+            
             models.Add(new Enemy(
                 Game.Content.Load<Model>(@"Models/Tank/tank"),
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
                 new Vector3(-300, 0, 150),
-                playerModel
+                playerModel,
+                uiManager
                 ));
 
             models.Add(new Enemy(
@@ -96,9 +75,10 @@ namespace Game3 {
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
                 new Vector3(-00, 0, -200),
-                playerModel
+                playerModel,
+                uiManager
                 ));
-
+                
             base.LoadContent();
         }
 
@@ -134,12 +114,22 @@ namespace Game3 {
         private void SpawnEnergyItem(GameTime gameTime) {
             float elapsedTime = (float) gameTime.ElapsedGameTime.TotalSeconds;
 
-            if (secondsSinceLastItem >= 2) {
+            if (secondsSinceLastItem >= 3) {
                 Random rnd = new Random();
+
                 models.Add(new Pickup(
                     Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
-                    new Vector3(rnd.Next(-300, 300), 30, rnd.Next(-250, 250))));
+                    new Vector3(rnd.Next(-400, 400), 30, rnd.Next(-350, 250))));
                 secondsSinceLastItem = 0;
+
+            } else if (secondsSinceLastItem >= 3) {
+                Random rnd = new Random();
+
+                models.Add(new Pickup(
+                    Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
+                    new Vector3(rnd.Next(-400, 400), 30, rnd.Next(-350, 250))));
+                secondsSinceLastItem = 0;
+
             } else {
                 secondsSinceLastItem += elapsedTime;
             }
