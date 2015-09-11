@@ -29,26 +29,6 @@ namespace Game3 {
 
         public float energy { get; set; }
 
-        //MousePick mousePick;
-
-        // bones which will be animated
-        ModelBone leftBackWheelBone;
-        ModelBone rightBackWheelBone;
-        ModelBone leftFrontWheelBone;
-        ModelBone rightFrontWheelBone;
-
-        public static explicit operator Player(Model v) {
-            throw new NotImplementedException();
-        }
-
-        // the original animating bone transform matrix must be stored
-        Matrix leftBackWheelTransform;
-        Matrix rightBackWheelTransform;
-        Matrix leftFrontWheelTransform;
-        Matrix rightFrontWheelTransform;
-
-        Matrix[] boneTransforms;
-
         state currentState = state.Resting;
         direction currentDirection;
         UIManager uiManager;
@@ -82,24 +62,11 @@ namespace Game3 {
             graphicsDeviceManager = graphics;
             this.uiManager = uiManager;
             this.audioManager = audioManager;
-            //mousePick = new MousePick(device, camera);
-
-            boneTransforms = new Matrix[model.Bones.Count];
-
-            // references to bones to animate 
-            //leftBackWheelBone = model.Bones["l_back_wheel_geo"];
-            //rightBackWheelBone = model.Bones["r_back_wheel_geo"];
-            //leftFrontWheelBone = model.Bones["l_front_wheel_geo"];
-            //rightFrontWheelBone = model.Bones["r_front_wheel_geo"];
-
-            // store the original transform matrix, otherwise animations on rotations will be all wonky
-            //leftBackWheelTransform = leftBackWheelBone.Transform;
-            //rightBackWheelTransform = rightBackWheelBone.Transform;
-            //leftFrontWheelTransform = leftFrontWheelBone.Transform;
-            //rightFrontWheelTransform = rightFrontWheelBone.Transform;
 
             health = MAX_HEALTH;
             energy = MAX_ENERGY;
+
+            base.translation = Matrix.Identity;
         }
 
         public override void Update(GameTime gameTime) {
@@ -137,18 +104,6 @@ namespace Game3 {
             }
 
             base.Update(gameTime);
-        }
-
-        /// wheel rotation
-        private void HandleRotateWheels(float elapsedTime) {
-            float wheelRotationValue = elapsedTime * WHEEL_ROTATION_SPEED;
-
-            Matrix wheelRotation = Matrix.CreateRotationX(wheelRotationValue);
-
-            leftBackWheelBone.Transform = wheelRotation * leftBackWheelTransform;
-            rightBackWheelBone.Transform = wheelRotation * rightBackWheelTransform;
-            leftFrontWheelBone.Transform = wheelRotation * leftFrontWheelTransform;
-            rightFrontWheelBone.Transform = wheelRotation * rightFrontWheelTransform;
         }
 
         /// whole Player rotation
@@ -300,7 +255,6 @@ namespace Game3 {
         private void MovementClamp() {
             float currentX = newPosition.X;
             float currentZ = newPosition.Z;
-            
 
             // clamp player within game area
             currentX = MathHelper.Clamp(currentX, -550f, 550f);

@@ -46,8 +46,6 @@ namespace Game3
             spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
             spriteBatch.DrawString(font, "Health " + playerHealth, new Vector2(0, 0), Color.Cyan);
             spriteBatch.DrawString(font, "Energy " + Math.Round(playerEnergy, 2), new Vector2(0, 40), Color.Cyan);
-            spriteBatch.DrawString(font, debug1, new Vector2(0, 60), Color.Cyan);
-            spriteBatch.DrawString(font, debug2, new Vector2(0, 80), Color.Cyan);
             spriteBatch.End();
 
             game.GraphicsDevice.BlendState = BlendState.Opaque;

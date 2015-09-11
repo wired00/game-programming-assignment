@@ -18,21 +18,7 @@ namespace Game3 {
         
         public int health { get; set; }
 
-        Matrix rotation = Matrix.Identity; // tank rotation
-        
-        // bones which will be animated
-        ModelBone leftBackWheelBone;
-        ModelBone rightBackWheelBone;
-        ModelBone leftFrontWheelBone;
-        ModelBone rightFrontWheelBone;
-
-        // the original animating bone transform matrix must be stored
-        Matrix leftBackWheelTransform;
-        Matrix rightBackWheelTransform;
-        Matrix leftFrontWheelTransform;
-        Matrix rightFrontWheelTransform;
-
-        Matrix[] boneTransforms;
+        Matrix rotation = Matrix.Identity; // tank rotationss
 
         state currentState = state.Resting;
 
@@ -40,7 +26,6 @@ namespace Game3 {
         int moveCount = 0;
         
         float moveSpeed = 20f;
-        float wheelRotateSpeed = 10f;
         bool seekingOther;
         
         Vector3 other;
@@ -57,21 +42,7 @@ namespace Game3 {
 		public Enemy(Model model, GraphicsDevice device, Camera camera, Vector3 position, Player playerTank, UIManager uiManager)
             : base(model) {
 
-			translation.Translation = position;
-
-            boneTransforms = new Matrix[model.Bones.Count];
-
-            // references to bones to animate
-//            leftBackWheelBone = model.Bones["l_back_wheel_geo"];
-//            rightBackWheelBone = model.Bones["r_back_wheel_geo"];
-//            leftFrontWheelBone = model.Bones["l_front_wheel_geo"];
-//            rightFrontWheelBone = model.Bones["r_front_wheel_geo"];
-
-            // store the original transform matrix, otherwise animations on rotations will be all wonky
-//            leftBackWheelTransform = leftBackWheelBone.Transform;
-//            rightBackWheelTransform = rightBackWheelBone.Transform;
-//            leftFrontWheelTransform = leftFrontWheelBone.Transform;
-//            rightFrontWheelTransform = rightFrontWheelBone.Transform;
+			base.translation.Translation = position;
 
 			this.playerTank = playerTank;
             health = MAX_HEALTH;
@@ -87,9 +58,6 @@ namespace Game3 {
             Vector3 currentTankPosition = translation.Translation;
 
             Vector3? targetPlayer = GetNearestPlayer();
-
-            //Console.WriteLine("seekOther: " + seekingOther + ", " + "moveCount: " + moveCount);
-
 
             if (seekingOther)
             {
@@ -181,18 +149,6 @@ namespace Game3 {
 
             return closestModel;
 
-        }
-
-        /// wheel rotation
-        private void HandleRotateWheels(float elapsedTime) {
-            float wheelRotationValue = elapsedTime * wheelRotateSpeed;
-
-            Matrix wheelRotation = Matrix.CreateRotationX(wheelRotationValue);
-
-            leftBackWheelBone.Transform = wheelRotation * leftBackWheelTransform;
-            rightBackWheelBone.Transform = wheelRotation * rightBackWheelTransform;
-            leftFrontWheelBone.Transform = wheelRotation * leftFrontWheelTransform;
-            rightFrontWheelBone.Transform = wheelRotation * rightFrontWheelTransform;
         }
         
         /// whole tank rotation
