@@ -33,16 +33,23 @@ namespace Game3 {
         Matrix[] boneTransforms;
 
         state currentState = state.Resting;
+
+        Vector3? lastPos;
+        int moveCount = 0;
         
         float moveSpeed = 20f;
         float wheelRotateSpeed = 10f;
+        bool seekingOther;
+        
+        Vector3 other;
 
         enum state {
             Moving,
             Resting,
             Rotating,
             SeekingEnergyItem,
-            SeekingPlayer
+            SeekingPlayer, 
+
         }
 
 		public Enemy(Model model, GraphicsDevice device, Camera camera, Vector3 position, Player playerTank)
@@ -66,6 +73,8 @@ namespace Game3 {
 
 			this.playerTank = playerTank;
             health = MAX_HEALTH;
+            Random rng = new Random();
+            other = new Vector3(rng.Next(-300, 300), 0, rng.Next(-250, 250));
         }
 
         public override void Update(GameTime gameTime) {
@@ -74,18 +83,37 @@ namespace Game3 {
             Vector3 currentTankPosition = translation.Translation;
 
             Vector3? targetPlayer = GetNearestPlayer();
-            if (targetPlayer.HasValue) {
+
+            if (seekingOther)
+            {
+                HandleSeek(other, currentTankPosition, gameTime);
+                if (Vector3.Distance(other, currentTankPosition) < 10) {
+                    //currentState = state.Resting;
+                    seekingOther = false;
+                    Random rng = new Random();
+                    other = new Vector3(rng.Next(-300, 300), 0, rng.Next(-250, 250));
+                }
+                HandleTankRotation(other, currentTankPosition);
+            }
+            else if (targetPlayer.HasValue)
+            {
                 // determine state
-                if (health < MAX_HEALTH) {
+                if (health < MAX_HEALTH)
+                {
                     Vector3? targetItem = GetNearestEnergyItem();
                     // if safe distance from player then seek health, otherwise flee
-                    if (Vector3.Distance((Vector3)targetPlayer, currentTankPosition) > 200f && targetItem.HasValue) {
+                    if (Vector3.Distance((Vector3)targetPlayer, currentTankPosition) > 200f && targetItem.HasValue)
+                    {
                         HandleTankRotation((Vector3)targetItem, currentTankPosition);
                         HandleSeek((Vector3)targetItem, currentTankPosition, gameTime);
-                    } else {
+                    }
+                    else
+                    {
                         HandleFlee((Vector3)targetPlayer, currentTankPosition, gameTime);
                     }
-                } else {
+                }
+                else
+                {
 
                     HandleTankRotation((Vector3)targetPlayer, currentTankPosition);
                     HandleSeek((Vector3)targetPlayer, currentTankPosition, gameTime);
@@ -93,6 +121,7 @@ namespace Game3 {
             }
 
             MovementClamp();
+            CheckMovement();
 
             // change enemy model red to signify damage
             if (health < MAX_HEALTH) {
@@ -227,6 +256,19 @@ namespace Game3 {
                 translation.Translation = new Vector3(translation.Translation.X, Matrix.Identity.Translation.Y, translation.Translation.Z);
             }
 
+        }
+
+        internal void CheckMovement() {
+            if (lastPos.HasValue && Vector3.Distance((Vector3)lastPos, this.translation.Translation) < 10f && health < MAX_HEALTH)
+            {
+                moveCount++;
+                if (moveCount >= 30)
+                {
+                    moveCount = 0;
+                    seekingOther = true;
+                }
+            }
+            lastPos = this.translation.Translation;
         }
 
         internal void FullHealth() {
