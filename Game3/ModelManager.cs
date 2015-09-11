@@ -7,6 +7,8 @@ namespace Game3 {
     class ModelManager : DrawableGameComponent {
         List<BasicModel> models = new List<BasicModel>();
 
+        Player playerModel;
+        
         CollisionHandler collisionHandler = new CollisionHandler();
 
         float secondsSinceLastItem = 0;
@@ -61,14 +63,14 @@ namespace Game3 {
             );
 
             // need to keep hold of the players tank
-            Tank playerTank = new Tank (
+            playerModel = new Player (
 	              Game.Content.Load<Model> (@"Models/Tank/tank"),
 	              ((Game1)Game).GraphicsDevice,
 	              ((Game1)Game).camera,
                   ((Game1)Game).graphics,
                   ((Game1)Game).uiManager);
 
-			models.Add(playerTank);
+			models.Add(playerModel);
 
             
 			models.Add(new Enemy(
@@ -76,7 +78,7 @@ namespace Game3 {
 				((Game1)Game).GraphicsDevice,
 				((Game1)Game).camera,
 				new Vector3 (500, 0, -400),
-				playerTank
+				playerModel
 				));
 
             models.Add(new Enemy(
@@ -84,7 +86,7 @@ namespace Game3 {
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
                 new Vector3(-300, 0, 150),
-                playerTank
+                playerModel
                 ));
 
             models.Add(new Enemy(
@@ -92,7 +94,7 @@ namespace Game3 {
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
                 new Vector3(-00, 0, -200),
-                playerTank
+                playerModel
                 ));
 
             base.LoadContent();
@@ -132,7 +134,6 @@ namespace Game3 {
 
             if (secondsSinceLastItem >= 2) {
                 Random rnd = new Random();
-                Console.WriteLine("inside");
                 models.Add(new Pickup(
                     Game.Content.Load<Model>(@"Models/Crate/crate"),
                     new Vector3(rnd.Next(-300, 300), 30, rnd.Next(-300, 300))));
@@ -150,6 +151,10 @@ namespace Game3 {
             }
             base.Draw(gameTime);
             ((Game1)Game).uiManager.Draw(gameTime);
+        }
+
+        public Player getPlayerModel() {
+            return this.playerModel;
         }
 
     }

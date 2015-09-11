@@ -4,7 +4,6 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>Z:/Documents/@@Working/Repositories/UTS/game-programming-assignment/Game3/Content/Models/Crate/crate.dae</File>
-    <File>Z:/Documents/@@Working/Repositories/UTS/game-programming-assignment/Game3/Content/Models/Car/Cartest3.dae</File>
+    <File>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/Game3/Content/Models/Crate/crate.dae</File>
   </SourceFiles>
 </SourceFileCollection>

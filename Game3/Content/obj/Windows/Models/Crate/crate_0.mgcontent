@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>Z:/Documents/@@Working/Repositories/UTS/game-programming-assignment/Game3/Content/Models/Crate/crate.png</SourceFile>
-  <SourceTime>2015-09-06T16:15:51+10:00</SourceTime>
-  <DestFile>Z:/Documents/@@Working/Repositories/UTS/game-programming-assignment/Game3/Content/bin/Windows/Models/Crate/crate_0.xnb</DestFile>
-  <DestTime>2015-09-06T16:27:10+10:00</DestTime>
+  <SourceFile>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/Game3/Content/Models/Crate/crate.png</SourceFile>
+  <SourceTime>2015-08-27T15:59:42+10:00</SourceTime>
+  <DestFile>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/Game3/Content/bin/Windows/Models/Crate/crate_0.xnb</DestFile>
+  <DestTime>2015-09-11T15:11:50.1066621+10:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-04-30T03:14:44+10:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

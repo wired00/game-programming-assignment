@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>Z:/Documents/@@Working/Repositories/UTS/game-programming-assignment/Game3/Content/Models/Car/Cartest3.dae</SourceFile>
-  <SourceTime>2015-09-06T16:15:51+10:00</SourceTime>
-  <DestFile>Z:/Documents/@@Working/Repositories/UTS/game-programming-assignment/Game3/Content/bin/Windows/Models/Car/Cartest3.xnb</DestFile>
-  <DestTime>2015-09-06T16:27:11+10:00</DestTime>
+  <SourceFile>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/Game3/Content/Models/Car/Cartest3.dae</SourceFile>
+  <SourceTime>2015-09-11T12:00:21.5292399+10:00</SourceTime>
+  <DestFile>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/Game3/Content/bin/Windows/Models/Car/Cartest3.xnb</DestFile>
+  <DestTime>2015-09-11T15:11:50.306714+10:00</DestTime>
   <Importer>OpenAssetImporter</Importer>
   <ImporterTime>2015-04-30T03:14:44+10:00</ImporterTime>
   <Processor>ModelProcessor</Processor>

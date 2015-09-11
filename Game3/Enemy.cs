@@ -10,36 +10,25 @@ using Microsoft.Xna.Framework.Content;
 namespace Game3 {
     class Enemy : BasicModel {
 
-        public Matrix translation = Matrix.Identity; // tank movement
+        public static int MAX_HEALTH = 100;
 
-		Tank playerTank;
-		Vector3 positionPlayerTank;
-
-        int maxHealth = 100;
-
+		Player playerTank;
+        
         public int health { get; set; }
 
         Matrix rotation = Matrix.Identity; // tank rotation
-
-        MousePick mousePick;
-        Vector3 pickPosition;
-        Vector3? mousePosition;
-
+        
         // bones which will be animated
-        ModelBone turretBone;
         ModelBone leftBackWheelBone;
         ModelBone rightBackWheelBone;
         ModelBone leftFrontWheelBone;
         ModelBone rightFrontWheelBone;
-        ModelBone cannonBone;
 
         // the original animating bone transform matrix must be stored
-        Matrix turretTransform;
         Matrix leftBackWheelTransform;
         Matrix rightBackWheelTransform;
         Matrix leftFrontWheelTransform;
         Matrix rightFrontWheelTransform;
-        Matrix cannonTransform;
 
         Matrix[] boneTransforms;
 
@@ -56,34 +45,27 @@ namespace Game3 {
             SeekingPlayer
         }
 
-		public Enemy(Model model, GraphicsDevice device, Camera camera, Vector3 position, Tank playerTank)
+		public Enemy(Model model, GraphicsDevice device, Camera camera, Vector3 position, Player playerTank)
             : base(model) {
 
 			translation.Translation = position;
 
-            mousePick = new MousePick(device, camera);
-
             boneTransforms = new Matrix[model.Bones.Count];
 
-
             // references to bones to animate
-//            turretBone = model.Bones["turret_geo"];
 //            leftBackWheelBone = model.Bones["l_back_wheel_geo"];
 //            rightBackWheelBone = model.Bones["r_back_wheel_geo"];
 //            leftFrontWheelBone = model.Bones["l_front_wheel_geo"];
 //            rightFrontWheelBone = model.Bones["r_front_wheel_geo"];
-//            cannonBone = model.Bones["canon_geo"];
 
             // store the original transform matrix, otherwise animations on rotations will be all wonky
-//            turretTransform = turretBone.Transform;
 //            leftBackWheelTransform = leftBackWheelBone.Transform;
 //            rightBackWheelTransform = rightBackWheelBone.Transform;
 //            leftFrontWheelTransform = leftFrontWheelBone.Transform;
 //            rightFrontWheelTransform = rightFrontWheelBone.Transform;
-//            cannonTransform = cannonBone.Transform;
 
 			this.playerTank = playerTank;
-            health = maxHealth;
+            health = MAX_HEALTH;
         }
 
         public override void Update(GameTime gameTime) {
@@ -94,7 +76,7 @@ namespace Game3 {
             Vector3? targetPlayer = GetNearestPlayer();
             if (targetPlayer.HasValue) {
                 // determine state
-                if (health < maxHealth) {
+                if (health < MAX_HEALTH) {
                     Vector3? targetItem = GetNearestEnergyItem();
                     // if safe distance from player then seek health, otherwise flee
                     if (Vector3.Distance((Vector3)targetPlayer, currentTankPosition) > 200f && targetItem.HasValue) {
@@ -113,7 +95,7 @@ namespace Game3 {
             MovementClamp();
 
             // change enemy model red to signify damage
-            if (health < maxHealth) {
+            if (health < MAX_HEALTH) {
                 base.tintColour = Color.Red.ToVector3();
             } else {
                 base.tintColour = Color.Transparent.ToVector3();
@@ -129,8 +111,8 @@ namespace Game3 {
                 foreach (BasicModel model in models) {
                     
                     // if player
-                    if (model.GetType() == typeof(Tank)) {
-                        foundModel = ((Tank)model).translation.Translation;
+                    if (model.GetType() == typeof(Player)) {
+                        foundModel = ((Player)model).translation.Translation;
                     }
                     
                 }
@@ -195,16 +177,6 @@ namespace Game3 {
             return newRotation;
         }
 
-        // atan rotation method, Not used.
-		Matrix RotateToFace2(Vector3 targetPosition, Vector3 currentPosition, Vector3 up) {
-			// atan method
-			float targetX = targetPosition.X;
-			float targetZ = targetPosition.Z;
-			Double newOrientation = Math.Atan2(targetX, targetZ);
-			Matrix newRotation = Matrix.CreateRotationY( (float) newOrientation );
-			return newRotation;
-		}
-
         private void MovementClamp() {
             float currentX = translation.Translation.X;
             float currentZ = translation.Translation.Z;
@@ -247,7 +219,7 @@ namespace Game3 {
         /// TODO: Convert this to do a jump mechanic at same time.
         /// </summary>
         /// <param name=""></param>
-        internal void KnockBackFrom(Tank model) {
+        internal void KnockBackFrom(BasicModel model) {
             translation.Translation += Vector3.Normalize(translation.Translation - model.translation.Translation) * 50f;
 
             // some reason Y can go below 0, make sure Y always at identity Y
@@ -258,7 +230,7 @@ namespace Game3 {
         }
 
         internal void FullHealth() {
-            health = maxHealth;
+            health = MAX_HEALTH;
         }
 
         private bool isMoving() {

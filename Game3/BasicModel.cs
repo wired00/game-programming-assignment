@@ -8,6 +8,8 @@ using Microsoft.Xna.Framework.Graphics;
 namespace Game3 {
     class BasicModel {
 
+        public Matrix translation = Matrix.Identity; // model translation / position matrix
+
         public Model model { get; protected set; }
 
         public List<BasicModel> models { get; set; }

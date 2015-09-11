@@ -27,33 +27,59 @@ namespace Game3 {
         /// <param name="modelB"></param>
         private void HandleCollision(BasicModel modelA, BasicModel modelB) {
             if (modelA.GetType() == typeof(Enemy) && modelB.GetType() == typeof(Pickup)) {
+                ///
+                /// COLLISION - ENEMY AND PICKUP ITEM
+                ///
 
                 ((Enemy)modelA).FullHealth();
                 modelB.currentDrawState = BasicModel.drawState.remove;
 
-            } else if (modelA.GetType() == typeof(Tank) && modelB.GetType() == typeof(Pickup)) {
+            } else if (modelA.GetType() == typeof(Player) && modelB.GetType() == typeof(Pickup)) {
+                ///
+                /// COLLISION - PLAYER AND PICKUP ITEM
+                ///
+
                 modelB.currentDrawState = BasicModel.drawState.remove;
-            } else if (modelA.GetType() == typeof(Enemy) && modelB.GetType() == typeof(Tank)) {
 
-                ((Enemy)modelA).KnockBackFrom((Tank)modelB);
+            } else if (modelA.GetType() == typeof(Enemy) && modelB.GetType() == typeof(Enemy)) {
+                ///
+                /// COLLISION - ENEMY AI WITH ENEMY AI
+                ///
 
-                ((Tank)modelB).health = ((Tank)modelB).health - 25;
+                Enemy enemyModelA = (Enemy)modelA;
+                Enemy enemyModelB = (Enemy)modelB;
 
-                if (((Tank)modelB).health <= 0) {
-                    modelB.currentDrawState = BasicModel.drawState.remove;
+                // knockback each enemy
+                enemyModelA.KnockBackFrom(enemyModelB);
+                enemyModelB.KnockBackFrom(enemyModelA);
+
+            } else if (modelA.GetType() == typeof(Enemy) && modelB.GetType() == typeof(Player)) {
+                ///
+                /// COLLISION - ENEMY AND PLAYER
+                ///
+
+                Enemy enemyModel = (Enemy)modelA;
+                Player playerModel = (Player)modelB;
+
+                enemyModel.KnockBackFrom(playerModel); // knockback player from enemy
+                playerModel.KnockBackFrom(enemyModel); // knockback enemy from player
+
+                if (playerModel.isBoosting()) {
+                    enemyModel.health = enemyModel.health - Enemy.MAX_HEALTH;
+                } else {
+                    enemyModel.health = enemyModel.health - 25;
+                    playerModel.health = playerModel.health - 25;
                 }
 
-            } else if (modelA.GetType() == typeof(Tank) && modelB.GetType() == typeof(Enemy)) {
-                ((Tank)modelA).KnockBackFrom((Enemy) modelB);
-
-                ((Enemy)modelB).health = ((Enemy)modelB).health - 25;
-
-                if (((Enemy)modelB).health <= 0) {
-                    modelB.currentDrawState = BasicModel.drawState.remove;
+                if (enemyModel.health <= 0) {
+                    enemyModel.currentDrawState = BasicModel.drawState.remove;
                 }
 
+                if (playerModel.health <= 0) {
+                    playerModel.currentDrawState = BasicModel.drawState.remove;
+                }
             }
-}
+        }
 
         public bool collidesWith (BasicModel modelA, BasicModel modelB) {
             // get the position of each model

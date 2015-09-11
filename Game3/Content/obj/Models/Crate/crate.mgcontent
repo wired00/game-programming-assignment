@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/philt/Google Drive/Working/Google Drive - UTS/Game Programming/Labs/Lab6/Assignment1/Game3/Game3/Content/Models/Crate/crate.dae</SourceFile>
-  <SourceTime>2015-08-27T15:59:42+10:00</SourceTime>
-  <DestFile>C:/Users/philt/Google Drive/Working/Google Drive - UTS/Game Programming/Labs/Lab6/Assignment1/Game3/Game3/Content/bin/Models/Crate/crate.xnb</DestFile>
-  <DestTime>2015-09-05T01:09:23.9048671+10:00</DestTime>
+  <SourceFile>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/Game3/Content/Models/Crate/crate.dae</SourceFile>
+  <SourceTime>2015-09-11T12:00:21.5312405+10:00</SourceTime>
+  <DestFile>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/Game3/Content/bin/Models/Crate/crate.xnb</DestFile>
+  <DestTime>2015-09-11T16:00:09.4842045+10:00</DestTime>
   <Importer>OpenAssetImporter</Importer>
   <ImporterTime>2015-04-30T03:14:44+10:00</ImporterTime>
   <Processor>ModelProcessor</Processor>
@@ -66,7 +66,7 @@
   </Parameters>
   <Dependencies />
   <BuildAsset>
-    <string>C:/Users/philt/Google Drive/Working/Google Drive - UTS/Game Programming/Labs/Lab6/Assignment1/Game3/Game3/Content/bin/Models/Crate/crate_0.xnb</string>
+    <string>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/Game3/Content/bin/Models/Crate/crate_0.xnb</string>
   </BuildAsset>
   <BuildOutput />
 </PipelineBuildEvent>

@@ -404,9 +404,6 @@ C:\Users\philt_000\Google Drive\Working\Google Drive - UTS\Game Programming\Labs
 G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\obj\x86\Debug\Game3.exe
 G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\obj\x86\Debug\Game3.pdb
 G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\obj\x86\Debug\Game3.csprojResolveAssemblyReference.cache
-G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Car\Cartest3.xnb
-G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Crate\crate.xnb
-G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Crate\crate_0.xnb
 G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Ground\3SNe_0.xnb
 G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Ground\Ground.xnb
 G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_back_0.xnb
@@ -481,3 +478,6 @@ Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Wi
 Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\obj\x86\Debug\Game3.csprojResolveAssemblyReference.cache
 Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\obj\x86\Debug\Game3.exe
 Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\obj\x86\Debug\Game3.pdb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Car\Cartest3.xnb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Crate\crate.xnb
+G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\Game3\bin\Windows\Debug\Content\Models\Crate\crate_0.xnb

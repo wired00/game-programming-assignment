@@ -4,7 +4,6 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/philt/Google Drive/Working/Google Drive - UTS/Game Programming/Labs/Lab6/Assignment1/Game3/Game3/Content/Models/Crate/crate.dae</File>
-    <File>C:/Users/philt/Google Drive/Working/Google Drive - UTS/Game Programming/Labs/Lab6/Assignment1/Game3/Game3/Content/Models/Car/Cartest3.dae</File>
+    <File>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/Game3/Content/Models/Crate/crate.dae</File>
   </SourceFiles>
 </SourceFileCollection>
