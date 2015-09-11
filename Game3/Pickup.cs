@@ -42,9 +42,7 @@ namespace Game3 {
 
         private void HandleRotate(float elapsedTime) {
             float wheelRotationValue = elapsedTime * ROTATION_SPEED;
-
-            //Console.WriteLine(wheelRotationValue);
-
+        
             Matrix wheelRotation = Matrix.CreateRotationY(wheelRotationValue);
 
             rotation = wheelRotation * originalRotation;

@@ -32,24 +32,20 @@ namespace Game3 {
         //MousePick mousePick;
 
         // bones which will be animated
-        ModelBone turretBone;
         ModelBone leftBackWheelBone;
         ModelBone rightBackWheelBone;
         ModelBone leftFrontWheelBone;
         ModelBone rightFrontWheelBone;
-        ModelBone cannonBone;
 
         public static explicit operator Player(Model v) {
             throw new NotImplementedException();
         }
 
         // the original animating bone transform matrix must be stored
-        Matrix turretTransform;
         Matrix leftBackWheelTransform;
         Matrix rightBackWheelTransform;
         Matrix leftFrontWheelTransform;
         Matrix rightFrontWheelTransform;
-        Matrix cannonTransform;
 
         Matrix[] boneTransforms;
 
@@ -90,7 +86,7 @@ namespace Game3 {
 
             boneTransforms = new Matrix[model.Bones.Count];
 
-            // references to bones to animate
+            // references to bones to animate 
             //leftBackWheelBone = model.Bones["l_back_wheel_geo"];
             //rightBackWheelBone = model.Bones["r_back_wheel_geo"];
             //leftFrontWheelBone = model.Bones["l_front_wheel_geo"];
