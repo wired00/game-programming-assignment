@@ -8,8 +8,8 @@ namespace Game3 {
         List<BasicModel> models = new List<BasicModel>();
 
         Player playerModel;
-        
-        CollisionHandler collisionHandler = new CollisionHandler();
+
+        CollisionHandler collisionHandler;// = new CollisionHandler(((Game1)Game).audioManager);
 
         float secondsSinceLastItem = 0;
 
@@ -18,6 +18,7 @@ namespace Game3 {
         }
 
         public override void Initialize() {
+            collisionHandler = new CollisionHandler(((Game1)Game).audioManager);
             base.Initialize();
         }
 

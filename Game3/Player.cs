@@ -12,6 +12,7 @@ namespace Game3 {
     class Player : BasicModel {
 
         static int MAX_HEALTH = 100;
+        public static float MAX_ENERGY = 100;
         static float MAX_MOVE_SPEED = 9f;
         static float MOVE_SPEED = 3f;
         static float WHEEL_ROTATION_SPEED = 10f;
@@ -25,6 +26,8 @@ namespace Game3 {
         Vector3 newPosition;
 
         public int health { get; set; }
+
+        public float energy { get; set; }
 
         //MousePick mousePick;
 
@@ -104,6 +107,7 @@ namespace Game3 {
             cannonTransform = cannonBone.Transform;
 
             health = MAX_HEALTH;
+            energy = MAX_ENERGY;
         }
 
         public override void Update(GameTime gameTime) {
@@ -301,7 +305,8 @@ namespace Game3 {
                 {
                     this.velocity += VELOCITY_INCREMENTOR;
                 }
-                uiManager.playerEnergy -= .11f;
+                energy -= .11f;
+                uiManager.playerEnergy = energy;
                 if (audioManager.accelerate.State != SoundState.Playing)
                 {
                     audioManager.accelerate.Play();

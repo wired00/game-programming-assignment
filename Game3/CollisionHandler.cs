@@ -4,9 +4,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Game3 {
     class CollisionHandler {
+
+        AudioManager audioManager;
+
+        public CollisionHandler(AudioManager audioManager) {
+            this.audioManager = audioManager;
+        }
+
         public void detectCollisions(List<BasicModel> models) {
 
             foreach (BasicModel modelA in models) {
@@ -38,7 +46,15 @@ namespace Game3 {
                 ///
                 /// COLLISION - PLAYER AND PICKUP ITEM
                 ///
-
+                audioManager.charge.Play();
+                if (((Player)modelA).energy + 25 >= Player.MAX_ENERGY)
+                {
+                    ((Player)modelA).energy = Player.MAX_ENERGY;
+                }
+                else
+                {
+                    ((Player)modelA).energy += 25;
+                }
                 modelB.currentDrawState = BasicModel.drawState.remove;
 
             } else if (modelA.GetType() == typeof(Enemy) && modelB.GetType() == typeof(Enemy)) {

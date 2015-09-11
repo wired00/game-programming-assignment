@@ -20,6 +20,7 @@ namespace Game3
         public SoundEffectInstance enemyDeath;
         public SoundEffectInstance idleLoop;
         public SoundEffectInstance revving;
+        public SoundEffectInstance charge;
 
         public AudioManager(Game game)
         {
@@ -58,7 +59,9 @@ namespace Game3
             idleLoop.Volume = 0.02f;
             soundFX = game.Content.Load<SoundEffect>(@"Audio/revving");
             revving = soundFX.CreateInstance();
-
+            soundFX = game.Content.Load<SoundEffect>(@"Audio/charge");
+            charge = soundFX.CreateInstance();
+            charge.Volume = 0.05f;
             //base.LoadContent();
         }
 
