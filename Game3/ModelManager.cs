@@ -65,7 +65,7 @@ namespace Game3 {
 
             // need to keep hold of the players tank
             playerModel = new Player (
-	              Game.Content.Load<Model> (@"Models/Tank/tank"),
+	              Game.Content.Load<Model> (@"Models/Car/CarModel"),
 	              ((Game1)Game).GraphicsDevice,
 	              ((Game1)Game).camera,
                   ((Game1)Game).graphics,

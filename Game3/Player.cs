@@ -91,20 +91,16 @@ namespace Game3 {
             boneTransforms = new Matrix[model.Bones.Count];
 
             // references to bones to animate
-            turretBone = model.Bones["turret_geo"];
-            leftBackWheelBone = model.Bones["l_back_wheel_geo"];
-            rightBackWheelBone = model.Bones["r_back_wheel_geo"];
-            leftFrontWheelBone = model.Bones["l_front_wheel_geo"];
-            rightFrontWheelBone = model.Bones["r_front_wheel_geo"];
-            cannonBone = model.Bones["canon_geo"];
+            //leftBackWheelBone = model.Bones["l_back_wheel_geo"];
+            //rightBackWheelBone = model.Bones["r_back_wheel_geo"];
+            //leftFrontWheelBone = model.Bones["l_front_wheel_geo"];
+            //rightFrontWheelBone = model.Bones["r_front_wheel_geo"];
 
             // store the original transform matrix, otherwise animations on rotations will be all wonky
-            turretTransform = turretBone.Transform;
-            leftBackWheelTransform = leftBackWheelBone.Transform;
-            rightBackWheelTransform = rightBackWheelBone.Transform;
-            leftFrontWheelTransform = leftFrontWheelBone.Transform;
-            rightFrontWheelTransform = rightFrontWheelBone.Transform;
-            cannonTransform = cannonBone.Transform;
+            //leftBackWheelTransform = leftBackWheelBone.Transform;
+            //rightBackWheelTransform = rightBackWheelBone.Transform;
+            //leftFrontWheelTransform = leftFrontWheelBone.Transform;
+            //rightFrontWheelTransform = rightFrontWheelBone.Transform;
 
             health = MAX_HEALTH;
             energy = MAX_ENERGY;
@@ -196,7 +192,7 @@ namespace Game3 {
                 newPosition.X -= velocity * turboSpeed;
                 newPosition.Z -= velocity * turboSpeed;
 
-                HandleRotateWheels(elapsedTime);
+                //HandleRotateWheels(elapsedTime);
                 currentDirection = direction.left_up;
             } else if (Keyboard.GetState().IsKeyDown(Keys.A) && Keyboard.GetState().IsKeyDown(Keys.S)) {
                 currentState = state.Moving;
@@ -206,7 +202,7 @@ namespace Game3 {
                 newPosition.Z += velocity * turboSpeed;
 
 
-                HandleRotateWheels(elapsedTime);
+                //HandleRotateWheels(elapsedTime);
                 currentDirection = direction.left_down;
 
             } else if (Keyboard.GetState().IsKeyDown(Keys.D) && Keyboard.GetState().IsKeyDown(Keys.W)) {
@@ -216,7 +212,7 @@ namespace Game3 {
                 newPosition.X += velocity * turboSpeed;
                 newPosition.Z -= velocity * turboSpeed;
 
-                HandleRotateWheels(elapsedTime);
+                //HandleRotateWheels(elapsedTime);
                 currentDirection = direction.right_up;
 
             } else if (Keyboard.GetState().IsKeyDown(Keys.D) && Keyboard.GetState().IsKeyDown(Keys.S)) {
@@ -226,7 +222,7 @@ namespace Game3 {
                 newPosition.X += velocity * turboSpeed;
                 newPosition.Z += velocity * turboSpeed;
 
-                HandleRotateWheels(elapsedTime);
+                //HandleRotateWheels(elapsedTime);
                 currentDirection = direction.right_down;
 
             } else if (Keyboard.GetState().IsKeyDown(Keys.A)) {
@@ -235,7 +231,7 @@ namespace Game3 {
 
                 newPosition.X -= velocity * turboSpeed;
                 
-                HandleRotateWheels(elapsedTime);
+               // HandleRotateWheels(elapsedTime);
                 currentDirection = direction.left;
 
             } else if (Keyboard.GetState().IsKeyDown(Keys.D)) {
@@ -243,7 +239,7 @@ namespace Game3 {
                 HandleAcceleration();
 
                 newPosition.X += velocity * turboSpeed;
-                HandleRotateWheels(elapsedTime);
+                //HandleRotateWheels(elapsedTime);
                 currentDirection = direction.right;
 
             }  else if (Keyboard.GetState().IsKeyDown(Keys.W)) {
@@ -251,7 +247,7 @@ namespace Game3 {
                 HandleAcceleration();
 
                 newPosition.Z -= velocity * turboSpeed;
-                HandleRotateWheels(elapsedTime);
+                //HandleRotateWheels(elapsedTime);
                 currentDirection = direction.up;
 
             } else if (Keyboard.GetState().IsKeyDown(Keys.S)) {
@@ -259,7 +255,7 @@ namespace Game3 {
                 HandleAcceleration();
 
                 newPosition.Z += velocity * turboSpeed;
-                HandleRotateWheels(elapsedTime);
+                //HandleRotateWheels(elapsedTime);
                 currentDirection = direction.back;
 
             } else {
@@ -322,7 +318,7 @@ namespace Game3 {
                     this.velocity *= VELOCITY_DECREMENTOR;
 
                     if (this.velocity > 0.1f) {
-                        HandleRotateWheels(elapsedTime);
+                        //HandleRotateWheels(elapsedTime);
                     }
 
                     if (currentDirection != direction.unset) {
@@ -372,7 +368,7 @@ namespace Game3 {
         }
 
         public override Matrix GetWorld() {
-            return Matrix.CreateScale(0.1f) * rotation * translation;
+            return Matrix.CreateScale(2f) * rotation * translation;
         }
 
         /// <summary>

@@ -8,12 +8,18 @@ using Microsoft.Xna.Framework.Graphics;
 namespace Game3 {
     class Pickup : BasicModel {
 
-        public Matrix translation = Matrix.Identity;
+        static float ROTATION_SPEED = 2f;
+
+        Matrix rotation = Matrix.Identity;
+
+        Matrix originalRotation = Matrix.Identity;
 
         public Pickup(Model model, Vector3 position)
             : base(model) {
 
             translation.Translation = position;
+
+            originalRotation = rotation;
 
         }
    
@@ -22,9 +28,29 @@ namespace Game3 {
             base.Draw(device, camera);
         }
 
+        public override void Update(GameTime gameTime) {
+
+            float elapsedTime = (float)gameTime.TotalGameTime.TotalSeconds;
+            HandleRotate(elapsedTime);
+
+            base.Update(gameTime);
+        }
+
         public override Matrix GetWorld() {
-            return Matrix.CreateScale(5f) * translation;
+            return Matrix.CreateScale(2.5f) * rotation * translation;
+        }
+
+        private void HandleRotate(float elapsedTime) {
+            float wheelRotationValue = elapsedTime * ROTATION_SPEED;
+
+            //Console.WriteLine(wheelRotationValue);
+
+            Matrix wheelRotation = Matrix.CreateRotationY(wheelRotationValue);
+
+            rotation = wheelRotation * originalRotation;
         }
 
     }
 }
+
+
