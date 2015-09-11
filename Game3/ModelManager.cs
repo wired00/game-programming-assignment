@@ -68,7 +68,8 @@ namespace Game3 {
 	              ((Game1)Game).GraphicsDevice,
 	              ((Game1)Game).camera,
                   ((Game1)Game).graphics,
-                  ((Game1)Game).uiManager);
+                  ((Game1)Game).uiManager,
+                  ((Game1)Game).audioManager);
 
 			models.Add(playerModel);
 
@@ -136,7 +137,7 @@ namespace Game3 {
                 Random rnd = new Random();
                 models.Add(new Pickup(
                     Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
-                    new Vector3(rnd.Next(-300, 300), 30, rnd.Next(-300, 300))));
+                    new Vector3(rnd.Next(-300, 300), 30, rnd.Next(-250, 250))));
                 secondsSinceLastItem = 0;
             } else {
                 secondsSinceLastItem += elapsedTime;

@@ -41,8 +41,10 @@ namespace Game3
             music.Play();
             soundFX = game.Content.Load<SoundEffect>(@"Audio/accelerate");
             accelerate = soundFX.CreateInstance();
+            accelerate.Volume = 0.015f;
             soundFX = game.Content.Load<SoundEffect>(@"Audio/boost");
             boost = soundFX.CreateInstance();
+            boost.Volume = 0.1f;
             soundFX = game.Content.Load<SoundEffect>(@"Audio/boostend");
             boostEnd = soundFX.CreateInstance();
             soundFX = game.Content.Load<SoundEffect>(@"Audio/booststart");
@@ -53,6 +55,7 @@ namespace Game3
             enemyDeath = soundFX.CreateInstance();
             soundFX = game.Content.Load<SoundEffect>(@"Audio/idleloop");
             idleLoop = soundFX.CreateInstance();
+            idleLoop.Volume = 0.02f;
             soundFX = game.Content.Load<SoundEffect>(@"Audio/revving");
             revving = soundFX.CreateInstance();
 

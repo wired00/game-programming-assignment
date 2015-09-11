@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Game3 {
     class Player : BasicModel {
@@ -25,7 +26,7 @@ namespace Game3 {
 
         public int health { get; set; }
 
-        MousePick mousePick;
+        //MousePick mousePick;
 
         // bones which will be animated
         ModelBone turretBone;
@@ -52,7 +53,8 @@ namespace Game3 {
         state currentState = state.Resting;
         direction currentDirection;
         UIManager uiManager;
-        
+        AudioManager audioManager;
+
         float turboSpeed = 1f;
         float velocity = 0f; // need to track velocity so the car naturally slows down
         
@@ -75,12 +77,13 @@ namespace Game3 {
             unset
         }
 
-        public Player(Model model, GraphicsDevice device, Camera camera, GraphicsDeviceManager graphics, UIManager uiManager)
+        public Player(Model model, GraphicsDevice device, Camera camera, GraphicsDeviceManager graphics, UIManager uiManager, AudioManager audioManager)
             : base(model) {
 
             graphicsDeviceManager = graphics;
             this.uiManager = uiManager;
-            mousePick = new MousePick(device, camera);
+            this.audioManager = audioManager;
+            //mousePick = new MousePick(device, camera);
 
             boneTransforms = new Matrix[model.Bones.Count];
 
@@ -122,7 +125,20 @@ namespace Game3 {
                 rotation = RotateToFace(newPosition, currentPlayerPosition, Vector3.Up); // rotate to the future position
             }
 
+            health = MAX_HEALTH;
             uiManager.playerHealth = this.health;
+
+            if (!isMoving() && audioManager.idleLoop.State != SoundState.Playing) {
+                audioManager.accelerate.Pause();
+                audioManager.idleLoop.Play();
+            }
+            if (isBoosting() && audioManager.boost.State != SoundState.Playing)
+            {
+                audioManager.boost.Play();
+            }
+            else if(!isBoosting()){
+                audioManager.boost.Pause();
+            }
 
             base.Update(gameTime);
         }
@@ -248,11 +264,11 @@ namespace Game3 {
 
             // turbo boost if space bar held down
             if (Keyboard.GetState().IsKeyDown(Keys.Space)) {
-                turboSpeed = 1.5f;
+                turboSpeed = 2f;
                 currentState = state.Boosting;
             } else {
                 turboSpeed = 1f;
-                currentState = state.Moving;
+                //currentState = state.Moving;
             }
         }
 
@@ -268,22 +284,30 @@ namespace Game3 {
             newPosition = new Vector3(currentX, 0, currentZ);
         }
 
-        private void HandleAcceleration() {
+        private void HandleAcceleration()
+        {
 
-            if (isMoving()) {
+            if (isMoving())
+            {
                 currentDirection = direction.unset;
                 // set initial velocity of car
-                if (this.velocity == 0) {
+                if (this.velocity == 0)
+                {
                     this.velocity = MOVE_SPEED;
                 }
 
                 // increase acceleration & clamp under max speed
-                if (this.velocity < MAX_MOVE_SPEED) {
+                if (this.velocity < MAX_MOVE_SPEED)
+                {
                     this.velocity += VELOCITY_INCREMENTOR;
                 }
                 uiManager.playerEnergy -= .11f;
+                if (audioManager.accelerate.State != SoundState.Playing)
+                {
+                    audioManager.accelerate.Play();
+                    audioManager.idleLoop.Pause();
+                }
             }
-       
         }
 
         private void HandleDecceleration(float elapsedTime) {
@@ -334,8 +358,6 @@ namespace Game3 {
 
                     currentState = state.Resting;
                 }
-
-
             }
 
         }
