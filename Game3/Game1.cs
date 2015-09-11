@@ -12,7 +12,7 @@ namespace Game3 {
         public GraphicsDevice device { get; protected set; }
         public Camera camera { get; protected set; }
 
-        public GraphicsDeviceManager graphics { get; }
+        public GraphicsDeviceManager graphics { get; set; }
 
         ModelManager modelManager;
         public UIManager uiManager;

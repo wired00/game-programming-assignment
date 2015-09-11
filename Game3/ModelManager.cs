@@ -24,11 +24,11 @@ namespace Game3 {
         protected override void LoadContent() {
 
             models.Add(new Pickup(
-                Game.Content.Load<Model > (@"Models/Crate/crate"),
+                Game.Content.Load<Model > (@"Models/Battery/BatteryModel"),
                 new Vector3(300,30,100))
 			);
             models.Add(new Pickup(
-                Game.Content.Load<Model > (@"Models/Crate/crate"),
+                Game.Content.Load<Model > (@"Models/Battery/BatteryModel"),
                 new Vector3(-100, 30, 100))
             );
 
@@ -38,23 +38,23 @@ namespace Game3 {
             //);
 
             models.Add(new Pickup(
-                Game.Content.Load<Model > (@"Models/Crate/crate"),
+                Game.Content.Load<Model > (@"Models/Battery/BatteryModel"),
                 new Vector3(300, 30, 200))
             );
 
 
             models.Add(new Pickup(
-                Game.Content.Load<Model>(@"Models/Crate/crate"),
+                Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
                 new Vector3(400, 30, 50))
             );
 
             models.Add(new Pickup(
-                Game.Content.Load<Model>(@"Models/Crate/crate"),
+                Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
                 new Vector3(200, 30, -200))
             );
 
             models.Add(new Pickup(
-                Game.Content.Load<Model>(@"Models/Crate/crate"),
+                Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
                 new Vector3(50, 30, -100))
             );
 
@@ -135,7 +135,7 @@ namespace Game3 {
             if (secondsSinceLastItem >= 2) {
                 Random rnd = new Random();
                 models.Add(new Pickup(
-                    Game.Content.Load<Model>(@"Models/Crate/crate"),
+                    Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
                     new Vector3(rnd.Next(-300, 300), 30, rnd.Next(-300, 300))));
                 secondsSinceLastItem = 0;
             } else {
