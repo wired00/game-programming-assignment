@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/Game3/Content/Models/Crate/crate.dae</SourceFile>
-  <SourceTime>2015-09-11T12:00:21.5312405+10:00</SourceTime>
-  <DestFile>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/Game3/Content/bin/Models/Crate/crate.xnb</DestFile>
-  <DestTime>2015-09-11T16:00:09.4842045+10:00</DestTime>
+  <SourceFile>C:/Users/Kyron/Documents/Visual Studio 2015/Projects/game-programming-assignment/Game3/Content/Models/Crate/crate.dae</SourceFile>
+  <SourceTime>2015-09-11T19:31:15.2277408+10:00</SourceTime>
+  <DestFile>C:/Users/Kyron/Documents/Visual Studio 2015/Projects/game-programming-assignment/Game3/Content/bin/Models/Crate/crate.xnb</DestFile>
+  <DestTime>2015-09-11T19:34:26.6034668+10:00</DestTime>
   <Importer>OpenAssetImporter</Importer>
-  <ImporterTime>2015-04-30T03:14:44+10:00</ImporterTime>
+  <ImporterTime>2015-08-02T07:32:06+10:00</ImporterTime>
   <Processor>ModelProcessor</Processor>
-  <ProcessorTime>2015-04-30T03:14:44+10:00</ProcessorTime>
+  <ProcessorTime>2015-08-02T07:32:06+10:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>0,0,0,0</Value>
@@ -66,7 +66,7 @@
   </Parameters>
   <Dependencies />
   <BuildAsset>
-    <string>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/Game3/Content/bin/Models/Crate/crate_0.xnb</string>
+    <string>C:/Users/Kyron/Documents/Visual Studio 2015/Projects/game-programming-assignment/Game3/Content/bin/Models/Crate/crate_0.xnb</string>
   </BuildAsset>
   <BuildOutput />
 </PipelineBuildEvent>

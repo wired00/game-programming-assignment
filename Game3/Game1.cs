@@ -16,6 +16,7 @@ namespace Game3 {
 
         ModelManager modelManager;
         public UIManager uiManager;
+        public AudioManager audioManager;
 
         Matrix world = Matrix.CreateTranslation(0, 0, 0);     
         Matrix view = Matrix.CreateLookAt(new Vector3(0, 2, 3), new Vector3(0, 0, 0), new Vector3(0, 1, 0));
@@ -40,6 +41,7 @@ namespace Game3 {
             modelManager = new ModelManager(this);
             Components.Add(modelManager);
             uiManager = new UIManager(this);
+            audioManager = new AudioManager(this);
 
             //world.Translation = new Vector3(world)
 
