@@ -52,8 +52,10 @@ namespace Game3
             boostStart = soundFX.CreateInstance();
             soundFX = game.Content.Load<SoundEffect>(@"Audio/crash");
             crash = soundFX.CreateInstance();
+            crash.Volume = 0.01f;
             soundFX = game.Content.Load<SoundEffect>(@"Audio/enemydeath");
             enemyDeath = soundFX.CreateInstance();
+            enemyDeath.Volume = 0.05f;
             soundFX = game.Content.Load<SoundEffect>(@"Audio/idleloop");
             idleLoop = soundFX.CreateInstance();
             idleLoop.Volume = 0.02f;

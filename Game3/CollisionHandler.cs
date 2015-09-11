@@ -80,18 +80,27 @@ namespace Game3 {
                 enemyModel.KnockBackFrom(playerModel); // knockback player from enemy
                 playerModel.KnockBackFrom(enemyModel); // knockback enemy from player
 
-                if (playerModel.isBoosting()) {
+                if (playerModel.isBoosting())
+                {
                     enemyModel.health = enemyModel.health - Enemy.MAX_HEALTH;
-                } else {
+                }
+                else
+                {
                     enemyModel.health = enemyModel.health - 25;
-                    playerModel.health = playerModel.health - 25;
+                    playerModel.health = playerModel.health - 10;
+                    if (audioManager.crash.State != SoundState.Playing)
+                    {
+                        audioManager.crash.Play();
+                    }
                 }
 
                 if (enemyModel.health <= 0) {
+                    audioManager.enemyDeath.Play();
                     enemyModel.currentDrawState = BasicModel.drawState.remove;
                 }
 
                 if (playerModel.health <= 0) {
+                    audioManager.enemyDeath.Play();
                     playerModel.currentDrawState = BasicModel.drawState.remove;
                 }
             }
