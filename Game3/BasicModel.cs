@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Game3 {
+namespace Game3 { 
     class BasicModel {
 
         public Matrix translation = Matrix.Identity; // model translation / position matrix
