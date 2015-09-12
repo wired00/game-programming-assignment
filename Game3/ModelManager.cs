@@ -16,13 +16,15 @@ namespace Game3 {
 
         UIManager uiManager;
         Game game;
+        SplashScreen splashScreen;
 
-        public ModelManager(Game game) : base(game) {
+        public ModelManager(Game game, SplashScreen splashScreen) : base(game) {
             this.game = game;
+            this.splashScreen = splashScreen;
         }
 
         public override void Initialize() {
-            collisionHandler = new CollisionHandler(((Game1)Game).audioManager);
+            collisionHandler = new CollisionHandler((Game1) game, ((Game1)Game).audioManager, splashScreen);
             uiManager = new UIManager(game);
             base.Initialize();
         }

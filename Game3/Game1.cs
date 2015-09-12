@@ -24,7 +24,7 @@ namespace Game3 {
 
         // Splash Screen
         public enum GameState { START, PLAY, LEVEL_CHANGE, END}
-        GameState currentGameState = GameState.START;
+        public GameState currentGameState = GameState.START;
 
         public void ChangeGameState (GameState state, int level)
         {
@@ -34,7 +34,7 @@ namespace Game3 {
             {
                 case GameState.LEVEL_CHANGE:
                     splashScreen.SetData("Level " + (level + 1),
-                        GameState.LEVEL_CHANGE);
+                    GameState.LEVEL_CHANGE);
                     modelManager.Enabled = false;
                     modelManager.Visible = false;
                     splashScreen.Enabled = true;
@@ -49,11 +49,12 @@ namespace Game3 {
                     break;
 
                 case GameState.END:
-                    splashScreen.SetData("Game Over.\nLevel: " + "\nScore: " + score, GameState.END);
+                    splashScreen.SetData("Game Over.\nLevel: 1" + "\nScore: " + score, GameState.END);
                     modelManager.Enabled = false;
                     modelManager.Visible = false;
                     splashScreen.Enabled = true;
                     splashScreen.Visible = true;
+                    Console.WriteLine("END SCREEN DISPLAYYY***");
                     break;
 
             }
@@ -78,7 +79,12 @@ namespace Game3 {
             camera = new Camera(this, new Vector3(0, 700, 400), new Vector3(0, 100, 0), Vector3.Up);
             Components.Add(camera);
 
-            modelManager = new ModelManager(this);
+            // Splash screen component
+            splashScreen = new SplashScreen(this);
+            Components.Add(splashScreen);
+            splashScreen.SetData("Welcome to Car Demolition!", currentGameState);
+
+            modelManager = new ModelManager(this, splashScreen);
             modelManager.Enabled = false; // for when splash screen is enabled
             modelManager.Visible = false; // for when splash screen is enabled
             Components.Add(modelManager);
@@ -92,10 +98,7 @@ namespace Game3 {
 
             this.IsMouseVisible = true;
 
-            // Splash screen component
-            splashScreen = new SplashScreen(this);
-            Components.Add(splashScreen);
-            splashScreen.SetData("Welcome to Car Demolition!", currentGameState);
+
 
             base.Initialize();
         }

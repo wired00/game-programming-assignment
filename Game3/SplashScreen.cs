@@ -17,7 +17,7 @@ namespace Game3
         SpriteFont secondarySpriteFont;
         SpriteBatch spriteBatch;
         Game1.GameState currentGameState;
-
+        
         public SplashScreen(Game game) : base (game) { }
 
         protected override void LoadContent()
@@ -77,9 +77,9 @@ namespace Game3
             base.Draw(gameTime);
         }
 
-        public void SetData(string main, Game1.GameState currGameState)
+        public void SetData(string textToDraw, Game1.GameState currGameState)
         {
-            textToDraw = main;
+            this.textToDraw = textToDraw;
             this.currentGameState = currGameState;
 
             switch (currentGameState)
@@ -90,6 +90,7 @@ namespace Game3
                     break;
                 case Game1.GameState.END:
                     secondaryTextToDraw = "Press ENTER to quit";
+                   
                     break;
             }
 

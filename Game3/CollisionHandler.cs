@@ -11,8 +11,16 @@ namespace Game3 {
 
         AudioManager audioManager;
 
-        public CollisionHandler(AudioManager audioManager) {
+        SplashScreen splashScreen;
+
+        Game1 game;
+     
+        
+    
+        public CollisionHandler(Game1 game, AudioManager audioManager, SplashScreen splashScreen) {
             this.audioManager = audioManager;
+            this.splashScreen = splashScreen;
+            this.game = game;
         }
 
         public void detectCollisions(List<BasicModel> models) {
@@ -93,7 +101,7 @@ namespace Game3 {
                 {
                     playerModel.KnockBackFrom(enemyModel); // knockback enemy from player
                     enemyModel.health = enemyModel.health - 25;
-                    playerModel.health = playerModel.health - 10;
+                    playerModel.health = playerModel.health - 5;
                     if (audioManager.crash.State != SoundState.Playing)
                     {
                         audioManager.crash.Play();
@@ -103,12 +111,16 @@ namespace Game3 {
                 if (enemyModel.health <= 0) {
                     audioManager.enemyDeath.Play();
                     enemyModel.currentDrawState = BasicModel.drawState.remove;
+                    splashScreen.SetData("TODO - enemy wins", Game1.GameState.END); // change splash state
+                    this.game.ChangeGameState(Game1.GameState.END, 1); // change game state
                 }
 
                 if (playerModel.health <= 0) {
                     audioManager.enemyDeath.Play();
                     playerModel.health = 0;
                     playerModel.currentDrawState = BasicModel.drawState.remove;
+                    splashScreen.SetData("TODO - enemy wins", Game1.GameState.END); // change splash state
+                    this.game.ChangeGameState(Game1.GameState.END, 1); // change game state
                 }
             }
         }
