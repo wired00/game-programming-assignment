@@ -86,7 +86,7 @@ namespace Game3
             {
                 case Game1.GameState.START:
                 case Game1.GameState.LEVEL_CHANGE:
-                    secondaryTextToDraw = "Press ENTER to begin";
+                    secondaryTextToDraw = "Space bar to boost and damage enemies. Press ENTER to begin";
                     break;
                 case Game1.GameState.END:
                     secondaryTextToDraw = "Press ENTER to quit";
