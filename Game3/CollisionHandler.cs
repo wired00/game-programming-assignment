@@ -69,6 +69,10 @@ namespace Game3 {
                 enemyModelA.KnockBackFrom(enemyModelB);
                 enemyModelB.KnockBackFrom(enemyModelA);
 
+                if (audioManager.crash.State != SoundState.Playing) {
+                    audioManager.crash.Play();
+                }
+
             } else if (modelA.GetType() == typeof(Enemy) && modelB.GetType() == typeof(Player)) {
                 ///
                 /// COLLISION - ENEMY AND PLAYER
