@@ -66,7 +66,6 @@ namespace Game3 {
                     effect.Projection = camera.projection;
                     effect.TextureEnabled = true;
                     effect.EnableDefaultLighting();
-                    //effect.AmbientLightColor = Color.Red.ToVector3();
                     effect.World = transformation[mesh.ParentBone.Index] * GetWorld();
 
                     if (this.tintColour != null) {

@@ -247,7 +247,7 @@ namespace Game3 {
             float currentZ = newPosition.Z;
 
             // clamp player within game area
-            currentX = MathHelper.Clamp(currentX, -550f, 550f);
+            currentX = MathHelper.Clamp(currentX, -650f, 650f);
             currentZ = MathHelper.Clamp(currentZ, -550f, 250f);
 
             newPosition = new Vector3(currentX, 0, currentZ);

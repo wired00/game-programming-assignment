@@ -110,8 +110,6 @@ namespace Game3 {
             }
 
             base.Update(gameTime);
-
-
         }
 
         private void SpawnModels(GameTime gameTime) {
@@ -130,7 +128,6 @@ namespace Game3 {
             } else {
                 secondsSinceLastItem += elapsedTime;
             }
-
 
             // spawn enemy, spawn faster as the game progresses.
             float timeToSpawnEnemy = 7f - spawnModifier;
