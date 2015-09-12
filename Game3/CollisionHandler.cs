@@ -98,18 +98,21 @@ namespace Game3 {
                 
                 if (playerModel.isBoosting())
                 {
-                    playerModel.energy -= enemyModel.health/3;
+                    playerModel.energy -= playerModel.energy/3;
                     enemyModel.health = enemyModel.health - enemyModel.health;
-                    playerModel.health = playerModel.health - 5;
+                    playerModel.health -= 5;
                 }
                 else
                 {
                     playerModel.KnockBackFrom(enemyModel); // knockback enemy from player
-                    enemyModel.health = enemyModel.health - 25;
-                    playerModel.health = playerModel.health - 5;
+                    enemyModel.health -= 25;
+                    playerModel.health -= 5;
                     if (audioManager.crash.State != SoundState.Playing)
                     {
                         audioManager.crash.Play();
+                    }
+                    if (playerModel.energy <= 0) {
+                        playerModel.health -= 20;
                     }
                 }
 
