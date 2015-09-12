@@ -21,22 +21,20 @@ namespace Game3 {
         Matrix rotation = Matrix.Identity; // tank rotationss
 
         state currentState = state.Resting;
-
-        Vector3? lastPos;
-        int moveCount = 0;
         
         float moveSpeed = 20f;
-        bool seekingOther;
-        
-        Vector3 other;
+        float jumpVelocity = 0f;
+        static float JUMP_HEIGHT = 50f;
+        private BasicModel knockbackModelPosition;
 
         enum state {
             Moving,
             Resting,
             Rotating,
             SeekingEnergyItem,
-            SeekingPlayer, 
-
+            SeekingPlayer,
+            Jumping,
+            Falling
         }
 
 		public Enemy(Model model, GraphicsDevice device, Camera camera, Vector3 position, Player playerTank, UIManager uiManager)
@@ -47,7 +45,6 @@ namespace Game3 {
 			this.playerTank = playerTank;
             health = MAX_HEALTH;
             Random rng = new Random();
-            other = new Vector3(rng.Next(-300, 300), 0, rng.Next(-250, 250));
 
             this.uiManager = uiManager;
         }
@@ -59,43 +56,28 @@ namespace Game3 {
 
             Vector3? targetPlayer = GetNearestPlayer();
 
-            if (seekingOther)
-            {
-                HandleSeek(other, currentTankPosition, gameTime);
-                if (Vector3.Distance(other, currentTankPosition) < 10) {
-                    //currentState = state.Resting;
-                    seekingOther = false;
-                    Random rng = new Random();
-                    other = new Vector3(rng.Next(-300, 300), 0, rng.Next(-250, 250));
-                }
-                HandleTankRotation(other, currentTankPosition);
-            }
-            else if (targetPlayer.HasValue)
-            {
-                // determine state
-                if (health < MAX_HEALTH)
-                {
+            if (targetPlayer.HasValue) {
+                // if damaged, first flee from player then seek health box
+                if (health < MAX_HEALTH) {
                     Vector3? targetItem = GetNearestEnergyItem();
+
                     // if safe distance from player then seek health, otherwise flee
-                    if (Vector3.Distance((Vector3)targetPlayer, currentTankPosition) > 200f && targetItem.HasValue)
-                    {
-                        HandleTankRotation((Vector3)targetItem, currentTankPosition);
+                    if (Vector3.Distance((Vector3)targetPlayer, currentTankPosition) > 200f && targetItem.HasValue) {
+                        HandleRotation((Vector3)targetItem, currentTankPosition);
                         HandleSeek((Vector3)targetItem, currentTankPosition, gameTime);
-                    }
-                    else
-                    {
+                    } else {
                         HandleFlee((Vector3)targetPlayer, currentTankPosition, gameTime);
                     }
-                }
-                else
-                {
-                    HandleTankRotation((Vector3)targetPlayer, currentTankPosition);
+                } else {
+                    HandleRotation((Vector3)targetPlayer, currentTankPosition);
                     HandleSeek((Vector3)targetPlayer, currentTankPosition, gameTime);
                 }
             }
 
+            if (this.knockbackModelPosition != null) {
+                HandleJump(false);
+            }
             MovementClamp();
-            //CheckMovement();
 
             // change enemy model red to signify damage
             if (health < MAX_HEALTH) {
@@ -151,8 +133,7 @@ namespace Game3 {
 
         }
         
-        /// whole tank rotation
-        private void HandleTankRotation(Vector3 targetPosition, Vector3 currentTankPosition) {
+        private void HandleRotation(Vector3 targetPosition, Vector3 currentTankPosition) {
             rotation = RotateToFace((Vector3)targetPosition, currentTankPosition, Vector3.Up);
         }
 
@@ -171,12 +152,13 @@ namespace Game3 {
         private void MovementClamp() {
             float currentX = translation.Translation.X;
             float currentZ = translation.Translation.Z;
+            float currentY = translation.Translation.Y;
 
             // clamp player within game area
             currentX = MathHelper.Clamp(currentX, -550f, 550f);
             currentZ = MathHelper.Clamp(currentZ, -550f, 250f);
 
-            translation.Translation = new Vector3(currentX, 0, currentZ);
+            translation.Translation = new Vector3(currentX, currentY, currentZ);
         }
 
         private void HandleSeek(Vector3 targetPosition, Vector3 currentTankPosition, GameTime gameTime) {
@@ -206,35 +188,65 @@ namespace Game3 {
         }
 
         /// <summary>
-        /// Knockback the enemy when it hits a target. Use similar as flee mechanic
+        /// Knockback the enemy when it hits a target. Use similar to flee mechanic
         /// TODO: Convert this to do a jump mechanic at same time.
         /// </summary>
         /// <param name=""></param>
         internal void KnockBackFrom(BasicModel model) {
-            translation.Translation += Vector3.Normalize(translation.Translation - model.translation.Translation) * 50f;
+            //translation.Translation += Vector3.Normalize(translation.Translation - model.translation.Translation) * 50f;
 
-            // some reason Y can go below 0, make sure Y always at identity Y
+            this.knockbackModelPosition = model;
+
+            if (this.knockbackModelPosition != null) {
+                HandleJump(true);
+            }
+
+            // make sure Y always at identity Y
             if (translation.Translation.Y < Matrix.Identity.Translation.Y) {
                 translation.Translation = new Vector3(translation.Translation.X, Matrix.Identity.Translation.Y, translation.Translation.Z);
             }
 
         }
 
-        internal void CheckMovement() {
 
-            if (lastPos.HasValue) {
-                float distanceFromLastPosition = Vector3.Distance((Vector3)lastPos, this.translation.Translation);
-                if ((distanceFromLastPosition < 5f && distanceFromLastPosition > 3.5f) && health < MAX_HEALTH) {
-                    Console.WriteLine(Vector3.Distance((Vector3)lastPos, this.translation.Translation));
-                    moveCount++;
-                    if (moveCount >= 30) {
-                        moveCount = 0;
-                        seekingOther = true;
-                    }
-                }
+        /// 
+        /// jump
+        /// 
+        private void HandleJump(bool startJump) {
+
+            // store the current jump Y position and modify each frame/tick with the current velocity
+            float jumpPosition = translation.Translation.Y + jumpVelocity;
+            
+
+            // jump model into air with an initial velocity
+            if (startJump && (isMoving() || isResting())) {
+                //Console.WriteLine("JUMPING INITIALISE");
+                jumpPosition += 5f;
+                jumpVelocity += 10f;
+                currentState = state.Jumping;
             }
 
-            lastPos = this.translation.Translation;
+            // gravity emulation
+            // if jumping or falling, reduce the velocity 
+            if (isJumping() || isFalling()) {
+                jumpVelocity -= 0.15f;
+                translation.Translation += Vector3.Normalize(translation.Translation - this.knockbackModelPosition.translation.Translation) * 5f;
+            }
+            // if reached highest expected jump height then start falling
+            if (jumpPosition >= JUMP_HEIGHT) {
+                currentState = state.Falling;
+            }
+
+            // clamp above ground, falling through ground!
+            if (jumpPosition < Matrix.Identity.Translation.Y) {
+                jumpVelocity = 0f;
+                jumpPosition = Matrix.Identity.Translation.Y;
+                currentState = state.Moving;
+            }
+
+            // set the camera position based on Y jump position which was altered
+            translation.Translation = new Vector3(translation.Translation.X, jumpPosition, translation.Translation.Z);
+
         }
 
         internal void FullHealth() {
@@ -255,6 +267,14 @@ namespace Game3 {
         }
         private bool isSeekingEnergyItem() {
             return currentState == state.SeekingEnergyItem;
+        }
+
+        private bool isFalling() {
+            return currentState == state.Falling;
+        }
+
+        private bool isJumping() {
+            return currentState == state.Jumping;
         }
 
     }
