@@ -159,7 +159,7 @@ namespace Game3 {
             float currentY = translation.Translation.Y;
 
             // clamp player within game area
-            currentX = MathHelper.Clamp(currentX, -550f, 550f);
+            currentX = MathHelper.Clamp(currentX, -650f, 650f);
             currentZ = MathHelper.Clamp(currentZ, -550f, 250f);
 
             translation.Translation = new Vector3(currentX, currentY, currentZ);
