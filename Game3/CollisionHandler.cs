@@ -14,13 +14,16 @@ namespace Game3 {
         SplashScreen splashScreen;
 
         Game1 game;
+
+        Score score;
      
         
     
-        public CollisionHandler(Game1 game, AudioManager audioManager, SplashScreen splashScreen) {
-            this.audioManager = audioManager;
-            this.splashScreen = splashScreen;
+        public CollisionHandler(Game1 game) {
+            this.audioManager = game.audioManager;
+            this.splashScreen = game.splashScreen;
             this.game = game;
+            this.score = game.score;
         }
 
         public void detectCollisions(List<BasicModel> models) {
@@ -46,9 +49,10 @@ namespace Game3 {
                 ///
                 /// COLLISION - ENEMY AND PICKUP ITEM
                 ///
-
+                score.enemyBatteryCount++;
                 ((Enemy)modelA).FullHealth();
                 modelB.currentDrawState = BasicModel.drawState.remove;
+
 
             } else if (modelA.GetType() == typeof(Player) && modelB.GetType() == typeof(Pickup)) {
                 ///
@@ -64,6 +68,7 @@ namespace Game3 {
                     ((Player)modelA).energy += 25;
                 }
                 modelB.currentDrawState = BasicModel.drawState.remove;
+                score.playerBatteryCount++;
 
             } else if (modelA.GetType() == typeof(Enemy) && modelB.GetType() == typeof(Enemy)) {
                 ///
@@ -111,8 +116,7 @@ namespace Game3 {
                 if (enemyModel.health <= 0) {
                     audioManager.enemyDeath.Play();
                     enemyModel.currentDrawState = BasicModel.drawState.remove;
-                    splashScreen.SetData("TODO - enemy wins", Game1.GameState.END); // change splash state
-                    this.game.ChangeGameState(Game1.GameState.END, 1); // change game state
+                    score.enemiesDefeatedCount++;
                 }
 
                 if (playerModel.health <= 0) {
@@ -121,6 +125,7 @@ namespace Game3 {
                     playerModel.currentDrawState = BasicModel.drawState.remove;
                     splashScreen.SetData("TODO - enemy wins", Game1.GameState.END); // change splash state
                     this.game.ChangeGameState(Game1.GameState.END, 1); // change game state
+                    //score.survivalTime = game.gameTime.TotalGameTime.Seconds;
                 }
             }
         }

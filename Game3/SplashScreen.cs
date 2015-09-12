@@ -37,7 +37,7 @@ namespace Game3
             //Did player hit enter?
             if (Keyboard.GetState().IsKeyDown(Keys.Enter))
             {
-                Console.WriteLine("enter clicked");
+                
                 //If not in end game, then move to play state
                 if (currentGameState == Game1.GameState.LEVEL_CHANGE ||
                     currentGameState == Game1.GameState.START)

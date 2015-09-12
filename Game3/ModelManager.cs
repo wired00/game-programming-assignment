@@ -24,7 +24,7 @@ namespace Game3 {
         }
 
         public override void Initialize() {
-            collisionHandler = new CollisionHandler((Game1) game, ((Game1)Game).audioManager, splashScreen);
+            collisionHandler = new CollisionHandler((Game1) game);
             uiManager = new UIManager(game);
             base.Initialize();
         }

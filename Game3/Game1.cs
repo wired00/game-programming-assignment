@@ -17,6 +17,10 @@ namespace Game3 {
         ModelManager modelManager;
         public UIManager uiManager;
         public AudioManager audioManager;
+        public Score score;
+        public SplashScreen splashScreen;
+        public GameTime gameTime; 
+     
 
         Matrix world = Matrix.CreateTranslation(0, 0, 0);     
         Matrix view = Matrix.CreateLookAt(new Vector3(0, 2, 3), new Vector3(0, 0, 0), new Vector3(0, 1, 0));
@@ -49,19 +53,20 @@ namespace Game3 {
                     break;
 
                 case GameState.END:
-                    splashScreen.SetData("Game Over.\nLevel: 1" + "\nScore: " + score, GameState.END);
+                    splashScreen.SetData("Game Over.\n" +
+                        "\n Enemies Defeated: " + score.enemiesDefeatedCount +
+                        "\n You picked up " + score.playerBatteryCount + " Batteries" +
+                        "\n The enemies picked up " + score.enemyBatteryCount + " Batteries" +
+                        "\n You survived " + Math.Round(score.survivalTime, 2) + " seconds", GameState.END);
                     modelManager.Enabled = false;
                     modelManager.Visible = false;
                     splashScreen.Enabled = true;
                     splashScreen.Visible = true;
-                    Console.WriteLine("END SCREEN DISPLAYYY***");
+                    
                     break;
 
             }
         }
-
-        SplashScreen splashScreen;
-        int score = 0;
 
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
@@ -93,6 +98,8 @@ namespace Game3 {
             uiManager = new UIManager(this);
             
             audioManager = new AudioManager(this);
+
+            score = new Score();
 
             //world.Translation = new Vector3(world)
 
@@ -127,7 +134,10 @@ namespace Game3 {
         protected override void Update(GameTime gameTime) {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            
+
+            this.gameTime = gameTime;
+            score.survivalTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+
             base.Update(gameTime);
         }
 
