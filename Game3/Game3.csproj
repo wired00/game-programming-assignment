@@ -7,7 +7,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Game3</RootNamespace>
-    <AssemblyName>Game3</AssemblyName>
+    <AssemblyName>Battery Derby</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>Windows</MonoGamePlatform>
     <MonoGameContentBuilderExe>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <ApplicationIcon>BatteryDerby.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AudioManager.cs" />
@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BatteryDerby.ico" />
     <Content Include="Content\Audio\accelerate.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
