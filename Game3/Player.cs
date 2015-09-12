@@ -14,9 +14,9 @@ namespace Game3 {
         static int MAX_HEALTH = 100;
         public static float MAX_ENERGY = 100;
         static float MAX_MOVE_SPEED = 9f;
-        static float MOVE_SPEED = 3f;
+        static float MOVE_SPEED = 1f;
         static float WHEEL_ROTATION_SPEED = 10f;
-        static float VELOCITY_INCREMENTOR = 0.3f;
+        static float VELOCITY_INCREMENTOR = 0.1f;
         static float VELOCITY_DECREMENTOR = 0.95f;
         
         Matrix rotation = Matrix.Identity;
@@ -92,6 +92,7 @@ namespace Game3 {
             uiManager.playerEnergy = this.energy;
 
             if (!isMoving() && audioManager.idleLoop.State != SoundState.Playing && energy > 0) {
+                audioManager.revving.Stop();
                 audioManager.accelerate.Pause();
                 audioManager.idleLoop.Play();
             }
@@ -270,7 +271,7 @@ namespace Game3 {
             {
                 currentDirection = direction.unset;
                 // set initial velocity of car
-                if (this.velocity == 0)
+                if (this.velocity <= 0)
                 {
                     this.velocity = MOVE_SPEED;
                 }

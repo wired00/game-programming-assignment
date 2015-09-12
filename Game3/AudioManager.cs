@@ -37,17 +37,17 @@ namespace Game3
         {
             soundFX = game.Content.Load<SoundEffect>(@"Audio/bgm");
             music = soundFX.CreateInstance();
-            music.Volume = 0.3f;
+            music.Volume = 0.2f;
             music.IsLooped = true;
             music.Play();
 
             soundFX = game.Content.Load<SoundEffect>(@"Audio/accelerate");
             accelerate = soundFX.CreateInstance();
-            accelerate.Volume = 0.4f;
+            accelerate.Volume = 0.3f;
 
             soundFX = game.Content.Load<SoundEffect>(@"Audio/boost");
             boost = soundFX.CreateInstance();
-            boost.Volume = 1f;
+            boost.Volume = 0.9f;
 
             soundFX = game.Content.Load<SoundEffect>(@"Audio/boostend");
             boostEnd = soundFX.CreateInstance();
@@ -57,22 +57,26 @@ namespace Game3
 
             soundFX = game.Content.Load<SoundEffect>(@"Audio/crash");
             crash = soundFX.CreateInstance();
-            crash.Volume = 0.3f;
+            crash.Volume = 0.2f;
 
             soundFX = game.Content.Load<SoundEffect>(@"Audio/enemydeath");
             enemyDeath = soundFX.CreateInstance();
-            enemyDeath.Volume = 0.5f;
+            enemyDeath.Volume = 0.4f;
 
             soundFX = game.Content.Load<SoundEffect>(@"Audio/idleloop");
             idleLoop = soundFX.CreateInstance();
-            idleLoop.Volume = 0.5f;
+            idleLoop.Volume = 0.4f;
 
             soundFX = game.Content.Load<SoundEffect>(@"Audio/revving");
             revving = soundFX.CreateInstance();
+            revving.Volume = 0.5f;
+            revving.IsLooped = true;
+            revving.Play();
+            
 
             soundFX = game.Content.Load<SoundEffect>(@"Audio/charge");
             charge = soundFX.CreateInstance();
-            charge.Volume = 1f;
+            charge.Volume = 0.5f;
             //base.LoadContent();
         }
 

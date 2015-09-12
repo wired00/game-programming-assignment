@@ -82,8 +82,7 @@ namespace Game3 {
                 Player playerModel = (Player)modelB;
 
                 enemyModel.KnockBackFrom(playerModel); // knockback player from enemy
-                playerModel.KnockBackFrom(enemyModel); // knockback enemy from player
-
+                
                 if (playerModel.isBoosting())
                 {
                     playerModel.energy -= enemyModel.health/3;
@@ -92,6 +91,7 @@ namespace Game3 {
                 }
                 else
                 {
+                    playerModel.KnockBackFrom(enemyModel); // knockback enemy from player
                     enemyModel.health = enemyModel.health - 25;
                     playerModel.health = playerModel.health - 10;
                     if (audioManager.crash.State != SoundState.Playing)
