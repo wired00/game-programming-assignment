@@ -124,6 +124,10 @@ namespace Game3 {
 
                 if (playerModel.health <= 0) {
                     audioManager.enemyDeath.Play();
+                    audioManager.accelerate.Stop();
+                    audioManager.boost.Stop();
+                    audioManager.charge.Stop();
+                    audioManager.idleLoop.Stop();
                     playerModel.health = 0;
                     playerModel.currentDrawState = BasicModel.drawState.remove;
                     splashScreen.SetData("TODO - enemy wins", Game1.GameState.END); // change splash state
