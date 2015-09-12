@@ -100,9 +100,6 @@
     </MonoGameContentReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Models\Ground\3SNe_0.xnb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Models\Ground\Ground.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -15,7 +15,6 @@ namespace Game3 {
         public static float MAX_ENERGY = 100;
         static float MAX_MOVE_SPEED = 9f;
         static float MOVE_SPEED = 1f;
-        static float WHEEL_ROTATION_SPEED = 10f;
         static float VELOCITY_INCREMENTOR = 0.1f;
         static float VELOCITY_DECREMENTOR = 0.95f;
         
@@ -146,7 +145,6 @@ namespace Game3 {
                     newPosition.X -= velocity * turboSpeed;
                     newPosition.Z -= velocity * turboSpeed;
 
-                    //HandleRotateWheels(elapsedTime);
                     currentDirection = direction.left_up;
                 }
                 else if (Keyboard.GetState().IsKeyDown(Keys.A) && Keyboard.GetState().IsKeyDown(Keys.S))
@@ -157,8 +155,6 @@ namespace Game3 {
                     newPosition.X -= velocity * turboSpeed;
                     newPosition.Z += velocity * turboSpeed;
 
-
-                    //HandleRotateWheels(elapsedTime);
                     currentDirection = direction.left_down;
 
                 }
@@ -170,7 +166,6 @@ namespace Game3 {
                     newPosition.X += velocity * turboSpeed;
                     newPosition.Z -= velocity * turboSpeed;
 
-                    //HandleRotateWheels(elapsedTime);
                     currentDirection = direction.right_up;
 
                 }
@@ -182,7 +177,6 @@ namespace Game3 {
                     newPosition.X += velocity * turboSpeed;
                     newPosition.Z += velocity * turboSpeed;
 
-                    //HandleRotateWheels(elapsedTime);
                     currentDirection = direction.right_down;
 
                 }
@@ -193,7 +187,6 @@ namespace Game3 {
 
                     newPosition.X -= velocity * turboSpeed;
 
-                    // HandleRotateWheels(elapsedTime);
                     currentDirection = direction.left;
 
                 }
@@ -203,7 +196,6 @@ namespace Game3 {
                     HandleAcceleration();
 
                     newPosition.X += velocity * turboSpeed;
-                    //HandleRotateWheels(elapsedTime);
                     currentDirection = direction.right;
 
                 }
@@ -213,7 +205,6 @@ namespace Game3 {
                     HandleAcceleration();
 
                     newPosition.Z -= velocity * turboSpeed;
-                    //HandleRotateWheels(elapsedTime);
                     currentDirection = direction.up;
 
                 }
@@ -223,7 +214,6 @@ namespace Game3 {
                     HandleAcceleration();
 
                     newPosition.Z += velocity * turboSpeed;
-                    //HandleRotateWheels(elapsedTime);
                     currentDirection = direction.back;
 
                 }
@@ -295,10 +285,6 @@ namespace Game3 {
             if (isSlowing()) {
                 if (this.velocity > 0.01f) {
                     this.velocity *= VELOCITY_DECREMENTOR;
-
-                    if (this.velocity > 0.1f) {
-                        //HandleRotateWheels(elapsedTime);
-                    }
 
                     if (currentDirection != direction.unset) {
                         switch (this.currentDirection) {
