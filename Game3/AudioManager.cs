@@ -30,7 +30,6 @@ namespace Game3
 
         public  void Initialize()
         {
-            //base.Initialize();
         }
 
         protected void LoadContent()
@@ -49,12 +48,6 @@ namespace Game3
             boost = soundFX.CreateInstance();
             boost.Volume = 0.9f;
 
-            soundFX = game.Content.Load<SoundEffect>(@"Audio/boostend");
-            boostEnd = soundFX.CreateInstance();
-
-            soundFX = game.Content.Load<SoundEffect>(@"Audio/booststart");
-            boostStart = soundFX.CreateInstance();
-
             soundFX = game.Content.Load<SoundEffect>(@"Audio/crash");
             crash = soundFX.CreateInstance();
             crash.Volume = 0.2f;
@@ -72,18 +65,14 @@ namespace Game3
             revving.Volume = 0.5f;
             revving.IsLooped = true;
             revving.Play();
-            
 
             soundFX = game.Content.Load<SoundEffect>(@"Audio/charge");
             charge = soundFX.CreateInstance();
             charge.Volume = 0.5f;
-            //base.LoadContent();
         }
 
         public void Update(GameTime gametime)
         {
-
-            //base.Update(gametime);
         }
 
     }
