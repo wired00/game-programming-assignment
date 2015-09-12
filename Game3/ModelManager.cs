@@ -44,43 +44,40 @@ namespace Game3 {
 
             // need to keep hold of the players tank
             playerModel = new Player (
-	              Game.Content.Load<Model> (@"Models/Car/CarModel2"),
+	              Game.Content.Load<Model> (@"Models/Car/Player/CarModel2"),
 	              ((Game1)Game).GraphicsDevice,
 	              ((Game1)Game).camera,
                   ((Game1)Game).graphics,
                   ((Game1)Game).uiManager,
                   ((Game1)Game).audioManager);
-
 			models.Add(playerModel);
 
-            
-			models.Add(new Enemy(
-				Game.Content.Load<Model>(@"Models/Tank/tank"),
-				((Game1)Game).GraphicsDevice,
-				((Game1)Game).camera,
-				new Vector3 (500, 0, -400),
-				playerModel,
-                uiManager
-				));
+            Enemy enemy = new Enemy(
+                Game.Content.Load<Model>(@"Models/Car/Enemy/CarModel2"),
+                ((Game1)Game).GraphicsDevice,
+                ((Game1)Game).camera,
+                new Vector3(500, 0, -400),
+                playerModel,
+                uiManager);
+            models.Add(enemy);
 
-            
-            models.Add(new Enemy(
-                Game.Content.Load<Model>(@"Models/Tank/tank"),
+            enemy = new Enemy(
+                Game.Content.Load<Model>(@"Models/Car/Enemy/CarModel2"),
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
                 new Vector3(-300, 0, 150),
                 playerModel,
-                uiManager
-                ));
+                uiManager);
+            models.Add(enemy);
 
-            models.Add(new Enemy(
-                Game.Content.Load<Model>(@"Models/Tank/tank"),
+            enemy = new Enemy(
+                Game.Content.Load<Model>(@"Models/Car/Enemy/CarModel2"),
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
-                new Vector3(-00, 0, -200),
+                new Vector3(-200, 0, -200),
                 playerModel,
-                uiManager
-                ));
+                uiManager);
+            models.Add(enemy);
                 
             base.LoadContent();
         }
@@ -167,7 +164,7 @@ namespace Game3 {
         private void SpawnEnemys() {
             Random rnd = new Random();
             models.Add(new Enemy(
-                Game.Content.Load<Model>(@"Models/Tank/tank"),
+                Game.Content.Load<Model>(@"Models/Car/Enemy/CarModel2"),
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
                 new Vector3(rnd.Next(-400, 400), 30, rnd.Next(-350, 250)),

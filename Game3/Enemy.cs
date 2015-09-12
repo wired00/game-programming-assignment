@@ -24,7 +24,7 @@ namespace Game3 {
         
         float moveSpeed = 20f;
         float jumpVelocity = 0f;
-        static float JUMP_HEIGHT = 50f;
+        static float JUMP_HEIGHT = 40f;
         private BasicModel knockbackModelPosition;
 
         enum state {
@@ -47,6 +47,9 @@ namespace Game3 {
             Random rng = new Random();
 
             this.uiManager = uiManager;
+
+            base.tintColour = BasicModel.TINT_BLUE;
+
         }
 
         public override void Update(GameTime gameTime) {
@@ -77,13 +80,14 @@ namespace Game3 {
             if (this.knockbackModelPosition != null) {
                 HandleJump(false);
             }
+
             MovementClamp();
 
-            // change enemy model red to signify damage
+            // change enemy model to signify damage
             if (health < MAX_HEALTH) {
-                base.tintColour = Color.Red.ToVector3();
+                base.tintColour = BasicModel.TINT_RED;
             } else {
-                base.tintColour = Color.Transparent.ToVector3();
+                base.tintColour = BasicModel.TINT_BLUE;
             }
 
             base.Update(gameTime);
@@ -184,7 +188,7 @@ namespace Game3 {
         }
 
         public override Matrix GetWorld() {
-            return Matrix.CreateScale(0.1f) * rotation * translation;
+            return Matrix.CreateScale(2f) * rotation * translation;
         }
 
         /// <summary>
@@ -210,14 +214,14 @@ namespace Game3 {
 
 
         /// 
-        /// jump
+        /// jump model on collision
         /// 
         private void HandleJump(bool startJump) {
 
             // store the current jump Y position and modify each frame/tick with the current velocity
             float jumpPosition = translation.Translation.Y + jumpVelocity;
             
-
+            
             // jump model into air with an initial velocity
             if (startJump && (isMoving() || isResting())) {
                 //Console.WriteLine("JUMPING INITIALISE");

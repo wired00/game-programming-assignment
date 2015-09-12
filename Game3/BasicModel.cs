@@ -8,6 +8,10 @@ using Microsoft.Xna.Framework.Graphics;
 namespace Game3 { 
     class BasicModel {
 
+        public static Vector3 TINT_RED = Color.Firebrick.ToVector3();
+        public static Vector3 TINT_TRANSPARENT = Color.Transparent.ToVector3();
+        public static Vector3 TINT_BLUE = Color.DarkBlue.ToVector3();
+
         public Matrix translation = Matrix.Identity; // model translation / position matrix
 
         public Model model { get; protected set; }
