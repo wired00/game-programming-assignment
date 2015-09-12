@@ -69,7 +69,6 @@ namespace Game3 {
         }
 
         public override void Update(GameTime gameTime) {
-
             float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             Vector3 currentPlayerPosition = translation.Translation;

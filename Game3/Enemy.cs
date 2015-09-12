@@ -24,7 +24,7 @@ namespace Game3 {
         
         float moveSpeed = 20f;
         float jumpVelocity = 0f;
-        static float JUMP_HEIGHT = 40f;
+        static float JUMP_HEIGHT = 35f;
         private BasicModel knockbackModelPosition;
 
         enum state {
@@ -225,7 +225,7 @@ namespace Game3 {
             // jump model into air with an initial velocity
             if (startJump && (isMoving() || isResting())) {
                 //Console.WriteLine("JUMPING INITIALISE");
-                jumpPosition += 5f;
+                jumpPosition += 10f;
                 jumpVelocity += 10f;
                 currentState = state.Jumping;
             }
@@ -234,7 +234,7 @@ namespace Game3 {
             // if jumping or falling, reduce the velocity 
             if (isJumping() || isFalling()) {
                 jumpVelocity -= 0.15f;
-                translation.Translation += Vector3.Normalize(translation.Translation - this.knockbackModelPosition.translation.Translation) * 5f;
+                translation.Translation += Vector3.Normalize(translation.Translation - this.knockbackModelPosition.translation.Translation) * 3f;
             }
             // if reached highest expected jump height then start falling
             if (jumpPosition >= JUMP_HEIGHT) {

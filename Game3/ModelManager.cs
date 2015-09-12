@@ -13,6 +13,7 @@ namespace Game3 {
 
         float secondsSinceLastItem = 0;
         float secondsSinceLastEnemy = 0;
+        int enemySpawnCount = 0;
 
         UIManager uiManager;
         Game game;
@@ -117,11 +118,12 @@ namespace Game3 {
 
             float elapsedTime = (float) gameTime.ElapsedGameTime.TotalSeconds;
 
-             //float spawnMultiplier = (float) Math.Ceiling(totalTime / 5f);
-            
+            float spawnModifier = (float) Math.Ceiling(enemySpawnCount / 2f);
+
+            Console.WriteLine(spawnModifier);
 
             // Spawn Pickup items every 2 seconds
-            if (secondsSinceLastItem >= 2) {
+            if (secondsSinceLastItem >= 1.5f) {
                 SpawnItems();
                 secondsSinceLastItem = 0;
 
@@ -130,14 +132,19 @@ namespace Game3 {
             }
 
 
-            // spawn enemy(s)
-            if (secondsSinceLastEnemy >= 10) {
+            // spawn enemy, spawn faster as the game progresses.
+            float timeToSpawnEnemy = 7f - spawnModifier;
+            if (timeToSpawnEnemy < 2f) {
+                timeToSpawnEnemy = 2f; // don't allow faster than every 2 seconds, might be a bit too fast!
+            }
+
+            if (secondsSinceLastEnemy >= timeToSpawnEnemy) {
                 SpawnEnemys();
+                enemySpawnCount++;
                 secondsSinceLastEnemy = 0;
             } else {
                 secondsSinceLastEnemy += elapsedTime;
             }
-
 
         }
 
@@ -162,15 +169,26 @@ namespace Game3 {
         }
 
         private void SpawnEnemys() {
-            Random rnd = new Random();
             models.Add(new Enemy(
                 Game.Content.Load<Model>(@"Models/Car/Enemy/CarModel2"),
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
-                new Vector3(rnd.Next(-400, 400), 30, rnd.Next(-350, 250)),
+                GetEnemySpawnLocation(),
                 playerModel,
                 uiManager
                 ));
+        }
+
+        // get random enemy spawn location. Will spawn at a random y coord to the outside of either the left or right of map
+        private Vector3 GetEnemySpawnLocation() {
+            Random rnd = new Random();
+
+            // Spawn left or right of map?
+            if (rnd.Next(1, 10) > 5) {
+                return new Vector3(-700, 30, rnd.Next(-400, 400));
+            } else {
+                return new Vector3(700, 30, rnd.Next(-400, 400));
+            }
         }
 
     }
