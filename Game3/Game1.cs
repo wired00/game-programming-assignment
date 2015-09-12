@@ -87,7 +87,7 @@ namespace Game3 {
             // Splash screen component
             splashScreen = new SplashScreen(this);
             Components.Add(splashScreen);
-            splashScreen.SetData("Welcome to Car Demolition!", currentGameState);
+            splashScreen.SetData("Welcome to Battery Derby!", currentGameState);
 
             modelManager = new ModelManager(this, splashScreen);
             modelManager.Enabled = false; // for when splash screen is enabled

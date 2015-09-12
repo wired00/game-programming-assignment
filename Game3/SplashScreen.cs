@@ -17,6 +17,7 @@ namespace Game3
         SpriteFont secondarySpriteFont;
         SpriteBatch spriteBatch;
         Game1.GameState currentGameState;
+        Texture2D backgroundTexture;
         
         public SplashScreen(Game game) : base (game) { }
 
@@ -25,6 +26,7 @@ namespace Game3
             // Load fonts
             spriteFont = Game.Content.Load<SpriteFont>(@"Fonts/MyFont");
             secondarySpriteFont = Game.Content.Load<SpriteFont>(@"Fonts/MyFont");
+            backgroundTexture = Game.Content.Load<Texture2D>(@"Models/Splashscreen/StartBackGround");
 
             // Create sprite batch
             spriteBatch = new SpriteBatch(Game.GraphicsDevice);
@@ -59,18 +61,59 @@ namespace Game3
             Vector2 TitleSize = spriteFont.MeasureString(textToDraw);
             base.Draw(gameTime);
 
-            //Draw main text
-            spriteBatch.DrawString(spriteFont, textToDraw,
-                                    new Vector2(Game.Window.ClientBounds.Width / 2
-                                                - Game.Window.ClientBounds.Height / 2),
-                                                Color.Gold);
-            //Draw subtext
-            spriteBatch.DrawString(secondarySpriteFont, secondaryTextToDraw,
-                                    new Vector2(Game.Window.ClientBounds.Width / 2
-                                                - secondarySpriteFont.MeasureString
-                                                (secondaryTextToDraw).X / 2,
-                                                Game.Window.ClientBounds.Height / 2
-                                                + TitleSize.Y + 10), Color.Gold);
+
+            
+            if (currentGameState == Game1.GameState.START)
+            {
+                spriteBatch.Draw(backgroundTexture,
+                                  new Rectangle(0, 0, Game.Window.ClientBounds.Width,
+                                                Game.Window.ClientBounds.Height), null,
+                                                Color.White, 0, Vector2.Zero, SpriteEffects.None, 1);
+
+                //Draw main text
+                spriteBatch.DrawString(spriteFont, textToDraw,
+                                        new Vector2(Game.Window.ClientBounds.Width / 2
+                                                    - Game.Window.ClientBounds.Height / 2),
+                                                    Color.Black);
+
+                //Draw subtext
+                spriteBatch.DrawString(secondarySpriteFont, secondaryTextToDraw,
+                                        new Vector2(Game.Window.ClientBounds.Width / 2
+                                                    - secondarySpriteFont.MeasureString
+                                                    (secondaryTextToDraw).X / 2,
+                                                    Game.Window.ClientBounds.Height / 2
+                                                    + TitleSize.Y - 20), Color.Black);
+
+
+            }
+
+            if (currentGameState == Game1.GameState.END)
+            {
+                spriteBatch.Draw(backgroundTexture,
+                                  new Rectangle(0, 0, Game.Window.ClientBounds.Width,
+                                                Game.Window.ClientBounds.Height), null,
+                                                Color.White, 0, Vector2.Zero, SpriteEffects.None, 1);
+
+                //Draw main text
+                spriteBatch.DrawString(spriteFont, textToDraw,
+                                        new Vector2(Game.Window.ClientBounds.Width / 2
+                                                    - Game.Window.ClientBounds.Height / 2 ),
+                                                    Color.Black);
+
+                //Draw subtext
+                spriteBatch.DrawString(secondarySpriteFont, secondaryTextToDraw,
+                                        new Vector2(Game.Window.ClientBounds.Width / 2
+                                                    - secondarySpriteFont.MeasureString
+                                                    (secondaryTextToDraw).X / 2,
+                                                    Game.Window.ClientBounds.Height / 2
+                                                    + TitleSize.Y - 10), Color.Black);
+
+
+            }  
+
+
+
+
 
             spriteBatch.End();
 
