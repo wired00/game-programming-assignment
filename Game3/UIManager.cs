@@ -32,7 +32,7 @@ namespace Game3
         protected void LoadContent()
         {
             spriteBatch = new SpriteBatch(game.GraphicsDevice);
-            font = game.Content.Load<SpriteFont>("myFont");
+            font = game.Content.Load<SpriteFont>("Fonts/myFont");
             //base.LoadContent();
         }
 

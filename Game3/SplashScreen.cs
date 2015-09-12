@@ -23,8 +23,8 @@ namespace Game3
         protected override void LoadContent()
         {
             // Load fonts
-            spriteFont = Game.Content.Load<SpriteFont>(@"MyFont");
-            secondarySpriteFont = Game.Content.Load<SpriteFont>(@"MyFont");
+            spriteFont = Game.Content.Load<SpriteFont>(@"Fonts/MyFont");
+            secondarySpriteFont = Game.Content.Load<SpriteFont>(@"Fonts/MyFont");
 
             // Create sprite batch
             spriteBatch = new SpriteBatch(Game.GraphicsDevice);

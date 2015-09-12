@@ -136,7 +136,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\MyFont.xnb">
+    <Content Include="Content\Fonts\MyFont.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
