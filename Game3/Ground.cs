@@ -18,7 +18,7 @@ namespace Game3 {
         }
 
         public override Matrix GetWorld() {
-            return Matrix.CreateScale(10f);
+            return Matrix.CreateScale(3f);
         }
 
     }

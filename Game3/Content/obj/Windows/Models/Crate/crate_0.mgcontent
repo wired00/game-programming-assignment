@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>Z:/Documents/@@Working/Repositories/UTS/game-programming-assignment/Game3/Content/Models/Crate/crate.png</SourceFile>
+  <SourceTime>2015-09-06T16:15:51+10:00</SourceTime>
+  <DestFile>Z:/Documents/@@Working/Repositories/UTS/game-programming-assignment/Game3/Content/bin/Windows/Models/Crate/crate_0.xnb</DestFile>
+  <DestTime>2015-09-06T16:27:10+10:00</DestTime>
+  <Importer>TextureImporter</Importer>
+  <ImporterTime>2015-04-30T03:14:44+10:00</ImporterTime>
+  <Processor>TextureProcessor</Processor>
+  <ProcessorTime>2015-04-30T03:14:44+10:00</ProcessorTime>
+  <Parameters>
+    <Key>ColorKeyColor</Key>
+    <Value>0,0,0,0</Value>
+  </Parameters>
+  <Parameters>
+    <Key>ColorKeyEnabled</Key>
+    <Value>True</Value>
+  </Parameters>
+  <Parameters>
+    <Key>GenerateMipmaps</Key>
+    <Value>True</Value>
+  </Parameters>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>DxtCompressed</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

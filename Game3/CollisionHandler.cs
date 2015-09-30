@@ -31,9 +31,12 @@ namespace Game3 {
             foreach (BasicModel modelA in models) {
                 foreach (BasicModel modelB in models) {
                     if (modelA.uniqueId != modelB.uniqueId && (validModelType(modelA)) && (validModelType(modelB))) {
-                        if (collidesWith(modelA, modelB)) {
-                            HandleCollision(modelA, modelB);
+                        if (modelA.GetType() != typeof(MapTile) && modelB.GetType() != typeof(MapTile)) {
+                            if (collidesWith(modelA, modelB)) {
+                                HandleCollision(modelA, modelB);
+                            }
                         }
+
                     }
                 }
             }

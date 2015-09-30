@@ -2,7 +2,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using TexturedQuad;
 
 namespace Game3 {
     class ModelManager : DrawableGameComponent {
@@ -19,12 +18,12 @@ namespace Game3 {
         UIManager uiManager;
         Game game;
         SplashScreen splashScreen;
-
-        Quad quad;
+        
         VertexDeclaration vertexDeclaration;
         Matrix View, Projection;
-        Texture2D texture;
-        BasicEffect quadEffect;
+
+        int tileWidth = 96;
+        bool bBuiltMap = false;
 
         public ModelManager(Game game, SplashScreen splashScreen) : base(game) {
             this.game = game;
@@ -35,7 +34,6 @@ namespace Game3 {
             collisionHandler = new CollisionHandler((Game1) game);
             uiManager = new UIManager(game);
 
-            quad = new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 1, 1);
             View = Matrix.CreateLookAt(new Vector3(0, 0, 2), Vector3.Zero,
                 Vector3.Up);
             Projection = Matrix.CreatePerspectiveFieldOfView(
@@ -48,15 +46,7 @@ namespace Game3 {
             Random rnd = new Random();
 
             // Create a new SpriteBatch, which can be used to draw textures.
-            texture = Game.Content.Load<Texture2D>(@"Models/Ground/Dirt32");
-            quadEffect = new BasicEffect(((Game1)Game).graphics.GraphicsDevice);
-            quadEffect.EnableDefaultLighting();
-
-            quadEffect.World = Matrix.Identity;
-            quadEffect.View = View;
-            quadEffect.Projection = Projection;
-            quadEffect.TextureEnabled = true;
-            quadEffect.Texture = texture;
+            //texture = Game.Content.Load<Texture2D>(@"Models/Ground/Dirt32");
 
             vertexDeclaration = new VertexDeclaration(new VertexElement[]
                 {
@@ -68,15 +58,26 @@ namespace Game3 {
 
             models.Add(new Pickup(
                 Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
+                //Game.Content.Load<Model>(@"Models/Ground/PlaneModel"),
                 new Vector3(rnd.Next(-400, 400), 30, rnd.Next(-350, 250))));
+
             models.Add(new Pickup(
                 Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
                 new Vector3(rnd.Next(-400, 400), 30, rnd.Next(-350, 250))));
 
-            //models.Add(new Ground(
-                //Game.Content.Load<Model>(@"Models/Ground/Ground"))
-            //    Game.Content.Load<Model>(@"Models/Ground/Ground"))
-            //);
+            if (!bBuiltMap) {
+
+                for (int j = -6; j <= 6; j++) {
+                    for (int i = -6; i <= 6; i++) {
+                        models.Add(new MapTile(
+                            Game.Content.Load<Model>(@"Models/Ground/PlaneModel2"),
+                            new Vector3(tileWidth * i, 0, tileWidth * j))
+                        );
+                    }
+                }
+
+                bBuiltMap = true;
+            }
 
             // need to keep hold of the players tank
             playerModel = new Player (
@@ -180,15 +181,7 @@ namespace Game3 {
 
         public override void Draw(GameTime gameTime) {
 
-            foreach (EffectPass pass in quadEffect.CurrentTechnique.Passes) {
-                pass.Apply();
-                
-                GraphicsDevice.DrawUserIndexedPrimitives
-                    <VertexPositionNormalTexture>(
-                    PrimitiveType.TriangleList,
-                    quad.Vertices, 0, 4,
-                    quad.Indexes, 0, 2);
-            }
+
 
             foreach (BasicModel model in models) {
                 model.Draw(((Game1)Game).device, ((Game1)Game).camera);

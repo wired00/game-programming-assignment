@@ -1,0 +1,121 @@
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\accelerate.wav
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\bgm.wav
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\boost.wav
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\charge.wav
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\crash.wav
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\enemydeath.wav
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\idleloop.wav
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\revving.wav
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Battery\BatteryModel.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Battery\BatteryTexture.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Battery\BatteryTexture_0.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Car\Player\CarTexture.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Car\Player\CarTexture_0.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Car\Enemy\CarModel2.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Car\Enemy\CarTexture2.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Car\Enemy\CarTexture2_0.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Car\Player\CarModel2.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Ground\topsoil-dirt.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Ground\topsoil-dirt_0.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\accelerate.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\bgm.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\boost.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\charge.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\crash.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\enemydeath.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\idleloop.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\revving.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Splashscreen\StartBackGround.jpg
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Ground\Ground.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Skybox\clear_back_0.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Skybox\clear_front_0.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Skybox\clear_left_0.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Skybox\clear_right_0.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Skybox\clear_top_0.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Skybox\skybox.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Fonts\MyFont.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Battery Derby.exe
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Battery Derby.pdb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\MonoGame.Framework.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.MediaFoundation.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.XAudio2.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.Direct3D11.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.DXGI.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.Direct2D1.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.XInput.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.RawInput.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.Direct3D9.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\MonoGame.Framework.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.MediaFoundation.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.XAudio2.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.Direct3D11.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.DXGI.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.Direct2D1.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.XInput.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.RawInput.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.Direct3D9.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\obj\x86\Release\Game3.csprojResolveAssemblyReference.cache
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\obj\x86\Release\Battery Derby.exe
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\obj\x86\Release\Battery Derby.pdb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\obj\x86\Release\Battery Derby.exe
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\obj\x86\Release\Battery Derby.pdb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Battery\BatteryModel.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Battery\BatteryTexture.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Battery\BatteryTexture_0.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Car\Player\CarTexture.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Car\Player\CarTexture_0.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Car\Enemy\CarModel2.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Car\Enemy\CarTexture2.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Car\Enemy\CarTexture2_0.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Car\Player\CarModel2.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Ground\topsoil-dirt.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Ground\topsoil-dirt_0.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\accelerate.wav
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\bgm.wav
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\boost.wav
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\charge.wav
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\crash.wav
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\enemydeath.wav
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\idleloop.wav
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\revving.wav
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\accelerate.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\bgm.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\boost.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\charge.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\crash.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\enemydeath.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\idleloop.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Audio\revving.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Splashscreen\StartBackGround.jpg
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Ground\Ground.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Skybox\clear_back_0.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Skybox\clear_front_0.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Skybox\clear_left_0.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Skybox\clear_right_0.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Skybox\clear_top_0.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Models\Skybox\skybox.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Content\Fonts\MyFont.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Battery Derby.exe
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\Battery Derby.pdb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\MonoGame.Framework.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.MediaFoundation.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.XAudio2.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.Direct3D11.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.DXGI.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.Direct2D1.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.XInput.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.RawInput.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.Direct3D9.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\MonoGame.Framework.xml
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.MediaFoundation.xml
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.xml
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.XAudio2.xml
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.Direct3D11.xml
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.DXGI.xml
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.Direct2D1.xml
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.XInput.xml
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.RawInput.xml
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Release\SharpDX.Direct3D9.xml

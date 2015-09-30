@@ -1,0 +1,262 @@
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\accelerate.wav
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\bgm.wav
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\boost.wav
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\charge.wav
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\crash.wav
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\enemydeath.wav
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\idleloop.wav
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\revving.wav
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Battery\BatteryModel.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Battery\BatteryTexture.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Battery\BatteryTexture_0.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Player\CarTexture.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Player\CarTexture_0.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Enemy\CarModel2.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Enemy\CarTexture2.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Enemy\CarTexture2_0.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Player\CarModel2.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\topsoil-dirt.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\topsoil-dirt_0.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\accelerate.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\bgm.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\boost.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\charge.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\crash.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\enemydeath.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\idleloop.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\revving.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Splashscreen\StartBackGround.jpg
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\Ground.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_back_0.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_front_0.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_left_0.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_right_0.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_top_0.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\skybox.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Fonts\MyFont.xnb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Battery Derby.exe
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Battery Derby.pdb
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\MonoGame.Framework.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XAudio2.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D11.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.DXGI.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct2D1.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XInput.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.RawInput.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D9.dll
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\MonoGame.Framework.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XAudio2.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D11.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.DXGI.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct2D1.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XInput.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.RawInput.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D9.xml
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\obj\x86\Debug\Game3.csprojResolveAssemblyReference.cache
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\obj\x86\Debug\Battery Derby.exe
+Z:\Documents\@@Working\Repositories\game-programming-assignment\Game3\obj\x86\Debug\Battery Derby.pdb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\obj\x86\Debug\Battery Derby.exe
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\obj\x86\Debug\Battery Derby.pdb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\accelerate.wav
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\bgm.wav
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\boost.wav
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\charge.wav
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\crash.wav
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\enemydeath.wav
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\idleloop.wav
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\revving.wav
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Battery\BatteryModel.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Battery\BatteryTexture.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Battery\BatteryTexture_0.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Player\CarTexture.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Player\CarTexture_0.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Enemy\CarModel2.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Enemy\CarTexture2.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Enemy\CarTexture2_0.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Player\CarModel2.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\topsoil-dirt.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\topsoil-dirt_0.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\accelerate.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\bgm.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\boost.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\charge.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\crash.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\enemydeath.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\idleloop.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\revving.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Splashscreen\StartBackGround.jpg
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\Ground.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_back_0.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_front_0.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_left_0.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_right_0.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_top_0.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\skybox.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Content\Fonts\MyFont.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Battery Derby.exe
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\Battery Derby.pdb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\MonoGame.Framework.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XAudio2.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D11.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.DXGI.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct2D1.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XInput.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.RawInput.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D9.dll
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\MonoGame.Framework.xml
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.xml
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XAudio2.xml
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D11.xml
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.DXGI.xml
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct2D1.xml
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XInput.xml
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.RawInput.xml
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D9.xml
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\game-programming-assignment\Game3\obj\x86\Debug\Game3.csprojResolveAssemblyReference.cache
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\obj\x86\Debug\Battery Derby.exe
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\obj\x86\Debug\Battery Derby.pdb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\accelerate.wav
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\bgm.wav
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\boost.wav
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\charge.wav
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\crash.wav
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\enemydeath.wav
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\idleloop.wav
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\revving.wav
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Battery\BatteryModel.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Battery\BatteryTexture.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Battery\BatteryTexture_0.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Player\CarTexture.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Player\CarTexture_0.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Enemy\CarModel2.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Enemy\CarTexture2.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Enemy\CarTexture2_0.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Player\CarModel2.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\topsoil-dirt.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\topsoil-dirt_0.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\accelerate.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\bgm.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\boost.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\charge.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\crash.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\enemydeath.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\idleloop.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\revving.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Splashscreen\StartBackGround.jpg
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\Ground.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_back_0.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_front_0.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_left_0.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_right_0.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_top_0.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\skybox.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Fonts\MyFont.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Battery Derby.exe
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Battery Derby.pdb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\MonoGame.Framework.dll
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.dll
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XAudio2.dll
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D11.dll
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.DXGI.dll
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct2D1.dll
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XInput.dll
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.RawInput.dll
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D9.dll
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\MonoGame.Framework.xml
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.xml
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XAudio2.xml
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D11.xml
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.DXGI.xml
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct2D1.xml
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XInput.xml
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.RawInput.xml
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D9.xml
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\obj\x86\Debug\Game3.csprojResolveAssemblyReference.cache
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\Seamless ground texture v1.0.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\Dirt32.jpg
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\obj\x86\Debug\Battery Derby.exe
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\obj\x86\Debug\Battery Derby.pdb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\accelerate.wav
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\bgm.wav
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\boost.wav
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\charge.wav
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\crash.wav
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\enemydeath.wav
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\idleloop.wav
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\revving.wav
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\Dirt32.jpg
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Battery\BatteryModel.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Battery\BatteryTexture.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Battery\BatteryTexture_0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Player\CarTexture.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Player\CarTexture_0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Enemy\CarModel2.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Enemy\CarTexture2.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Enemy\CarTexture2_0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Player\CarModel2.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\topsoil-dirt.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\topsoil-dirt_0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\Seamless ground texture v1.0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\accelerate.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\bgm.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\boost.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\charge.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\crash.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\enemydeath.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\idleloop.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Audio\revving.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Cartest3.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Crate\crate.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Crate\crate_0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Splashscreen\StartBackGround.jpg
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\Ground.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_back_0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_front_0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_left_0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_right_0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\clear_top_0.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Skybox\skybox.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Fonts\MyFont.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Battery Derby.exe
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Battery Derby.pdb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\MonoGame.Framework.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XAudio2.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D11.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.DXGI.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct2D1.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XInput.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.RawInput.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D9.dll
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\MonoGame.Framework.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XAudio2.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D11.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.DXGI.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct2D1.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.XInput.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.RawInput.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\SharpDX.Direct3D9.xml
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\obj\x86\Debug\Game3.csprojResolveAssemblyReference.cache
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\PlaneModel2.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\sanddf.xnb
+Z:\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\sanddf_0.xnb
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\obj\x86\Debug\Battery Derby.exe
+\\vmware-host\Shared Folders\Documents\@@Working\Repositories\UTS\game-programming-assignment\Game3\obj\x86\Debug\Battery Derby.pdb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\PlaneModel2.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\sanddf.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Ground\sanddf_0.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Car\Cartest3.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Crate\crate.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\Game3\bin\Windows\Debug\Content\Models\Crate\crate_0.xnb
