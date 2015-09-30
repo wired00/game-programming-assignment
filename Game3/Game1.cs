@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using TexturedQuad;
 
 namespace Game3 {
     /// <summary>
@@ -105,8 +106,6 @@ namespace Game3 {
 
             this.IsMouseVisible = true;
 
-
-
             base.Initialize();
         }
 
@@ -153,6 +152,7 @@ namespace Game3 {
             //GraphicsDevice.DepthStencilState = DepthStencilState.Default;
 
             base.Draw(gameTime);
+            device.DepthStencilState = DepthStencilState.Default;
         }
 
     }

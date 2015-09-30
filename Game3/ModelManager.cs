@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using TexturedQuad;
 
 namespace Game3 {
     class ModelManager : DrawableGameComponent {
@@ -19,6 +20,12 @@ namespace Game3 {
         Game game;
         SplashScreen splashScreen;
 
+        Quad quad;
+        VertexDeclaration vertexDeclaration;
+        Matrix View, Projection;
+        Texture2D texture;
+        BasicEffect quadEffect;
+
         public ModelManager(Game game, SplashScreen splashScreen) : base(game) {
             this.game = game;
             this.splashScreen = splashScreen;
@@ -27,11 +34,38 @@ namespace Game3 {
         public override void Initialize() {
             collisionHandler = new CollisionHandler((Game1) game);
             uiManager = new UIManager(game);
+
+            quad = new Quad(Vector3.Zero, Vector3.Backward, Vector3.Up, 1, 1);
+            View = Matrix.CreateLookAt(new Vector3(0, 0, 2), Vector3.Zero,
+                Vector3.Up);
+            Projection = Matrix.CreatePerspectiveFieldOfView(
+                MathHelper.PiOver4, 4.0f / 3.0f, 1, 500);
+
             base.Initialize();
         }
 
         protected override void LoadContent() {
             Random rnd = new Random();
+
+            // Create a new SpriteBatch, which can be used to draw textures.
+            texture = Game.Content.Load<Texture2D>(@"Models/Ground/Dirt32");
+            quadEffect = new BasicEffect(((Game1)Game).graphics.GraphicsDevice);
+            quadEffect.EnableDefaultLighting();
+
+            quadEffect.World = Matrix.Identity;
+            quadEffect.View = View;
+            quadEffect.Projection = Projection;
+            quadEffect.TextureEnabled = true;
+            quadEffect.Texture = texture;
+
+            vertexDeclaration = new VertexDeclaration(new VertexElement[]
+                {
+                    new VertexElement(0, VertexElementFormat.Vector3, VertexElementUsage.Position, 0),
+                    new VertexElement(12, VertexElementFormat.Vector3, VertexElementUsage.Normal, 0),
+                    new VertexElement(24, VertexElementFormat.Vector2, VertexElementUsage.TextureCoordinate, 0)
+                }
+            );
+
             models.Add(new Pickup(
                 Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
                 new Vector3(rnd.Next(-400, 400), 30, rnd.Next(-350, 250))));
@@ -39,9 +73,10 @@ namespace Game3 {
                 Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
                 new Vector3(rnd.Next(-400, 400), 30, rnd.Next(-350, 250))));
 
-            models.Add(new Ground(
-                Game.Content.Load<Model>(@"Models/Ground/Ground"))
-            );
+            //models.Add(new Ground(
+                //Game.Content.Load<Model>(@"Models/Ground/Ground"))
+            //    Game.Content.Load<Model>(@"Models/Ground/Ground"))
+            //);
 
             // need to keep hold of the players tank
             playerModel = new Player (
@@ -79,7 +114,7 @@ namespace Game3 {
                 playerModel,
                 uiManager);
             models.Add(enemy);
-                
+
             base.LoadContent();
         }
 
@@ -118,8 +153,6 @@ namespace Game3 {
 
             float spawnModifier = (float) Math.Ceiling(enemySpawnCount / 2f);
 
-            Console.WriteLine(spawnModifier);
-
             // Spawn Pickup items every 2 seconds
             if (secondsSinceLastItem >= 1.5f) {
                 SpawnItems();
@@ -146,11 +179,25 @@ namespace Game3 {
         }
 
         public override void Draw(GameTime gameTime) {
+
+            foreach (EffectPass pass in quadEffect.CurrentTechnique.Passes) {
+                pass.Apply();
+                
+                GraphicsDevice.DrawUserIndexedPrimitives
+                    <VertexPositionNormalTexture>(
+                    PrimitiveType.TriangleList,
+                    quad.Vertices, 0, 4,
+                    quad.Indexes, 0, 2);
+            }
+
             foreach (BasicModel model in models) {
                 model.Draw(((Game1)Game).device, ((Game1)Game).camera);
             }
-            base.Draw(gameTime);
+
             ((Game1)Game).uiManager.Draw(gameTime);
+
+            base.Draw(gameTime);
+
         }
 
         public Player getPlayerModel() {

@@ -17,5 +17,9 @@ namespace Game3 {
             base.Draw(device, camera);
         }
 
+        public override Matrix GetWorld() {
+            return Matrix.CreateScale(10f);
+        }
+
     }
 }
