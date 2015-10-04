@@ -45,9 +45,6 @@ namespace Game3 {
         protected override void LoadContent() {
             Random rnd = new Random();
 
-            // Create a new SpriteBatch, which can be used to draw textures.
-            //texture = Game.Content.Load<Texture2D>(@"Models/Ground/Dirt32");
-
             vertexDeclaration = new VertexDeclaration(new VertexElement[]
                 {
                     new VertexElement(0, VertexElementFormat.Vector3, VertexElementUsage.Position, 0),
@@ -58,13 +55,16 @@ namespace Game3 {
 
             models.Add(new Pickup(
                 Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
-                //Game.Content.Load<Model>(@"Models/Ground/PlaneModel"),
                 new Vector3(rnd.Next(-400, 400), 30, rnd.Next(-350, 250))));
 
             models.Add(new Pickup(
                 Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
                 new Vector3(rnd.Next(-400, 400), 30, rnd.Next(-350, 250))));
 
+            ///
+            /// Build a map using tiles. each tile is 96x96 and the map is 12x12 tiles in size.
+            /// Thus, map is 1152x1152
+            ///
             if (!bBuiltMap) {
 
                 for (int j = -6; j <= 6; j++) {

@@ -16,8 +16,13 @@ namespace Game3 {
         Game1 game;
 
         Score score;
-     
-        
+
+        enum Quadrant {
+            A,
+            B,
+            C,
+            D
+        };
     
         public CollisionHandler(Game1 game) {
             this.audioManager = game.audioManager;
@@ -30,16 +35,73 @@ namespace Game3 {
 
             foreach (BasicModel modelA in models) {
                 foreach (BasicModel modelB in models) {
-                    if (modelA.uniqueId != modelB.uniqueId && (validModelType(modelA)) && (validModelType(modelB))) {
-                        if (modelA.GetType() != typeof(MapTile) && modelB.GetType() != typeof(MapTile)) {
-                            if (collidesWith(modelA, modelB)) {
-                                HandleCollision(modelA, modelB);
-                            }
+                    if (isValidCheck(modelA, modelB)) {
+                        if (collidesWith(modelA, modelB)) {
+                            HandleCollision(modelA, modelB);
                         }
-
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Only perform collision checks on valid models
+        /// -
+        /// - use spacial partition using quadrant to check if models are in same quadrant before more robust and computationallly expensive collision detection routine is performed
+        /// - ignore collisions for ground (MapTile) models, there are many, so this vastly improves performance.
+        /// - 
+        /// </summary>
+        /// <returns></returns>
+        private bool isValidCheck(BasicModel modelA, BasicModel modelB) {
+            if (modelA.uniqueId != modelB.uniqueId && (validModelType(modelA)) && (validModelType(modelB))) {
+                if (isMatchingMapQuadrant(modelA, modelB)) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Check if 2 models are in matching map quadrants. 
+        /// </summary>
+        /// <returns></returns>
+        private bool isMatchingMapQuadrant(BasicModel modelA, BasicModel modelB) {
+            return getMapQuadrant(modelA) == getMapQuadrant(modelB);
+        }
+
+        /// <summary>
+        /// Get the map quadrant based on the provided models position vector.
+        /// This is used for spacial partitioning
+        /// 
+        /// Map is devided into 4 quadrants:
+        /// 
+        ///         |
+        ///      A  |  B
+        ///   ------+------
+        ///      D  |  C
+        ///         |
+        /// 
+        /// 
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        private Quadrant getMapQuadrant(BasicModel model) {
+            float modelX = model.translation.Translation.X;
+            float modelZ = model.translation.Translation.Z;
+
+            // detect quadrant 1
+            if (modelX < 0 && modelZ >= 0) {
+                return Quadrant.A;
+            } else if (modelX >= 0 && modelZ >= 0) {
+                return Quadrant.B;
+            } else if (modelX >= 0 && modelZ < 0) {
+                return Quadrant.C;
+            } else if (modelX < 0 && modelZ < 0) {
+                return Quadrant.D;
+            }
+
+            return 0;
         }
 
         /// <summary>
@@ -140,6 +202,12 @@ namespace Game3 {
             }
         }
 
+        /// <summary>
+        /// Perform robust collision detection using BoundingSpheres to determine if two models are intersecting.
+        /// </summary>
+        /// <param name="modelA"></param>
+        /// <param name="modelB"></param>
+        /// <returns></returns>
         public bool collidesWith (BasicModel modelA, BasicModel modelB) {
             // get the position of each model
             Matrix modelATranslation = modelA.GetWorld();
@@ -161,8 +229,13 @@ namespace Game3 {
             return false;
         }
 
+        /// <summary>
+        /// Only perform collision detection on valid models. Ie, no point performing collision detection between ground (mapTile) and car models
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         private bool validModelType(BasicModel model) {
-            return model.GetType() != typeof(Ground); // ignore collisions with the ground
+            return model.GetType() != typeof(MapTile); // ignore collisions with the ground
         }
 
     }

@@ -65,7 +65,7 @@ namespace Game3 {
             health = MAX_HEALTH;
             energy = MAX_ENERGY;
 
-            base.translation = Matrix.Identity;
+            base.translation.Translation = new Vector3(100f, 0f, 100f);
         }
 
         public override void Update(GameTime gameTime) {
