@@ -1,7 +1,7 @@
-# game-programming-assignment
+# game-programming-assignment - UTS
 # contributors Robert, Kyron & Gabriel
 
-A simple game developed for UTS Game Programming class.
+**A simple game developed for UTS Game Programming class**
 
 Objective is to race around the arena destroying the other cars. You have a finite amount of boost which is replenished by picking up batteries
 
