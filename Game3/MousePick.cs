@@ -6,7 +6,9 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-
+/// <summary>
+/// Class to handle mouse picking of the user screen to game 3D space coordinate translation
+/// </summary>
 namespace Game3 {
     class MousePick {
 

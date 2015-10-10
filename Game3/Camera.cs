@@ -3,6 +3,9 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
+/// <summary>
+/// Players camer model
+/// </summary>
 namespace Game3 {
     public class Camera : GameComponent {
         // matrix object represents the location and rotation of the camera

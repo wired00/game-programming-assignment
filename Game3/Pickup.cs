@@ -5,6 +5,9 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
+/// <summary>
+/// Players power up pickup model
+/// </summary>
 namespace Game3 {
     class Pickup : BasicModel {
 

@@ -3,6 +3,9 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 
+/// <summary>
+/// A model manager will handle all models
+/// </summary>
 namespace Game3 {
     class ModelManager : DrawableGameComponent {
         List<BasicModel> models = new List<BasicModel>();

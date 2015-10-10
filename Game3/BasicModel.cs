@@ -5,6 +5,9 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
+/// <summary>
+/// Basic model is inherited by all other models
+/// </summary>
 namespace Game3 { 
     class BasicModel {
 

@@ -6,6 +6,9 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Audio;
 
+/// <summary>
+/// Collision handler is used to handle all collisions between models
+/// </summary>
 namespace Game3 {
     class CollisionHandler {
 
