@@ -6,6 +6,10 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
+
+/// <summary>
+/// Handles everything regarding splash screen either at startup or death screen
+/// </summary>
 namespace Game3
 {
     public class SplashScreen : DrawableGameComponent
