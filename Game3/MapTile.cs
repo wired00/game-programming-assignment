@@ -5,6 +5,9 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
+/// <summary>
+/// Map tile model, used to created tiles on the ground
+/// </summary>
 namespace Game3 {
     class MapTile : BasicModel {
         public MapTile(Model model, Vector3 position)

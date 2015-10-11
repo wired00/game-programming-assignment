@@ -6,6 +6,10 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 
+
+/// <summary>
+/// Handles UI elements such as player health and remaining energy
+/// </summary>
 namespace Game3
 {
     public class UIManager

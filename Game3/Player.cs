@@ -8,6 +8,9 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Audio;
 
+/// <summary>
+/// Players model
+/// </summary>
 namespace Game3 {
     class Player : BasicModel {
 

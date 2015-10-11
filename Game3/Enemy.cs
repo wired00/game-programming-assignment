@@ -7,6 +7,9 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 
+/// <summary>
+/// Enemy model type
+/// </summary>
 namespace Game3 {
     class Enemy : BasicModel {
 

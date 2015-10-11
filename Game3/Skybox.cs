@@ -5,6 +5,9 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
+/// <summary>
+/// A skybox class
+/// </summary>
 namespace Game3 {
     class Skybox : BasicModel {
 
