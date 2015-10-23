@@ -18,8 +18,7 @@ Use space bar to burn through energy faster but you will destroy the enemy cars.
 How long can you last?
 
 
-
-
+### Todo
 
  - A* AI pathfinding
  - Various enemy models and design
@@ -27,15 +26,4 @@ How long can you last?
  - Improved Models
  - Impassable objects on the arena
  - Improved arena map
->>>>>>> origin/11636329
-
-
-10562472_Gabriel_Chew Lab09
-10562472_Gabriel_Chew Lab09 Commit number 2
-10562472_Gabriel_Chew Lab09 Commit number 2
-10562472_Gabriel_Chew Lab09 Commit number 2
-10562472_Gabriel_Chew Lab09 Commit number 2
-10562472_Gabriel_Chew
-10562472_Gabriel_Chew
-
 
