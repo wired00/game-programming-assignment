@@ -24,12 +24,10 @@ namespace BatteryDerby {
         
         VertexDeclaration vertexDeclaration;
         Matrix View, Projection;
-
-        int tileWidth = 96;
+        
         bool bBuiltMap = false;
 
         PathfindAStar pathfindAStar;
-        List<Vector2> path;
         MapBuilder mapBuilder = null;
 
         public ModelManager(Game game, SplashScreen splashScreen) : base(game) {
@@ -79,7 +77,7 @@ namespace BatteryDerby {
                 bBuiltMap = true;
             }
 
-            // need to keep hold of the players tank
+            // need to keep hold of the players model
             playerModel = new Player (
 	              Game.Content.Load<Model> (@"Models/Car/Player/CarModel2"),
 	              ((Game1)Game).GraphicsDevice,
@@ -93,11 +91,13 @@ namespace BatteryDerby {
                 Game.Content.Load<Model>(@"Models/Car/Enemy/CarModel2"),
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
-                new Vector3(500, 0, -400),
+                //new Vector3(500, 0, -400),
+                new Vector3(50, 0, 50),
                 playerModel,
                 uiManager);
             models.Add(enemy);
 
+            /*
             enemy = new Enemy(
                 Game.Content.Load<Model>(@"Models/Car/Enemy/CarModel2"),
                 ((Game1)Game).GraphicsDevice,
@@ -115,6 +115,7 @@ namespace BatteryDerby {
                 playerModel,
                 uiManager);
             models.Add(enemy);
+            */
 
             base.LoadContent();
         }
@@ -127,15 +128,20 @@ namespace BatteryDerby {
                 BasicModel model = models[i];
 
                 model.Update(gameTime);
-
                 model.models = models;
+
+                if (model.GetType() == typeof(Enemy) && ((Enemy)model).aStarPaths.Count == 0) {
+                    List<Vector2> pathToTarget = FindPath(mapBuilder.GetQuantisation(model.translation.Translation), mapBuilder.GetQuantisation(playerModel.translation.Translation));
+                    ((Enemy)model).aStarPaths.AddRange(pathToTarget);
+                }
             }
 
             //partition.detectPartition(models);
             if (models.Count > 0) {
-                collisionHandler.detectCollisions(models);
+            //    collisionHandler.detectCollisions(models);
             }
 
+            // TODO: combine loop with detect collisions loop
             // remove any objects incase collision caused removal to trigger
             for (int i = 0; i < models.Count; i++) {
                 BasicModel model = models[i];
@@ -148,6 +154,11 @@ namespace BatteryDerby {
             base.Update(gameTime);
         }
 
+        public List<Vector2> FindPath(Point from, Point to) {
+            pathfindAStar = new PathfindAStar(mapBuilder);
+            return pathfindAStar.FindPath(from, to);
+        }
+
         private void SpawnModels(GameTime gameTime) {
 
             float elapsedTime = (float) gameTime.ElapsedGameTime.TotalSeconds;
@@ -156,7 +167,7 @@ namespace BatteryDerby {
 
             // Spawn Pickup items every 2 seconds
             if (secondsSinceLastItem >= 1.5f) {
-                SpawnItems();
+                //SpawnItems();
                 secondsSinceLastItem = 0;
 
             } else {
@@ -170,7 +181,7 @@ namespace BatteryDerby {
             }
 
             if (secondsSinceLastEnemy >= timeToSpawnEnemy) {
-                SpawnEnemys();
+                //SpawnEnemys();
                 enemySpawnCount++;
                 secondsSinceLastEnemy = 0;
             } else {

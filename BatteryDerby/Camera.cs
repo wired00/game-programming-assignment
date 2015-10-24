@@ -18,15 +18,9 @@ namespace BatteryDerby {
         public Vector3 cameraPosition { get; protected set; }
         Vector3 cameraDirection;
         Vector3 cameraUp;
-
-        State currentState = State.Walking;
-
+        
         MouseState prevMouseState;
-
-        /// Camera states enumerator
-        enum State {
-            Walking
-        }
+       
 
         public Camera(Game game, Vector3 pos, Vector3 target, Vector3 up)
                 : base(game) {
@@ -43,7 +37,7 @@ namespace BatteryDerby {
                 MathHelper.PiOver4, 
                 (float)Game.Window.ClientBounds.Width / 
                 (float)Game.Window.ClientBounds.Height, 
-                1, 3000);
+                1, 2000);
         }
 
         public override void Initialize() {
@@ -70,10 +64,7 @@ namespace BatteryDerby {
                 cameraPosition + cameraDirection,
                 cameraUp);
         }
-
-        private bool isWalking() {
-            return currentState == State.Walking;
-        }
+       
 
     }
 

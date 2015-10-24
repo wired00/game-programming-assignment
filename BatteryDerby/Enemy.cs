@@ -15,21 +15,23 @@ namespace BatteryDerby {
 
         public static int MAX_HEALTH = 100;
 
-		Player playerTank;
-
-        UIManager uiManager;
+		Player playerModel;
         
         public int health { get; set; }
 
-        Matrix rotation = Matrix.Identity; // tank rotationss
+        Matrix rotation = Matrix.Identity;
 
         state currentState = state.Resting;
         
-        float moveSpeed = 20f;
+        float moveSpeed = 50f;
         float jumpVelocity = 0f;
         static float JUMP_HEIGHT = 35f;
         private BasicModel knockbackModelPosition;
 
+        public List<Vector2> aStarPaths { get; set; }
+
+        Vector3? seekLocation = null;
+        
         enum state {
             Moving,
             Resting,
@@ -40,44 +42,54 @@ namespace BatteryDerby {
             Falling
         }
 
-		public Enemy(Model model, GraphicsDevice device, Camera camera, Vector3 position, Player playerTank, UIManager uiManager)
+		public Enemy(Model model, GraphicsDevice device, Camera camera, Vector3 position, Player playerModel, UIManager uiManager)
             : base(model) {
 
 			base.translation.Translation = position;
 
-			this.playerTank = playerTank;
+			this.playerModel = playerModel;
             health = MAX_HEALTH;
             Random rng = new Random();
 
-            this.uiManager = uiManager;
-
             base.tintColour = BasicModel.TINT_BLUE;
+
+            aStarPaths = new List<Vector2>();
 
         }
 
         public override void Update(GameTime gameTime) {
             float elapsedTime = (float) gameTime.ElapsedGameTime.TotalSeconds;
 
-            Vector3 currentTankPosition = translation.Translation;
+            Vector3 currentPosition = translation.Translation;
 
             Vector3? targetPlayer = GetNearestPlayer();
 
             if (targetPlayer.HasValue) {
                 // if damaged, first flee from player then seek health box
+                /*
                 if (health < MAX_HEALTH) {
                     Vector3? targetItem = GetNearestEnergyItem();
 
                     // if safe distance from player then seek health, otherwise flee
-                    if (Vector3.Distance((Vector3)targetPlayer, currentTankPosition) > 200f && targetItem.HasValue) {
-                        HandleRotation((Vector3)targetItem, currentTankPosition);
-                        HandleSeek((Vector3)targetItem, currentTankPosition, gameTime);
+                    if (Vector3.Distance((Vector3)targetPlayer, currentPosition) > 200f && targetItem.HasValue) {
+                        HandleRotation((Vector3)targetItem, currentPosition);
+                        HandleSeek((Vector3)targetItem, currentPosition, gameTime);
                     } else {
-                        HandleFlee((Vector3)targetPlayer, currentTankPosition, gameTime);
+                        HandleFlee((Vector3)targetPlayer, currentPosition, gameTime);
                     }
                 } else {
-                    HandleRotation((Vector3)targetPlayer, currentTankPosition);
-                    HandleSeek((Vector3)targetPlayer, currentTankPosition, gameTime);
+                    HandleRotation((Vector3)targetPlayer, currentPosition);
+
+                    HandleAStarSeek((Vector3)targetPlayer, currentPosition, gameTime);
+
+                    //HandleSeek((Vector3)targetPlayer, currentModelPosition, gameTime);
                 }
+                */
+
+                HandleRotation((Vector3)targetPlayer, currentPosition);
+
+                HandleAStarSeek((Vector3)targetPlayer, currentPosition, gameTime);
+
             }
 
             if (this.knockbackModelPosition != null) {
@@ -140,8 +152,8 @@ namespace BatteryDerby {
 
         }
         
-        private void HandleRotation(Vector3 targetPosition, Vector3 currentTankPosition) {
-            rotation = RotateToFace((Vector3)targetPosition, currentTankPosition, Vector3.Up);
+        private void HandleRotation(Vector3 targetPosition, Vector3 currentModelPosition) {
+            rotation = RotateToFace((Vector3)targetPosition, currentModelPosition, Vector3.Up);
         }
 
         Matrix RotateToFace(Vector3 targetPosition, Vector3 currentPosition, Vector3 up) {
@@ -156,34 +168,53 @@ namespace BatteryDerby {
             return newRotation;
         }
 
+        // TODO: move to model manager.
         private void MovementClamp() {
             float currentX = translation.Translation.X;
             float currentZ = translation.Translation.Z;
             float currentY = translation.Translation.Y;
 
             // clamp player within game area
-            currentX = MathHelper.Clamp(currentX, -650f, 650f);
-            currentZ = MathHelper.Clamp(currentZ, -550f, 250f);
+            //currentX = MathHelper.Clamp(currentX, -650f, 650f);
+            //currentZ = MathHelper.Clamp(currentZ, -650f, 450f);
 
             translation.Translation = new Vector3(currentX, currentY, currentZ);
         }
 
-        private void HandleSeek(Vector3 targetPosition, Vector3 currentTankPosition, GameTime gameTime) {
-            float elapsedTime = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 80f;   
-            
+        private void HandleSeek(Vector3 targetPosition, Vector3 currentModelPosition, GameTime gameTime) {
+            float elapsedTime = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 80f;
+
             if ((isResting() || isMoving())) {
-                if (Vector3.Distance(targetPosition, currentTankPosition) > 10f) {
-                    translation.Translation += Vector3.Normalize(targetPosition - currentTankPosition) * moveSpeed * elapsedTime;
+                if (Vector3.Distance(targetPosition, currentModelPosition) > 10f) {
+                    translation.Translation += Vector3.Normalize(targetPosition - currentModelPosition) * moveSpeed * elapsedTime;
                     currentState = state.Moving;
+                } else {
+                    currentState = state.Resting;
                 }
+            } 
+
+        }
+
+        private void HandleAStarSeek(Vector3 targetPlayer, Vector3 currentModelPosition, GameTime gameTime) {
+            // Implement a quasi queue. Issue a move command to enemy, wait for the enemy to become resting again, then issue another command.
+            // this way we process through the path list
+            if (this.isResting() && aStarPaths.Count() > 0) {
+                seekLocation = new Vector3(aStarPaths.First().X, playerModel.translation.Translation.Y, aStarPaths.First().Y);
+                aStarPaths.RemoveAt(0);
+
+                Console.WriteLine(aStarPaths.Count + ": " + seekLocation);
+
+                HandleSeek(seekLocation.Value, currentModelPosition, gameTime);
+            } else if (this.isMoving() && seekLocation.HasValue) {
+                HandleSeek(seekLocation.Value, currentModelPosition, gameTime);
             }
 
         }
 
-        private void HandleFlee(Vector3 targetPosition, Vector3 currentTankPosition, GameTime gameTime) {
+        private void HandleFlee(Vector3 targetPosition, Vector3 currentModelPosition, GameTime gameTime) {
             float elapsedTime = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 80f;
 
-            translation.Translation += Vector3.Normalize(currentTankPosition - targetPosition) * moveSpeed * elapsedTime;
+            translation.Translation += Vector3.Normalize(currentModelPosition - targetPosition) * moveSpeed * elapsedTime;
         }
 
         public override void Draw(GraphicsDevice device, Camera camera) {

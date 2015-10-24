@@ -181,69 +181,70 @@ namespace BatteryDerby {
             NodeRecord startNode = searchNodes[startPoint.X, startPoint.Y];
             NodeRecord goalNode = searchNodes[endPoint.X, endPoint.Y];
 
-            startNode.inOpenList = true;
+            if (startNode != null) {
 
-            startNode.distanceToGoal = Heuristic(startPoint, endPoint);
-            startNode.costSoFar = 0;
+                startNode.inOpenList = true;
 
-            open.Add(startNode);
+                startNode.distanceToGoal = Heuristic(startPoint, endPoint);
+                startNode.costSoFar = 0;
 
-            // loop through our open list items...
-            while (open.Count > 0) {
+                open.Add(startNode);
 
-                // work with smallest distance node first. As per Artificial Intelligence for games chapter 4
-                NodeRecord currentNode = SmallestDistanceNode();
+                // loop through our open list items...
+                while (open.Count > 0) {
 
-                // terminate if no nodes in open list.
-                if (currentNode == null) {
-                    break;
-                }
+                    // work with smallest distance node first. As per Artificial Intelligence for games chapter 4
+                    NodeRecord currentNode = SmallestDistanceNode();
 
-                // if node is goal node, then build the path, we're done.
-                if (currentNode == goalNode) {
-                    // Trace our path back to the start.
-                    return FindFinalPath(startNode, goalNode);
-                }
-
-                // get all current node's connections
-                for (int i = 0; i < currentNode.connections.Length; i++) {
-                    NodeRecord connection = currentNode.connections[i];
-
-                    // check if its a movable area
-                    if (connection == null || connection.movable == false) {
-                        continue;
+                    // terminate if no nodes in open list.
+                    if (currentNode == null) {
+                        break;
                     }
 
-                    float distanceTraveled = currentNode.costSoFar + 1;
-
-                    // estimate distance from this node to goal
-                    float heuristic = Heuristic(connection.position, endPoint);
-
-                    if (connection.inOpenList == false && connection.inClosedList == false) {
-                        // set connection cost to what we just got
-                        connection.costSoFar = distanceTraveled;
-                        // set connections distance to goal
-                        connection.distanceToGoal = distanceTraveled + heuristic;
-                        
-                        connection.parentNode = currentNode;
-                        
-                        connection.inOpenList = true;
-                        open.Add(connection);
+                    // if node is goal node, then build the path, we're done.
+                    if (currentNode == goalNode) {
+                        // Trace our path back to the start.
+                        return FindFinalPath(startNode, goalNode);
                     }
 
-                    else if (connection.inOpenList || connection.inClosedList) {
+                    // get all current node's connections
+                    for (int i = 0; i < currentNode.connections.Length; i++) {
+                        NodeRecord connection = currentNode.connections[i];
 
-                        if (connection.costSoFar > distanceTraveled) {
+                        // check if its a movable area
+                        if (connection == null || connection.movable == false) {
+                            continue;
+                        }
+
+                        float distanceTraveled = currentNode.costSoFar + 1;
+
+                        // estimate distance from this node to goal
+                        float heuristic = Heuristic(connection.position, endPoint);
+
+                        if (connection.inOpenList == false && connection.inClosedList == false) {
+                            // set connection cost to what we just got
                             connection.costSoFar = distanceTraveled;
+                            // set connections distance to goal
                             connection.distanceToGoal = distanceTraveled + heuristic;
 
                             connection.parentNode = currentNode;
+
+                            connection.inOpenList = true;
+                            open.Add(connection);
+                        } else if (connection.inOpenList || connection.inClosedList) {
+
+                            if (connection.costSoFar > distanceTraveled) {
+                                connection.costSoFar = distanceTraveled;
+                                connection.distanceToGoal = distanceTraveled + heuristic;
+
+                                connection.parentNode = currentNode;
+                            }
                         }
                     }
-                }
 
-                open.Remove(currentNode);
-                currentNode.inClosedList = true;
+                    open.Remove(currentNode);
+                    currentNode.inClosedList = true;
+                }
             }
 
             return new List<Vector2>();
