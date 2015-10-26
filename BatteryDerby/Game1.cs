@@ -71,7 +71,7 @@ namespace BatteryDerby {
         }
 
         protected override void Initialize() {
-            camera = new Camera(this, new Vector3(580, 1200, 1090), new Vector3(580, -2800, -500), Vector3.Up);
+            camera = new Camera(this, new Vector3(670, 1200, 1090), new Vector3(670, -2800, -500), Vector3.Up);
             Components.Add(camera);
 
             // Splash screen component

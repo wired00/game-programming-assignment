@@ -31,36 +31,35 @@ namespace BatteryDerby {
         };
         */
         private int[,] layout = new int[,] {
-            { 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, },
-            { 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, },
-            { 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, },
-            { 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, },
-            { 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, },
-            { 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, },
-            { 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, },
-            { 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, },
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
-            { 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, },
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
-            { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, },
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            { 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0,},
+            { 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            { 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,},
+            { 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0,},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
         };
 
+        private int[,] layoutObstacleModels = new int[,] {
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            { 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0,},
+            { 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            { 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,},
+            { 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0,},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+        };
         
-
-    private int[,] layoutObstacleModels = new int[,] {
-        { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, },
-        { 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, },
-        { 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, },
-        { 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, },
-        { 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, },
-        { 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, },
-        { 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, },
-        { 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, },
-        { 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, },
-        { 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, },
-        { 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, },
-        { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, },
-    };
     
         /*
         private int[,] layout = new int[,] {
@@ -127,7 +126,7 @@ namespace BatteryDerby {
             mapModels.AddRange(RenderTiles());
 
             /// add map obstacle models
-            //mapModels.AddRange(RenderObstacles());
+            mapModels.AddRange(RenderObstacles());
 
             return mapModels;
         }
@@ -143,8 +142,8 @@ namespace BatteryDerby {
                     // dynamically load tile texture based on map index
                     MapTile tile = new MapTile(
                             Game.Content.Load<Model>(textures[tileIndex]),
-                            new Vector3((TILE_SIZE * i), 0, (TILE_SIZE * j)));
-                            //new Vector3((TILE_SIZE * i), 0, (TILE_SIZE * j)));
+                            new Vector3((TILE_SIZE * i), 0, (TILE_SIZE * j)),
+                            tileIndex);
 
                     // TODO: ran out of time building unmovable tile/model, instead if 1 tile index, then just tint red, to indicate cannot move.
                     if (tileIndex == 1) {
@@ -159,20 +158,24 @@ namespace BatteryDerby {
             return tiles;
         }
 
-        private List<Pickup> RenderObstacles() {
-            List<Pickup> obstacleModels = new List<Pickup>();
+        private List<Tire> RenderObstacles() {
+            List<Tire> obstacleModels = new List<Tire>();
 
             for (int i = 0; i < Width; i++) {
                 for (int j = 0; j < Height; j++) {
 
-                    int tileIndex = layoutObstacleModels[j, i];
+                    int modelIndex = layoutObstacleModels[j, i];
 
-                    // dynamically load map obstacle models
-                    Pickup pickup = new Pickup(
-                            Game.Content.Load<Model>(@"Models/Vehicles/MonsterTruck"),
-                            new Vector3((TILE_SIZE * i) - 576, 0, (TILE_SIZE * j) - 720));
+                    bool walkable = (modelIndex == 1) ? false : true;
 
-                    obstacleModels.Add(pickup);
+                    if (!walkable) {
+                        // dynamically load map obstacle models
+                        Tire tireObstacle = new Tire(
+                                Game.Content.Load<Model>(@"Models/Obstacles/WallSectionL"),
+                                new Vector3((TILE_SIZE * i), 0, (TILE_SIZE * j)));
+
+                        obstacleModels.Add(tireObstacle);
+                    }
 
                 }
             }

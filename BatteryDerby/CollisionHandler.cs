@@ -202,6 +202,19 @@ namespace BatteryDerby {
                     this.game.ChangeGameState(Game1.GameState.END, 1); // change game state
                     //score.survivalTime = game.gameTime.TotalGameTime.Seconds;
                 }
+
+            } else if (modelA.GetType() == typeof(Player) && modelB.GetType() == typeof(Tire)) {
+                ///
+                /// COLLISION - PLAYER AND TIRE OBSTACLE
+                ///
+                Player playerModel = (Player)modelA;
+                Tire tireModel = (Tire)modelB;
+
+                playerModel.KnockBackFrom(tireModel); // knockback player from obstacle
+
+                if (audioManager.crash.State != SoundState.Playing) {
+                    audioManager.crash.Play();
+                }
             }
         }
 
@@ -238,7 +251,7 @@ namespace BatteryDerby {
         /// <param name="model"></param>
         /// <returns></returns>
         private bool validModelType(BasicModel model) {
-            return model.GetType() != typeof(MapTile); // ignore collisions with the ground
+            return (model.GetType() != typeof(MapTile));
         }
 
     }

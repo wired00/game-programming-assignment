@@ -40,9 +40,11 @@
     <Compile Include="Camera.cs" />
     <Compile Include="BasicModel.cs" />
     <Compile Include="CollisionHandler.cs" />
+    <Compile Include="MonsterTruck.cs" />
     <Compile Include="MapBuilder.cs" />
     <Compile Include="MapTile.cs" />
     <Compile Include="PathfindAStar.cs" />
+    <Compile Include="Tire.cs" />
     <Compile Include="Pickup.cs" />
     <Compile Include="Ground.cs" />
     <Compile Include="Game1.cs" />
@@ -232,12 +234,6 @@
     <Content Include="Content\Models\Vehicles\Buggy.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Models\Vehicles\MonsterTruck.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\Models\Vehicles\PlayerCar.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Content\Models\Vehicles\TextureBuggy.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -254,6 +250,25 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Models\Vehicles\TexturePlayerCar_0.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Models\Vehicles\PlayerCar2.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Models\Vehicles\PlayerCar_0.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Models\Vehicles\MonsterTruck2.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Models\Vehicles\Truck.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Models\Vehicles\Truck_0.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

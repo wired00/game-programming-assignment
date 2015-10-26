@@ -79,7 +79,7 @@ namespace BatteryDerby {
 
             // need to keep hold of the players model
             playerModel = new Player (
-	              Game.Content.Load<Model> (@"Models/Vehicles/PlayerCar"),
+	              Game.Content.Load<Model> (@"Models/Vehicles/PlayerCar2"),
 	              ((Game1)Game).GraphicsDevice,
 	              ((Game1)Game).camera,
                   ((Game1)Game).graphics,
@@ -92,10 +92,20 @@ namespace BatteryDerby {
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
                 //new Vector3(500, 0, -400),
-                new Vector3(50, 0, 50),
+                new Vector3(300, 0, 300),
                 playerModel,
                 uiManager);
             models.Add(enemy);
+
+            MonsterTruck enemyTruck = new MonsterTruck(
+                Game.Content.Load<Model>(@"Models/Vehicles/MonsterTruck2"),
+                ((Game1)Game).GraphicsDevice,
+                ((Game1)Game).camera,
+                //new Vector3(500, 0, -400),
+                new Vector3(400, 0, 100),
+                playerModel,
+                uiManager);
+            models.Add(enemyTruck);
 
             /*
             enemy = new Enemy(
@@ -134,11 +144,16 @@ namespace BatteryDerby {
                     List<Vector2> pathToTarget = FindPath(mapBuilder.GetQuantisation(model.translation.Translation), mapBuilder.GetQuantisation(playerModel.translation.Translation));
                     ((Enemy)model).aStarPaths.AddRange(pathToTarget);
                 }
+
+                if (model.GetType() == typeof(MonsterTruck) && ((MonsterTruck)model).aStarPaths.Count == 0) {
+                    List<Vector2> pathToTarget = FindPath(mapBuilder.GetQuantisation(model.translation.Translation), mapBuilder.GetQuantisation(playerModel.translation.Translation));
+                    ((MonsterTruck)model).aStarPaths.AddRange(pathToTarget);
+                }
             }
 
             //partition.detectPartition(models);
             if (models.Count > 0) {
-            //    collisionHandler.detectCollisions(models);
+                collisionHandler.detectCollisions(models);
             }
 
             // TODO: combine loop with detect collisions loop
@@ -167,7 +182,7 @@ namespace BatteryDerby {
 
             // Spawn Pickup items every 2 seconds
             if (secondsSinceLastItem >= 1.5f) {
-                //SpawnItems();
+                SpawnItems();
                 secondsSinceLastItem = 0;
 
             } else {
@@ -210,7 +225,7 @@ namespace BatteryDerby {
             Random rnd = new Random();
             models.Add(new Pickup(
                 Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
-                new Vector3(rnd.Next(-400, 400), 30, rnd.Next(-350, 250))));
+                new Vector3(rnd.Next(200, 1200), 30, rnd.Next(350, 650))));
 
         }
 
@@ -231,9 +246,9 @@ namespace BatteryDerby {
 
             // Spawn left or right of map?
             if (rnd.Next(1, 10) > 5) {
-                return new Vector3(-700, 30, rnd.Next(-400, 400));
+                return new Vector3(50, 30, rnd.Next(50, 400));
             } else {
-                return new Vector3(700, 30, rnd.Next(-400, 400));
+                return new Vector3(700, 30, rnd.Next(50, 400));
             }
         }
 

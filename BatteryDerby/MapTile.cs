@@ -10,10 +10,14 @@ using Microsoft.Xna.Framework.Graphics;
 /// </summary>
 namespace BatteryDerby {
     public class MapTile : BasicModel {
-        public MapTile(Model model, Vector3 position)
+
+        public bool walkable { get; }
+
+        public MapTile(Model model, Vector3 position, int tileIndex)
             : base(model) {
 
             translation.Translation = position;
+            this.walkable = (tileIndex == 1) ? false : true;
 
         }
    

@@ -335,7 +335,7 @@ namespace BatteryDerby {
         }
 
         public override Matrix GetWorld() {
-            return Matrix.CreateScale(6f) * rotation * translation;
+            return Matrix.CreateScale(4f) * rotation * translation;
         }
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace BatteryDerby {
         /// TODO: Convert this to do a jump mechanic at same time.
         /// </summary>
         /// <param name=""></param>
-        internal void KnockBackFrom(BasicModel model) {
-            translation.Translation += Vector3.Normalize(translation.Translation - model.translation.Translation) * 50f;
+        public void KnockBackFrom(BasicModel model) {
+            translation.Translation += Vector3.Normalize(translation.Translation - model.translation.Translation) * 30f;
 
             // some reason Y can go below 0, make sure Y always at identity Y
             if (translation.Translation.Y < Matrix.Identity.Translation.Y) {
