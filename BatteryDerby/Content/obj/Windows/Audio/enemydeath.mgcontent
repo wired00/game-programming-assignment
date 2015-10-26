@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/BatteryDerby/Content/Audio/enemydeath.wav</SourceFile>
-  <SourceTime>2015-10-24T09:26:08.2567257+11:00</SourceTime>
-  <DestFile>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/BatteryDerby/Content/bin/Windows/Audio/enemydeath.xnb</DestFile>
-  <DestTime>2015-10-24T10:19:57.9467081+11:00</DestTime>
+  <SourceFile>C:/Users/philt/Documents/Visual Studio 2015/Projects/game-programming-assignment/BatteryDerby/Content/Audio/enemydeath.wav</SourceFile>
+  <SourceTime>2015-10-23T20:05:51+11:00</SourceTime>
+  <DestFile>C:/Users/philt/Documents/Visual Studio 2015/Projects/game-programming-assignment/BatteryDerby/Content/bin/Windows/Audio/enemydeath.xnb</DestFile>
+  <DestTime>2015-10-26T19:22:41.0855095+11:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2015-04-30T03:14:44+10:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

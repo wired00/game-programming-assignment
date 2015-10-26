@@ -102,7 +102,7 @@ namespace BatteryDerby {
             if (health < MAX_HEALTH) {
                 base.tintColour = BasicModel.TINT_RED;
             } else {
-                base.tintColour = BasicModel.TINT_BLUE;
+                //base.tintColour = BasicModel.TINT_BLUE;
             }
 
             base.Update(gameTime);
@@ -222,7 +222,7 @@ namespace BatteryDerby {
         }
 
         public override Matrix GetWorld() {
-            return Matrix.CreateScale(2f) * rotation * translation;
+            return Matrix.CreateScale(6f) * rotation * translation;
         }
 
         /// <summary>

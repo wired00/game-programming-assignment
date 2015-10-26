@@ -33,19 +33,19 @@ namespace BatteryDerby {
         private int[,] layout = new int[,] {
             { 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, },
             { 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, },
-            { 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, },
+            { 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, },
+            { 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, },
+            { 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, },
+            { 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, },
+            { 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, },
+            { 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, },
             { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, },
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, },
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, },
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, },
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
+            { 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, },
             { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
             { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, },
         };
 
-        /*
+        
 
     private int[,] layoutObstacleModels = new int[,] {
         { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, },
@@ -61,7 +61,7 @@ namespace BatteryDerby {
         { 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, },
         { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, },
     };
-    */
+    
         /*
         private int[,] layout = new int[,] {
             { 0, 0, 0, 0, },
@@ -69,13 +69,13 @@ namespace BatteryDerby {
             { 0, 1, 1, 0, },
             { 0, 1, 1, 0, },
         };*/
-
+        /*
         private int[,] layoutObstacleModels = new int[,] {
+            { 1, 0, 0, 0, },
             { 0, 0, 0, 0, },
+            { 0, 1, 0, 0, },
             { 0, 0, 0, 0, },
-            { 0, 0, 0, 0, },
-            { 0, 0, 0, 0, },
-        };
+        };*/
 
         public int Width {
             get { return layout.GetLength(1); }
@@ -169,7 +169,7 @@ namespace BatteryDerby {
 
                     // dynamically load map obstacle models
                     Pickup pickup = new Pickup(
-                            Game.Content.Load<Model>(@"Models/Obstacles/WallSectionL"),
+                            Game.Content.Load<Model>(@"Models/Vehicles/MonsterTruck"),
                             new Vector3((TILE_SIZE * i) - 576, 0, (TILE_SIZE * j) - 720));
 
                     obstacleModels.Add(pickup);

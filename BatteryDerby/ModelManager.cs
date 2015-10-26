@@ -79,7 +79,7 @@ namespace BatteryDerby {
 
             // need to keep hold of the players model
             playerModel = new Player (
-	              Game.Content.Load<Model> (@"Models/Car/Player/CarModel2"),
+	              Game.Content.Load<Model> (@"Models/Vehicles/PlayerCar"),
 	              ((Game1)Game).GraphicsDevice,
 	              ((Game1)Game).camera,
                   ((Game1)Game).graphics,
@@ -88,7 +88,7 @@ namespace BatteryDerby {
 			models.Add(playerModel);
 
             Enemy enemy = new Enemy(
-                Game.Content.Load<Model>(@"Models/Car/Enemy/CarModel2"),
+                Game.Content.Load<Model>(@"Models/Vehicles/Buggy"),
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
                 //new Vector3(500, 0, -400),

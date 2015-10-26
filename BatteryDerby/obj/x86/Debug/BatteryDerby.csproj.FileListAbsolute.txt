@@ -166,3 +166,12 @@ G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\BatteryDer
 G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\BatteryDerby\obj\x86\Debug\BatteryDerby.csprojResolveAssemblyReference.cache
 G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\BatteryDerby\obj\x86\Debug\Battery Derby.exe
 G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\BatteryDerby\obj\x86\Debug\Battery Derby.pdb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\BatteryDerby\bin\Windows\Debug\Content\Models\Vehicles\Buggy.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\BatteryDerby\bin\Windows\Debug\Content\Models\Vehicles\MonsterTruck.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\BatteryDerby\bin\Windows\Debug\Content\Models\Vehicles\PlayerCar.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\BatteryDerby\bin\Windows\Debug\Content\Models\Vehicles\TextureBuggy.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\BatteryDerby\bin\Windows\Debug\Content\Models\Vehicles\TextureBuggy_0.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\BatteryDerby\bin\Windows\Debug\Content\Models\Vehicles\TextureMonsterTruck.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\BatteryDerby\bin\Windows\Debug\Content\Models\Vehicles\TextureMonsterTruck_0.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\BatteryDerby\bin\Windows\Debug\Content\Models\Vehicles\TexturePlayerCar.xnb
+C:\Users\philt\Documents\Visual Studio 2015\Projects\game-programming-assignment\BatteryDerby\bin\Windows\Debug\Content\Models\Vehicles\TexturePlayerCar_0.xnb
