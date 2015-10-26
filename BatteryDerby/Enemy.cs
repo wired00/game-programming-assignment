@@ -86,9 +86,14 @@ namespace BatteryDerby {
                 }
                 */
 
-                HandleRotation((Vector3)targetPlayer, currentPosition);
+                if (targetPlayer.HasValue) {
+                    HandleAStarSeek(targetPlayer.Value, currentPosition, gameTime);
+                }
 
-                HandleAStarSeek((Vector3)targetPlayer, currentPosition, gameTime);
+                if (seekLocation.HasValue) {
+                    HandleRotation(seekLocation.Value, currentPosition);
+                }
+                
 
             }
 
@@ -200,9 +205,7 @@ namespace BatteryDerby {
             // this way we process through the path list
             if (this.isResting() && aStarPaths.Count() > 0) {
                 seekLocation = new Vector3(aStarPaths.First().X, playerModel.translation.Translation.Y, aStarPaths.First().Y);
-                aStarPaths.RemoveAt(0);
-
-                Console.WriteLine(aStarPaths.Count + ": " + seekLocation);
+                aStarPaths.RemoveAt(0);              
 
                 HandleSeek(seekLocation.Value, currentModelPosition, gameTime);
             } else if (this.isMoving() && seekLocation.HasValue) {

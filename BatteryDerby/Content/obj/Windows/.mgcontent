@@ -4,13 +4,13 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/philt/Documents/Visual Studio 2015/Projects/game-programming-assignment/BatteryDerby/Content/Audio/accelerate.wav</File>
-    <File>C:/Users/philt/Documents/Visual Studio 2015/Projects/game-programming-assignment/BatteryDerby/Content/Audio/bgm.wav</File>
-    <File>C:/Users/philt/Documents/Visual Studio 2015/Projects/game-programming-assignment/BatteryDerby/Content/Audio/boost.wav</File>
-    <File>C:/Users/philt/Documents/Visual Studio 2015/Projects/game-programming-assignment/BatteryDerby/Content/Audio/charge.wav</File>
-    <File>C:/Users/philt/Documents/Visual Studio 2015/Projects/game-programming-assignment/BatteryDerby/Content/Audio/crash.wav</File>
-    <File>C:/Users/philt/Documents/Visual Studio 2015/Projects/game-programming-assignment/BatteryDerby/Content/Audio/enemydeath.wav</File>
-    <File>C:/Users/philt/Documents/Visual Studio 2015/Projects/game-programming-assignment/BatteryDerby/Content/Audio/idleloop.wav</File>
-    <File>C:/Users/philt/Documents/Visual Studio 2015/Projects/game-programming-assignment/BatteryDerby/Content/Audio/revving.wav</File>
+    <File>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/BatteryDerby/Content/Audio/accelerate.wav</File>
+    <File>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/BatteryDerby/Content/Audio/bgm.wav</File>
+    <File>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/BatteryDerby/Content/Audio/boost.wav</File>
+    <File>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/BatteryDerby/Content/Audio/charge.wav</File>
+    <File>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/BatteryDerby/Content/Audio/crash.wav</File>
+    <File>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/BatteryDerby/Content/Audio/enemydeath.wav</File>
+    <File>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/BatteryDerby/Content/Audio/idleloop.wav</File>
+    <File>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/BatteryDerby/Content/Audio/revving.wav</File>
   </SourceFiles>
 </SourceFileCollection>
