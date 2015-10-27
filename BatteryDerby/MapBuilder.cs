@@ -120,7 +120,7 @@ namespace BatteryDerby
                 for (int i = 0; i < 14; i++)
                 {
                     layoutObstacleModels[i, j] = line[j].Substring(i, 1);
-                    Console.WriteLine(i + " " + j + "=" + layoutObstacleModels[i, j]);
+                    //Console.WriteLine(i + " " + j + "=" + layoutObstacleModels[i, j]);
                 }
             }
 
