@@ -187,3 +187,5 @@ G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\BatteryDer
 G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\BatteryDerby\bin\Windows\Debug\Content\Models\Vehicles\MonsterTruck2.xnb
 G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\BatteryDerby\bin\Windows\Debug\Content\Models\Vehicles\Truck.xnb
 G:\Documents\@@Working\Repositories\uts\game-programming\Assignment 1\BatteryDerby\bin\Windows\Debug\Content\Models\Vehicles\Truck_0.xnb
+C:\Users\Kyron\Documents\GitHub\game-programming-assignment\BatteryDerby\obj\x86\Debug\Battery Derby.exe
+C:\Users\Kyron\Documents\GitHub\game-programming-assignment\BatteryDerby\obj\x86\Debug\Battery Derby.pdb
