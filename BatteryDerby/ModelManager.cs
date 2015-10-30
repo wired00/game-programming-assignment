@@ -14,6 +14,10 @@ namespace BatteryDerby {
 
         CollisionHandler collisionHandler;// = new CollisionHandler(((Game1)Game).audioManager);
 
+        public const int MINX = 96;
+        public const int MAXX = 1440;
+        public const int MINY = 96;
+        public const int MAXY = 1056;
         float secondsSinceLastItem = 0;
         float secondsSinceLastEnemy = 0;
         int enemySpawnCount = 0;
@@ -63,11 +67,11 @@ namespace BatteryDerby {
 
             models.Add(new Pickup(
                 Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
-                new Vector3(rnd.Next(500, 800), 30, rnd.Next(350, 550))));
+                new Vector3(rnd.Next(MINX, MAXX), 30, rnd.Next(MINY, MAXY))));
 
             models.Add(new Pickup(
                 Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
-                new Vector3(rnd.Next(500, 800), 30, rnd.Next(350, 550))));
+                new Vector3(rnd.Next(MINX, MAXX), 30, rnd.Next(MINY, MAXY))));
 
             ///
             /// Build a map using tiles
@@ -239,7 +243,7 @@ namespace BatteryDerby {
             Random rnd = new Random();
             models.Add(new Pickup(
                 Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
-                new Vector3(rnd.Next(200, 1200), 30, rnd.Next(350, 650))));
+                new Vector3(rnd.Next(MINX, MAXX), 30, rnd.Next(MINY, MAXY))));
 
         }
 
