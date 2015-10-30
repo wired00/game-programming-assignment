@@ -95,7 +95,7 @@ namespace BatteryDerby {
                   ((Game1)Game).uiManager,
                   ((Game1)Game).audioManager);
 			models.Add(playerModel);
-
+            
             Enemy enemy = new Enemy(
                 Game.Content.Load<Model>(@"Models/Vehicles/BuggyFullHP"),
                 ((Game1)Game).GraphicsDevice,
@@ -107,7 +107,7 @@ namespace BatteryDerby {
             models.Add(enemy);
 
             MonsterTruck enemyTruck = new MonsterTruck(
-                Game.Content.Load<Model>(@"Models/Vehicles/MonsterTruck"),
+                Game.Content.Load<Model>(@"Models/Vehicles/MonsterTruckFull"),
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
                 //new Vector3(500, 0, -400),
