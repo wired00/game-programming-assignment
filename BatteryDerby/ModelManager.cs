@@ -58,6 +58,9 @@ namespace BatteryDerby {
                 }
             );
 
+            models.Add(new Ground(
+                Game.Content.Load<Model>(@"Models/Ground/Ground")));
+
             models.Add(new Pickup(
                 Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
                 new Vector3(rnd.Next(-400, 400), 30, rnd.Next(-350, 250))));

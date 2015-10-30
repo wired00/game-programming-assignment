@@ -207,7 +207,7 @@ namespace BatteryDerby
                     // dynamically load tile texture based on map index
                     MapTile tile = new MapTile(
                             Game.Content.Load<Model>(textures[tileIndex]),
-                            new Vector3((TILE_SIZE * i), 0, (TILE_SIZE * j)),
+                            new Vector3((TILE_SIZE * i), 3, (TILE_SIZE * j)),
                             tileIndex);
 
                     // TODO: ran out of time building unmovable tile/model, instead if 1 tile index, then just tint red, to indicate cannot move.
