@@ -63,11 +63,11 @@ namespace BatteryDerby {
 
             models.Add(new Pickup(
                 Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
-                new Vector3(rnd.Next(-400, 400), 30, rnd.Next(-350, 250))));
+                new Vector3(rnd.Next(500, 800), 30, rnd.Next(350, 550))));
 
             models.Add(new Pickup(
                 Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
-                new Vector3(rnd.Next(-400, 400), 30, rnd.Next(-350, 250))));
+                new Vector3(rnd.Next(500, 800), 30, rnd.Next(350, 550))));
 
             ///
             /// Build a map using tiles
@@ -177,14 +177,25 @@ namespace BatteryDerby {
             return pathfindAStar.FindPath(from, to);
         }
 
+        private int PickupCount() {
+            int count = 0;
+            foreach (BasicModel i in models) {
+                if(i.GetType() == typeof(Pickup)) count++;
+            }
+
+            return count;
+        }
+
+
         private void SpawnModels(GameTime gameTime) {
 
             float elapsedTime = (float) gameTime.ElapsedGameTime.TotalSeconds;
 
             float spawnModifier = (float) Math.Ceiling(enemySpawnCount / 2f);
 
-            // Spawn Pickup items every 2 seconds
-            if (secondsSinceLastItem >= 1.5f) {
+            // Spawn 
+            //items every 2 seconds
+            if (secondsSinceLastItem >= 1.5f && PickupCount() < 10) {
                 SpawnItems();
                 secondsSinceLastItem = 0;
 
