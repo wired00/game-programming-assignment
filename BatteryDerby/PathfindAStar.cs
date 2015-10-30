@@ -65,7 +65,7 @@ namespace BatteryDerby {
                     NodeRecord node = new NodeRecord();
                     node.position = new Point(x, y);
 
-                    node.movable = map.GetIndex(x, y) == 0;
+                    node.movable = map.GetIndex(y, x) == 0;
 
                     if (node.movable == true) {
                         node.connections = new NodeRecord[4];
