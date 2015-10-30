@@ -215,6 +215,18 @@ namespace BatteryDerby {
                 if (audioManager.crash.State != SoundState.Playing) {
                     audioManager.crash.Play();
                 }
+            } else if (modelA.GetType() == typeof(Player) && modelB.GetType() == typeof(Barrier)) {
+                ///
+                /// COLLISION - PLAYER AND BARRIER OBSTACLE
+                ///
+                Player playerModel = (Player)modelA;
+                Barrier barrierModel = (Barrier)modelB;
+
+                playerModel.KnockBackFrom(barrierModel); // knockback player from obstacle
+
+                if (audioManager.crash.State != SoundState.Playing) {
+                    audioManager.crash.Play();
+                }
             }
         }
 

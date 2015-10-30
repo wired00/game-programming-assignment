@@ -40,15 +40,15 @@ namespace BatteryDerby {
         }
 
         public override Matrix GetWorld() {
-            return Matrix.CreateScale(2.5f) * rotation * translation;
+            return Matrix.CreateScale(2f) * rotation * translation;
         }
 
         private void HandleRotate(float elapsedTime) {
-            float wheelRotationValue = elapsedTime * ROTATION_SPEED;
+            float rotationValue = elapsedTime * ROTATION_SPEED;
         
-            Matrix wheelRotation = Matrix.CreateRotationY(wheelRotationValue);
+            Matrix rotation = Matrix.CreateRotationY(rotationValue);
 
-            rotation = wheelRotation * originalRotation;
+            rotation = rotation * originalRotation;
         }
 
     }

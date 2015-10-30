@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 /// <summary>
-/// Players power up pickup model
+/// Tire model
 /// </summary>
 namespace BatteryDerby {
     class Tire : BasicModel {

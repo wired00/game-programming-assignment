@@ -21,7 +21,7 @@ namespace BatteryDerby {
         static float VELOCITY_INCREMENTOR = 0.1f;
         static float VELOCITY_DECREMENTOR = 0.95f;
         
-        Matrix rotation = Matrix.Identity;
+        Matrix playerRotation = Matrix.Identity;
 
         GraphicsDeviceManager graphicsDeviceManager;
 
@@ -86,7 +86,7 @@ namespace BatteryDerby {
 
             // if the model has moved then rotate to face new position
             if (newPosition != currentPlayerPosition) {
-                rotation = RotateToFace(newPosition, currentPlayerPosition, Vector3.Up); // rotate to the future position
+                playerRotation = RotateToFace(newPosition, currentPlayerPosition, Vector3.Up); // rotate to the future position
             }
             
             uiManager.playerHealth = this.health;
@@ -114,7 +114,7 @@ namespace BatteryDerby {
             if (pickPosition.HasValue == true) {
 
                 // cross product method
-                rotation = RotateToFace((Vector3)pickPosition, currentPlayerPosition, Vector3.Up);
+                playerRotation = RotateToFace((Vector3)pickPosition, currentPlayerPosition, Vector3.Up);
 
             }
 
@@ -335,7 +335,7 @@ namespace BatteryDerby {
         }
 
         public override Matrix GetWorld() {
-            return Matrix.CreateScale(4f) * rotation * translation;
+            return Matrix.CreateScale(4f) * playerRotation * translation;
         }
 
         /// <summary>

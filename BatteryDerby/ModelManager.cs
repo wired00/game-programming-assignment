@@ -101,7 +101,7 @@ namespace BatteryDerby {
             models.Add(enemy);
 
             MonsterTruck enemyTruck = new MonsterTruck(
-                Game.Content.Load<Model>(@"Models/Vehicles/MonsterTruck2"),
+                Game.Content.Load<Model>(@"Models/Vehicles/MonsterTruckFull"),
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
                 //new Vector3(500, 0, -400),
