@@ -17,9 +17,9 @@ namespace BatteryDerby
         private List<String> textures = new List<String>();
         private List<String> obstacleModels = new List<String>();
 
-        private string[,] layout = new string[12, 15];
+        private string[,] layout = new string[13, 17];
 
-        private string[,] layoutObstacleModels = new string[12, 15];
+        private string[,] layoutObstacleModels = new string[13, 17];
 
         public int Width
         {
@@ -35,9 +35,10 @@ namespace BatteryDerby
         {
 
             /// keep list of all loaded tile textures.
-            textures.Add(@"Models/Tiles/TileDirt");
-            textures.Add(@"Models/Tiles/TileOil");
-            textures.Add(@"Models/Tiles/TileSkid");
+            textures.Add(@"Models/Tiles/TileDirt"); // index 0
+            textures.Add(@"Models/Tiles/TileOil"); // index 1
+            textures.Add(@"Models/Tiles/TileSkid"); // index 2
+            textures.Add(@"Models/Tiles/TileOil"); // index 3 - TODO: replace with tile representing base of barrier
 
             /// keep list of all possible obstacle models
             obstacleModels.Add(@"Models/Obstacles/WallSectionL");
@@ -46,17 +47,13 @@ namespace BatteryDerby
             //load the map
             string[] tileLines = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + @"/Content/Map1.txt");
 
-            //Console.WriteLine("tileLines.Length: " + tileLines.Length);
             for (int j = 0; j < tileLines.Length; j++) 
             {
-                //Console.WriteLine("line string: " + tileLines[j]);
                 string[] tileLine = tileLines[j].Split(',');
 
-               //Console.WriteLine("tileLine[j].Length: j: " + j + " - " +  tileLine.Length);
                 for (int i = 0; i < tileLine.Length; i++)
                 {
                     layout[j,i] = tileLine[i];
-                    //Console.WriteLine("i: " + i + " j: " + j + " = " + layout[i, j]);
                 }
             }
 
@@ -126,9 +123,7 @@ namespace BatteryDerby
                 {
                     int tileIndex = GetIndex(j, i);
 
-                    //Console.WriteLine("i: " + i + " - j: " + j + " - index: " + tileIndex);
-
-                    // dynamically load tile texture based on map index
+                    // dynamically load tile from "textures" list based on map index
                     MapTile tile = new MapTile(
                             Game.Content.Load<Model>(textures[tileIndex]),
                             new Vector3((TILE_SIZE * i), 3, (TILE_SIZE * j)),
@@ -148,6 +143,10 @@ namespace BatteryDerby
             return tiles;
         }
 
+        private bool isWalkable(int modelIndex) {
+            return (modelIndex == 1 || modelIndex == 3) ? false : true;
+        }
+
         private List<Tire> RenderObstacles()
         {
             List<Tire> obstacleModels = new List<Tire>();
@@ -159,16 +158,15 @@ namespace BatteryDerby
 
                     int modelIndex = GetObstacleIndex(j, i);
 
-                    bool walkable = (modelIndex == 1) ? false : true;
+                    switch (modelIndex) {
+                        case 3:
+                            Tire barrierObstacle = new Tire(
+                                    Game.Content.Load<Model>(@"Models/Obstacles/WallSectionL"),
+                                    new Vector3((TILE_SIZE * i), 0, (TILE_SIZE * j)));
 
-                    if (!walkable)
-                    {
-                        // dynamically load map obstacle models
-                        Tire tireObstacle = new Tire(
-                                Game.Content.Load<Model>(@"Models/Obstacles/WallSectionL"),
-                                new Vector3((TILE_SIZE * i), 0, (TILE_SIZE * j)));
+                            obstacleModels.Add(barrierObstacle);
 
-                        obstacleModels.Add(tireObstacle);
+                            break;
                     }
 
                 }
