@@ -88,7 +88,7 @@ namespace BatteryDerby {
 
             // need to keep hold of the players model
             playerModel = new Player (
-	              Game.Content.Load<Model> (@"Models/Vehicles/PlayerCar2"),
+	              Game.Content.Load<Model> (@"Models/Vehicles/PlayerCarModel"),
 	              ((Game1)Game).GraphicsDevice,
 	              ((Game1)Game).camera,
                   ((Game1)Game).graphics,
@@ -97,7 +97,7 @@ namespace BatteryDerby {
 			models.Add(playerModel);
 
             Enemy enemy = new Enemy(
-                Game.Content.Load<Model>(@"Models/Vehicles/Buggy"),
+                Game.Content.Load<Model>(@"Models/Vehicles/BuggyFullHP"),
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
                 //new Vector3(500, 0, -400),
@@ -107,7 +107,7 @@ namespace BatteryDerby {
             models.Add(enemy);
 
             MonsterTruck enemyTruck = new MonsterTruck(
-                Game.Content.Load<Model>(@"Models/Vehicles/MonsterTruckFull"),
+                Game.Content.Load<Model>(@"Models/Vehicles/MonsterTruck"),
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
                 //new Vector3(500, 0, -400),
