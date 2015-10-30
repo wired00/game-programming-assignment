@@ -20,7 +20,11 @@ namespace BatteryDerby {
         static float MOVE_SPEED = 1f;
         static float VELOCITY_INCREMENTOR = 0.1f;
         static float VELOCITY_DECREMENTOR = 0.95f;
-        
+        public const int MINX = 96;
+        public const int MAXX = 1440;
+        public const int MINY = 96;
+        public const int MAXY = 1056;
+
         Matrix playerRotation = Matrix.Identity;
 
         GraphicsDeviceManager graphicsDeviceManager;
@@ -250,8 +254,8 @@ namespace BatteryDerby {
             float currentZ = newPosition.Z;
 
             // clamp player within game area
-            //currentX = MathHelper.Clamp(currentX, -650f, 650f);
-            //currentZ = MathHelper.Clamp(currentZ, -550f, 250f);
+            currentX = MathHelper.Clamp(currentX, MINX, MAXX);
+            currentZ = MathHelper.Clamp(currentZ, MINY, MAXY);
 
             newPosition = new Vector3(currentX, 0, currentZ);
         }
