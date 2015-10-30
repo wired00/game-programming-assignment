@@ -95,9 +95,9 @@ namespace BatteryDerby
 
         public Point GetQuantisation(Vector3? vector)
         {
-            double tileX = Math.Abs(Math.Floor(Math.Abs(vector.Value.X) / MapBuilder.TILE_SIZE));
-            double tileY = Math.Abs(Math.Floor(Math.Abs(vector.Value.Z) / MapBuilder.TILE_SIZE));
-            /*
+            double tileX = Math.Abs(Math.Floor(Math.Abs(vector.Value.X + 2) / MapBuilder.TILE_SIZE));
+            double tileY = Math.Abs(Math.Floor(Math.Abs(vector.Value.Z + 2) / MapBuilder.TILE_SIZE));
+            
             if (tileX > Width - 1)
             {
                 tileX = Width - 1;
@@ -106,7 +106,7 @@ namespace BatteryDerby
             {
                 tileY = Height - 1;
             }
-            */
+            
             return new Point((int)tileX, (int)tileY);
         }
 
