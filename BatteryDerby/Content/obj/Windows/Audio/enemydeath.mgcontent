@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/BatteryDerby/Content/Audio/enemydeath.wav</SourceFile>
-  <SourceTime>2015-10-24T09:26:08.2567257+11:00</SourceTime>
-  <DestFile>G:/Documents/@@Working/Repositories/uts/game-programming/Assignment 1/BatteryDerby/Content/bin/Windows/Audio/enemydeath.xnb</DestFile>
-  <DestTime>2015-10-26T22:48:48.2548088+11:00</DestTime>
+  <SourceFile>C:/Users/Kyron/Documents/GitHub/game-programming-assignment/BatteryDerby/Content/Audio/enemydeath.wav</SourceFile>
+  <SourceTime>2015-10-27T13:22:29.2668407+11:00</SourceTime>
+  <DestFile>C:/Users/Kyron/Documents/GitHub/game-programming-assignment/BatteryDerby/Content/bin/Windows/Audio/enemydeath.xnb</DestFile>
+  <DestTime>2015-10-30T12:53:34.6679174+11:00</DestTime>
   <Importer>WavImporter</Importer>
-  <ImporterTime>2015-04-30T03:14:44+10:00</ImporterTime>
+  <ImporterTime>2015-08-02T07:32:06+10:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>
-  <ProcessorTime>2015-04-30T03:14:44+10:00</ProcessorTime>
+  <ProcessorTime>2015-08-02T07:32:06+10:00</ProcessorTime>
   <Parameters>
     <Key>Quality</Key>
     <Value>Best</Value>

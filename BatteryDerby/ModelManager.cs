@@ -92,7 +92,7 @@ namespace BatteryDerby {
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
                 //new Vector3(500, 0, -400),
-                new Vector3(300, 0, 300),
+                new Vector3(500, 0, 300),
                 playerModel,
                 uiManager);
             models.Add(enemy);

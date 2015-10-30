@@ -105,9 +105,9 @@ namespace BatteryDerby
 
             //load the map
             string[] line = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + @"/Content/Map1.txt");
-            for (int j = 0; j < 11; j++)
+            for (int j = 0; j < 12; j++)
             {
-                for (int i = 0; i < 14; i++)
+                for (int i = 0; i < 15; i++)
                 {
                     layout[i, j] = line[j].Substring(i, 1);
                     //Console.WriteLine(i + " " + j + "=" + layout[i, j]);
@@ -115,11 +115,11 @@ namespace BatteryDerby
             }
 
             string[] line2 = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + @"/Content/Map1Obs.txt");
-            for (int j = 0; j < 11; j++)
+            for (int j = 0; j < 12; j++)
             {
-                for (int i = 0; i < 14; i++)
+                for (int i = 0; i < 15; i++)
                 {
-                    layoutObstacleModels[i, j] = line[j].Substring(i, 1);
+                    layoutObstacleModels[i, j] = line2[j].Substring(i, 1);
                     //Console.WriteLine(i + " " + j + "=" + layoutObstacleModels[i, j]);
                 }
             }
@@ -131,14 +131,18 @@ namespace BatteryDerby
             if (cellX < 0 || cellX > Width - 1 || cellY < 0 || cellY > Height - 1)
                 return 0;
             int tileIndex = 0;
-            if (layout[cellY, cellX] == "1")
+            if (layout[cellY, cellX] != null)
             {
-                tileIndex = 1;
+                tileIndex = int.Parse(layout[cellY, cellX]);
             }
-            else if (layout[cellY, cellX] == "0")
-            {
-                tileIndex = 0;
-            }
+            //if (layout[cellY, cellX] == "0")
+            //{
+            //    tileIndex = 0;
+            //}
+            //else if (layout[cellY, cellX] == "1")
+            //{
+            //    tileIndex = 1;
+            //}
             return tileIndex;
         }
 
