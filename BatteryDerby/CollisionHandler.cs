@@ -212,9 +212,6 @@ namespace BatteryDerby {
 
                 playerModel.KnockBackFrom(tireModel); // knockback player from obstacle
 
-                if (audioManager.crash.State != SoundState.Playing) {
-                    audioManager.crash.Play();
-                }
             } else if (modelA.GetType() == typeof(Player) && modelB.GetType() == typeof(Barrier)) {
                 ///
                 /// COLLISION - PLAYER AND BARRIER OBSTACLE
@@ -224,9 +221,6 @@ namespace BatteryDerby {
 
                 playerModel.KnockBackFrom(barrierModel); // knockback player from obstacle
 
-                if (audioManager.crash.State != SoundState.Playing) {
-                    audioManager.crash.Play();
-                }
             }
         }
 

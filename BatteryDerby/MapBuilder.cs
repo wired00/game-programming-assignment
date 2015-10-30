@@ -17,9 +17,9 @@ namespace BatteryDerby
         private List<String> textures = new List<String>();
         private List<String> obstacleModels = new List<String>();
 
-        private string[,] layout = new string[13, 17];
+        private int[,] layout = new int[13, 17];
 
-        private string[,] layoutObstacleModels = new string[13, 17];
+        private int[,] layoutObstacleModels = new int[13, 17];
 
         public int Width
         {
@@ -53,10 +53,9 @@ namespace BatteryDerby
 
                 for (int i = 0; i < tileLine.Length; i++)
                 {
-                    layout[j,i] = tileLine[i];
+                    layout[j,i] = int.Parse(tileLine[i]);
                 }
             }
-
             
             string[] modelLines = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + @"/Content/Map1Obs.txt");
 
@@ -66,7 +65,7 @@ namespace BatteryDerby
 
                 for (int i = 0; i < modelLine.Length; i++)
                 {
-                    layoutObstacleModels[j,i] = modelLine[i];
+                    layoutObstacleModels[j,i] = int.Parse(modelLine[i]);
                 }
             }
 
@@ -74,19 +73,31 @@ namespace BatteryDerby
 
         public int GetIndex(int cellX, int cellY)
         {
-            return int.Parse(layout[cellX, cellY]);
+            return layout[cellX, cellY];
         }
 
         public int GetObstacleIndex(int cellX, int cellY)
         {
-            return int.Parse(layoutObstacleModels[cellX, cellY]);
+            return layoutObstacleModels[cellX, cellY];
+        }
+
+        /// <summary>
+        /// Check if a point on the tilemap is walkable.
+        ///
+        /// </summary>
+        /// <param name="tilePoint"></param>
+        /// <returns></returns>
+        public bool isWalkable(Point tilePoint) {
+            int tileMapIndex = GetIndex(tilePoint.Y, tilePoint.X);
+
+            return (tileMapIndex != 1);
         }
 
         public Point GetQuantisation(Vector3? vector)
         {
-            double tileX = Math.Abs(Math.Floor(Math.Abs(vector.Value.X + 2) / MapBuilder.TILE_SIZE));
-            double tileY = Math.Abs(Math.Floor(Math.Abs(vector.Value.Z + 2) / MapBuilder.TILE_SIZE));
-
+            double tileX = Math.Abs(Math.Floor(Math.Abs(vector.Value.X) / MapBuilder.TILE_SIZE));
+            double tileY = Math.Abs(Math.Floor(Math.Abs(vector.Value.Z) / MapBuilder.TILE_SIZE));
+            /*
             if (tileX > Width - 1)
             {
                 tileX = Width - 1;
@@ -95,7 +106,7 @@ namespace BatteryDerby
             {
                 tileY = Height - 1;
             }
-
+            */
             return new Point((int)tileX, (int)tileY);
         }
 
@@ -172,7 +183,7 @@ namespace BatteryDerby
 
                             break;
                         case 5:
-                            // barrier corner LHS rotate
+                            // barrier corner LHS
                             Barrier barrierObstacle5 = new Barrier(
                                     Game.Content.Load<Model>(@"Models/Obstacles/ConcreteWallLHS"),
                                     new Vector3((TILE_SIZE * i), 0, (TILE_SIZE * j)));
@@ -181,6 +192,7 @@ namespace BatteryDerby
 
                             break;
                         case 6:
+                            // barrier corner RHS
                             Barrier barrierObstacle6 = new Barrier(
                                     Game.Content.Load<Model>(@"Models/Obstacles/ConcreteWallRHS"),
                                     new Vector3((TILE_SIZE * i), 0, (TILE_SIZE * j)));
