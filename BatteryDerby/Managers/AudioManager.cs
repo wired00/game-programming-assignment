@@ -24,6 +24,7 @@ namespace BatteryDerby
         public SoundEffectInstance idleLoop;
         public SoundEffectInstance revving;
         public SoundEffectInstance charge;
+        public SoundEffectInstance tirecrash;
 
         public AudioManager(Game game)
         {
@@ -72,6 +73,10 @@ namespace BatteryDerby
             soundFX = game.Content.Load<SoundEffect>(@"Audio/charge");
             charge = soundFX.CreateInstance();
             charge.Volume = 0.5f;
+
+            soundFX = game.Content.Load<SoundEffect>(@"Audio/tirecrash");
+            tirecrash = soundFX.CreateInstance();
+            tirecrash.Volume = 0.5f;
         }
 
         public void Update(GameTime gametime)

@@ -4,16 +4,14 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Kyron/Documents/Visual Studio 2015/Projects/game-programming-assignment/Game3/Content/Models/Crate/crate.dae</File>
-    <File>C:/Users/Kyron/Documents/Visual Studio 2015/Projects/game-programming-assignment/Game3/Content/Audio/accelerate.wav</File>
-    <File>C:/Users/Kyron/Documents/Visual Studio 2015/Projects/game-programming-assignment/Game3/Content/Audio/bgm.wav</File>
-    <File>C:/Users/Kyron/Documents/Visual Studio 2015/Projects/game-programming-assignment/Game3/Content/Audio/boost.wav</File>
-    <File>C:/Users/Kyron/Documents/Visual Studio 2015/Projects/game-programming-assignment/Game3/Content/Audio/boostend.wav</File>
-    <File>C:/Users/Kyron/Documents/Visual Studio 2015/Projects/game-programming-assignment/Game3/Content/Audio/booststart.wav</File>
-    <File>C:/Users/Kyron/Documents/Visual Studio 2015/Projects/game-programming-assignment/Game3/Content/Audio/charge.wav</File>
-    <File>C:/Users/Kyron/Documents/Visual Studio 2015/Projects/game-programming-assignment/Game3/Content/Audio/crash.wav</File>
-    <File>C:/Users/Kyron/Documents/Visual Studio 2015/Projects/game-programming-assignment/Game3/Content/Audio/enemydeath.wav</File>
-    <File>C:/Users/Kyron/Documents/Visual Studio 2015/Projects/game-programming-assignment/Game3/Content/Audio/idleloop.wav</File>
-    <File>C:/Users/Kyron/Documents/Visual Studio 2015/Projects/game-programming-assignment/Game3/Content/Audio/revving.wav</File>
+    <File>C:/Users/Kyron/Documents/GitHub/game-programming-assignment/BatteryDerby/Content/Audio/accelerate.wav</File>
+    <File>C:/Users/Kyron/Documents/GitHub/game-programming-assignment/BatteryDerby/Content/Audio/bgm.wav</File>
+    <File>C:/Users/Kyron/Documents/GitHub/game-programming-assignment/BatteryDerby/Content/Audio/boost.wav</File>
+    <File>C:/Users/Kyron/Documents/GitHub/game-programming-assignment/BatteryDerby/Content/Audio/charge.wav</File>
+    <File>C:/Users/Kyron/Documents/GitHub/game-programming-assignment/BatteryDerby/Content/Audio/crash.wav</File>
+    <File>C:/Users/Kyron/Documents/GitHub/game-programming-assignment/BatteryDerby/Content/Audio/enemydeath.wav</File>
+    <File>C:/Users/Kyron/Documents/GitHub/game-programming-assignment/BatteryDerby/Content/Audio/idleloop.wav</File>
+    <File>C:/Users/Kyron/Documents/GitHub/game-programming-assignment/BatteryDerby/Content/Audio/revving.wav</File>
+    <File>C:/Users/Kyron/Documents/GitHub/game-programming-assignment/BatteryDerby/Content/Audio/tirecrash.wav</File>
   </SourceFiles>
 </SourceFileCollection>
