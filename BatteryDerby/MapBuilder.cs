@@ -17,69 +17,9 @@ namespace BatteryDerby
         private List<String> textures = new List<String>();
         private List<String> obstacleModels = new List<String>();
 
-        /*        
-                private int[,] layout = new int[,] {
-                    { 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, },
-                    { 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, },
-                    { 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, },
-                    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
-                    { 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, },
-                    { 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, },
-                    { 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, },
-                    { 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, },
-                    { 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, },
-                    { 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, },
-                    { 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, },
-                    { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, },
-                };
-                */
-        private string[,] layout = new string[15, 15];
-        //{
-        //{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        //{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        //{ 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0,},
-        //{ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,},
-        //{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        //{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        //{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        //{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        //{ 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,},
-        //{ 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0,},
-        //{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        //{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        //};
+        private string[,] layout = new string[12, 15];
 
-        private string[,] layoutObstacleModels = new string[15, 15];
-        //{
-        //    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        //    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        //    { 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0,},
-        //    { 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,},
-        //    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        //    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        //    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        //    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        //    { 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,},
-        //    { 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0,},
-        //    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        //    { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        //};
-
-
-        /*
-        private int[,] layout = new int[,] {
-            { 0, 0, 0, 0, },
-            { 0, 0, 0, 0, },
-            { 0, 1, 1, 0, },
-            { 0, 1, 1, 0, },
-        };*/
-        /*
-        private int[,] layoutObstacleModels = new int[,] {
-            { 1, 0, 0, 0, },
-            { 0, 0, 0, 0, },
-            { 0, 1, 0, 0, },
-            { 0, 0, 0, 0, },
-        };*/
+        private string[,] layoutObstacleModels = new string[12, 15];
 
         public int Width
         {
@@ -104,23 +44,32 @@ namespace BatteryDerby
             obstacleModels.Add(@"Models/Obstacles/WallSectionS");
 
             //load the map
-            string[] line = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + @"/Content/Map1.txt");
-            for (int j = 0; j < 12; j++)
+            string[] tileLines = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + @"/Content/Map1.txt");
+
+            //Console.WriteLine("tileLines.Length: " + tileLines.Length);
+            for (int j = 0; j < tileLines.Length; j++) 
             {
-                for (int i = 0; i < 15; i++)
+                //Console.WriteLine("line string: " + tileLines[j]);
+                string[] tileLine = tileLines[j].Split(',');
+
+               //Console.WriteLine("tileLine[j].Length: j: " + j + " - " +  tileLine.Length);
+                for (int i = 0; i < tileLine.Length; i++)
                 {
-                    layout[i, j] = line[j].Substring(i, 1);
-                    //Console.WriteLine(i + " " + j + "=" + layout[i, j]);
+                    layout[j,i] = tileLine[i];
+                    //Console.WriteLine("i: " + i + " j: " + j + " = " + layout[i, j]);
                 }
             }
 
-            string[] line2 = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + @"/Content/Map1Obs.txt");
-            for (int j = 0; j < 12; j++)
+            
+            string[] modelLines = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + @"/Content/Map1Obs.txt");
+
+            for (int j = 0; j < modelLines.Length; j++) 
             {
-                for (int i = 0; i < 15; i++)
+                string[] modelLine = modelLines[j].Split(',');
+
+                for (int i = 0; i < modelLine.Length; i++)
                 {
-                    layoutObstacleModels[i, j] = line2[j].Substring(i, 1);
-                    //Console.WriteLine(i + " " + j + "=" + layoutObstacleModels[i, j]);
+                    layoutObstacleModels[j,i] = modelLine[i];
                 }
             }
 
@@ -128,38 +77,12 @@ namespace BatteryDerby
 
         public int GetIndex(int cellX, int cellY)
         {
-            if (cellX < 0 || cellX > Width - 1 || cellY < 0 || cellY > Height - 1)
-                return 0;
-            int tileIndex = 0;
-            if (layout[cellY, cellX] != null)
-            {
-                tileIndex = int.Parse(layout[cellY, cellX]);
-            }
-            //if (layout[cellY, cellX] == "0")
-            //{
-            //    tileIndex = 0;
-            //}
-            //else if (layout[cellY, cellX] == "1")
-            //{
-            //    tileIndex = 1;
-            //}
-            return tileIndex;
+            return int.Parse(layout[cellX, cellY]);
         }
 
         public int GetObstacleIndex(int cellX, int cellY)
         {
-            if (cellX < 0 || cellX > Width - 1 || cellY < 0 || cellY > Height - 1)
-                return 0;
-            int tileIndex = 0;
-            if (layoutObstacleModels[cellY, cellX] == "1")
-            {
-                tileIndex = 1;
-            }
-            else if (layoutObstacleModels[cellY, cellX] == "0")
-            {
-                tileIndex = 0;
-            }
-            return tileIndex;
+            return int.Parse(layoutObstacleModels[cellX, cellY]);
         }
 
         public Point GetQuantisation(Vector3? vector)
@@ -203,6 +126,7 @@ namespace BatteryDerby
                 {
                     int tileIndex = GetIndex(j, i);
 
+                    //Console.WriteLine("i: " + i + " - j: " + j + " - index: " + tileIndex);
 
                     // dynamically load tile texture based on map index
                     MapTile tile = new MapTile(
