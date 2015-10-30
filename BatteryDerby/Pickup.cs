@@ -46,9 +46,8 @@ namespace BatteryDerby {
         private void HandleRotate(float elapsedTime) {
             float rotationValue = elapsedTime * ROTATION_SPEED;
         
-            Matrix rotation = Matrix.CreateRotationY(rotationValue);
-
-            rotation = rotation * originalRotation;
+            Matrix newRotation = Matrix.CreateRotationY(rotationValue);
+            this.rotation = newRotation * originalRotation;
         }
 
     }
