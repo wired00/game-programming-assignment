@@ -15,7 +15,7 @@ namespace BatteryDerby {
 
         Game1 game;
 
-        public static int MAX_HEALTH = 100;
+        public int MAX_HEALTH;
 
         Player playerModel;
 
@@ -26,7 +26,7 @@ namespace BatteryDerby {
         state currentState = state.Resting;
         seekState currentSeekState = seekState.Player;
 
-        float moveSpeed = 50f;
+        float moveSpeed;
         float jumpVelocity = 0f;
         static float JUMP_HEIGHT = 35f;
         private BasicModel knockbackModelPosition;
@@ -62,8 +62,14 @@ namespace BatteryDerby {
             : base(model) {
 
             this.game = game;
+            this.MAX_HEALTH = (int) game.enemyHealth;
+            this.moveSpeed = game.enemyMoveSpeed;
 
-			base.translation.Translation = position;
+
+            Console.WriteLine("ENEMY HP : " + this.MAX_HEALTH);
+            Console.WriteLine("ENEMY moveSpeed : " + this.moveSpeed);
+
+            base.translation.Translation = position;
 
 			this.playerModel = playerModel;
             health = MAX_HEALTH;
@@ -255,8 +261,7 @@ namespace BatteryDerby {
                 HandleSeek(seekLocation.Value, currentModelPosition, gameTime);
 
             } else if (this.isMoving() || this.isJumping() && seekLocation.HasValue) {
-            
-                HandleSeek(seekLocation.Value, currentModelPosition, gameTime);
+               HandleSeek(seekLocation.Value, currentModelPosition, gameTime);
                 
             }
 

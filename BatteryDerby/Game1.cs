@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Xml;
 
 namespace BatteryDerby {
@@ -32,7 +33,7 @@ namespace BatteryDerby {
 
         KeyboardState lastKeyboardState;
 
-        // behaviour variables
+        // behaviour variables - set to defaults, updated from behaviour.xml
         public EnemyDamagedBehaviour enemyDamagedBehaviour = EnemyDamagedBehaviour.normal;
 
         public enum EnemyDamagedBehaviour {
@@ -41,12 +42,18 @@ namespace BatteryDerby {
             thief
         }
 
-        public void ChangeGameState (GameState state, int level)
-        {
+        // behaviour variables - set to defaults, updated from config.xml
+        public float enemyMoveSpeed = 50f;
+        public float playerMoveSpeed = 1f;
+        public float truckMoveSpeed = 20f;
+        public float enemyHealth = 100f;
+        public float playerHealth = 100f;
+        public float truckHealth = 200f;
+
+        public void ChangeGameState(GameState state, int level) {
             currentGameState = state;
 
-            switch (currentGameState)
-            {
+            switch (currentGameState) {
                 case GameState.LEVEL_CHANGE:
                     splashScreen.SetData("Level " + (level + 1),
                     GameState.LEVEL_CHANGE);
@@ -73,7 +80,7 @@ namespace BatteryDerby {
                     modelManager.Visible = false;
                     splashScreen.Enabled = true;
                     splashScreen.Visible = true;
-                    
+
                     break;
 
             }
@@ -112,11 +119,11 @@ namespace BatteryDerby {
 
             base.Initialize();
         }
-        
+
         protected override void LoadContent() {
             device = graphics.GraphicsDevice;
         }
-        
+
         protected override void UnloadContent() {
             // TODO: Unload any non ContentManager content here
         }
@@ -126,14 +133,14 @@ namespace BatteryDerby {
                 Exit();
 
             this.gameTime = gameTime;
-            if (modelManager.Enabled == true) { 
-            score.survivalTime += (float)gameTime.ElapsedGameTime.TotalSeconds; }
+            if (modelManager.Enabled == true) {
+                score.survivalTime += (float)gameTime.ElapsedGameTime.TotalSeconds; }
 
             HandleKeyboardInput();
 
             base.Update(gameTime);
         }
-        
+
         protected override void Draw(GameTime gameTime) {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
@@ -145,14 +152,14 @@ namespace BatteryDerby {
 
             if (Keyboard.GetState().IsKeyDown(Keys.F1) && Keyboard.GetState() != lastKeyboardState) {
                 this.debugMode = !debugMode; // switch debugmode
-                
+
             }
             lastKeyboardState = Keyboard.GetState();
         }
 
         private void ReadXMLBehaviour() {
             bool bReadingEnemyDamagedBehaviour = false;
-            
+
             XmlTextReader reader = new XmlTextReader("Content/behaviour.xml");
 
             while (reader.Read()) {
@@ -181,6 +188,54 @@ namespace BatteryDerby {
                         // check for end of xml element
                         if (reader.Name == "EnemyDamagedBehaviour") { bReadingEnemyDamagedBehaviour = false; }
                         break;
+                }
+            }
+        }
+
+        private void ReadXMLConfig() {
+            bool bReadingEnemyMoveSpeed = false;
+            bool bReadingPlayerMoveSpeed = false;
+            bool bReadingTruckMoveSpeed = false;
+            bool bReadingEnemyHealth = false;
+            bool bReadingPlayerHealth = false;
+            bool bReadingTruckHealth = false;
+
+            XmlTextReader reader = new XmlTextReader("Content/config.xml");
+
+            while (reader.Read()) {
+
+                switch (reader.NodeType) {
+
+                    case XmlNodeType.Element:
+                        // check for start of xml element
+                        if (reader.Name == "EnemyMoveSpeed") { bReadingEnemyMoveSpeed = true; }
+                        if (reader.Name == "PlayerMoveSpeed") { bReadingPlayerMoveSpeed = true; }
+                        if (reader.Name == "TruckMoveSpeed") { bReadingTruckMoveSpeed = true; }
+                        if (reader.Name == "EnemyHealth") { bReadingEnemyHealth = true; }
+                        if (reader.Name == "PlayerHealth") { bReadingPlayerHealth = true; }
+                        if (reader.Name == "TruckHealth") { bReadingTruckHealth = true; }
+                        break;
+
+                    case XmlNodeType.Text:
+                        // read xml element's value, transpose to game enemyDamagedBehaviour enum value
+                        if (bReadingEnemyMoveSpeed) { enemyMoveSpeed = float.Parse(reader.Value, CultureInfo.InvariantCulture.NumberFormat); }
+                        if (bReadingPlayerMoveSpeed) { playerMoveSpeed = float.Parse(reader.Value, CultureInfo.InvariantCulture.NumberFormat); }
+                        if (bReadingTruckMoveSpeed) { truckMoveSpeed = float.Parse(reader.Value, CultureInfo.InvariantCulture.NumberFormat); }
+                        if (bReadingEnemyHealth) { enemyHealth = float.Parse(reader.Value, CultureInfo.InvariantCulture.NumberFormat); }
+                        if (bReadingPlayerHealth) { playerHealth = float.Parse(reader.Value, CultureInfo.InvariantCulture.NumberFormat); }
+                        if (bReadingTruckHealth) { truckHealth = float.Parse(reader.Value, CultureInfo.InvariantCulture.NumberFormat); }
+                        break;
+
+                    case XmlNodeType.EndElement:
+                        // check for end of xml element
+                        if (reader.Name == "EnemyMoveSpeed") { bReadingEnemyMoveSpeed = false; }
+                        if (reader.Name == "PlayerMoveSpeed") { bReadingPlayerMoveSpeed = false; }
+                        if (reader.Name == "TruckMoveSpeed") { bReadingTruckMoveSpeed = false; }
+                        if (reader.Name == "EnemyHealth") { bReadingEnemyHealth = false; }
+                        if (reader.Name == "PlayerHealth") { bReadingPlayerHealth = false; }
+                        if (reader.Name == "TruckHealth") { bReadingTruckHealth = false; }
+                        break;
+
                 }
             }
         }

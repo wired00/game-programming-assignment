@@ -14,10 +14,10 @@ using Microsoft.Xna.Framework.Audio;
 namespace BatteryDerby {
     public class Player : BasicModel {
 
-        static int MAX_HEALTH = 100;
+        int MAX_HEALTH;
         public static float MAX_ENERGY = 100;
         static float MAX_MOVE_SPEED = 9f;
-        static float MOVE_SPEED = 1f;
+        float MOVE_SPEED = 1f;
         static float VELOCITY_INCREMENTOR = 0.1f;
         static float VELOCITY_DECREMENTOR = 0.95f;
         public const int MINX = 96;
@@ -62,12 +62,15 @@ namespace BatteryDerby {
             unset
         }
 
-        public Player(Model model, GraphicsDevice device, Camera camera, GraphicsDeviceManager graphics, UIManager uiManager, AudioManager audioManager)
+        public Player(Model model, GraphicsDevice device, Camera camera, Game1 game)
             : base(model) {
 
-            graphicsDeviceManager = graphics;
-            this.uiManager = uiManager;
-            this.audioManager = audioManager;
+            this.MAX_HEALTH = (int) game.playerHealth;
+            this.MOVE_SPEED = game.playerMoveSpeed;
+
+            graphicsDeviceManager = game.graphics;
+            this.uiManager = game.uiManager;
+            this.audioManager = game.audioManager;
 
             health = MAX_HEALTH;
             energy = MAX_ENERGY;

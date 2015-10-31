@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Content;
 namespace BatteryDerby {
     class MonsterTruck : BasicModel {
 
-        public static int MAX_HEALTH = 200;
+        public int MAX_HEALTH = 200;
 
         Player playerModel;
 
@@ -24,7 +24,7 @@ namespace BatteryDerby {
         state currentState = state.Resting;
         seekState currentSeekState = seekState.Player;
 
-        float moveSpeed = 20f;
+        float moveSpeed;
 
         /// <summary>
         /// List of a* found paths updated from the ModelManager
@@ -45,8 +45,11 @@ namespace BatteryDerby {
             Flee
         }
 
-        public MonsterTruck(Model model, GraphicsDevice device, Camera camera, Vector3 position, Player playerModel, UIManager uiManager)
+        public MonsterTruck(Model model, GraphicsDevice device, Camera camera, Vector3 position, Player playerModel, Game1 game)
             : base(model) {
+
+            this.MAX_HEALTH = (int) game.truckHealth;
+            this.moveSpeed = game.truckMoveSpeed;
 
             base.translation.Translation = position;
 

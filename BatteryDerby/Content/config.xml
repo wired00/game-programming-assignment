@@ -1,0 +1,18 @@
+﻿<!-- 
+#########################################
+  CONFIG FILE FOR BATTERY DERBY
+#########################################
+
+  - store movement speeds of enemy vehicles, player vehicle and monster truck
+  - note: player move speed used different scale
+  - store health starting value of enemy vehicles, player vehicle and monster truck
+  
+-->
+<BatteryDerby>
+  <EnemyMoveSpeed>200</EnemyMoveSpeed>
+  <PlayerMoveSpeed>1</PlayerMoveSpeed>
+  <TruckMoveSpeed>20</TruckMoveSpeed>
+  <EnemyHealth>10</EnemyHealth>
+  <PlayerHealth>100</PlayerHealth>
+  <TruckHealth>200</TruckHealth>
+</BatteryDerby>

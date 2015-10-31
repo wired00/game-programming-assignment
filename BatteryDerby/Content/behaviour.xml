@@ -1,4 +1,16 @@
-﻿<BatteryDerby>
-  <!--Valid damaged behaviours are - aggressive, normal, thief -->
-  <EnemyDamagedBehaviour>thief</EnemyDamagedBehaviour>
+﻿<!-- 
+#########################################
+  BEHAVIOUR FILE FOR BATTERY DERBY
+#########################################
+
+  - This file allows adjusting NPC behaviour.
+  - Ie, allows changing how standard Enemey vehicles behave
+  - Valid damaged behaviours are - 
+      * aggressive
+      * normal
+      * thief
+      
+-->
+<BatteryDerby>
+  <EnemyDamagedBehaviour>normal</EnemyDamagedBehaviour>
 </BatteryDerby>
