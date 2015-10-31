@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +12,8 @@ using Microsoft.Xna.Framework.Content;
 /// </summary>
 namespace BatteryDerby {
     class Enemy : BasicModel {
+
+        Game1 game;
 
         public static int MAX_HEALTH = 100;
 
@@ -56,8 +58,10 @@ namespace BatteryDerby {
             Flee
         }
 
-        public Enemy(Model model, GraphicsDevice device, Camera camera, Vector3 position, Player playerModel, UIManager uiManager)
+        public Enemy(Model model, GraphicsDevice device, Camera camera, Vector3 position, Player playerModel, Game1 game)
             : base(model) {
+
+            this.game = game;
 
 			base.translation.Translation = position;
 
@@ -81,9 +85,11 @@ namespace BatteryDerby {
                 targetItem = randomPoint;
             }
 
-                // if damaged, then seek health box
-                if (health < MAX_HEALTH) {
-
+            // if damaged, then seek health box
+            // however, if Game1.EnemyDamagedBehaviour is read from XML Behaviour config, and set to agressive then don't hunt health, 
+            // just attack player mercilessly!
+            if (health < MAX_HEALTH && game.enemyDamagedBehaviour == Game1.EnemyDamagedBehaviour.normal) {
+                
                 // first clear previous player seek path.
                 if (!bClearedPlayerSeekPaths) {
                     this.aStarPaths.Clear();
@@ -93,13 +99,29 @@ namespace BatteryDerby {
 
                 if (targetItem.HasValue) {
 
-                    HandleAStarSeek(targetItem.Value, currentPosition, gameTime);
-                    HandleRotation(seekLocation.Value, currentPosition);
+                    if (targetItem.HasValue) {
+                        HandleAStarSeek(targetItem.Value, currentPosition, gameTime);
+                    }
+
+                    if (seekLocation.HasValue) {
+                        HandleRotation(seekLocation.Value, currentPosition);
+                    }
+                    
                     currentSeekState = seekState.EnergyItem;
                 } else {
                     currentSeekState = seekState.Flee;
                 }
 
+            } else if (game.enemyDamagedBehaviour == Game1.EnemyDamagedBehaviour.thief) {
+                // if game1 behaviour is set to thief then regardless of what happens just steal the energy items! 
+                if (targetItem.HasValue) {
+                    HandleAStarSeek(targetItem.Value, currentPosition, gameTime);
+                }
+
+                if (seekLocation.HasValue) {
+                    HandleRotation(seekLocation.Value, currentPosition);
+                }
+                currentSeekState = seekState.EnergyItem;
             } else {
 
                 // if not damaged then seek player
@@ -114,7 +136,6 @@ namespace BatteryDerby {
                 if (seekLocation.HasValue) {
                     HandleRotation(seekLocation.Value, currentPosition);
                     currentSeekState = seekState.Player;
-
                 }
 
             }              
@@ -232,8 +253,11 @@ namespace BatteryDerby {
                 aStarPaths.RemoveAt(0);
 
                 HandleSeek(seekLocation.Value, currentModelPosition, gameTime);
+
             } else if (this.isMoving() || this.isJumping() && seekLocation.HasValue) {
+            
                 HandleSeek(seekLocation.Value, currentModelPosition, gameTime);
+                
             }
 
         }

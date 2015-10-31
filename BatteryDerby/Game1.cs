@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.Xml;
 
 namespace BatteryDerby {
 
@@ -30,6 +31,15 @@ namespace BatteryDerby {
         public bool debugMode { get; set; }
 
         KeyboardState lastKeyboardState;
+
+        // behaviour variables
+        public EnemyDamagedBehaviour enemyDamagedBehaviour = EnemyDamagedBehaviour.normal;
+
+        public enum EnemyDamagedBehaviour {
+            aggressive,
+            normal,
+            thief
+        }
 
         public void ChangeGameState (GameState state, int level)
         {
@@ -96,9 +106,9 @@ namespace BatteryDerby {
             modelManager.Visible = false; // for when splash screen is enabled
             Components.Add(modelManager);
 
-
-
             this.IsMouseVisible = true;
+
+            ReadXMLBehaviour();
 
             base.Initialize();
         }
@@ -140,5 +150,39 @@ namespace BatteryDerby {
             lastKeyboardState = Keyboard.GetState();
         }
 
+        private void ReadXMLBehaviour() {
+            bool bReadingEnemyDamagedBehaviour = false;
+            
+            XmlTextReader reader = new XmlTextReader("Content/behaviour.xml");
+
+            while (reader.Read()) {
+
+                switch (reader.NodeType) {
+
+                    case XmlNodeType.Element:
+                        // check for start of xml element
+                        if (reader.Name == "EnemyDamagedBehaviour") { bReadingEnemyDamagedBehaviour = true; }
+                        break;
+
+                    case XmlNodeType.Text:
+                        // read xml element's value, transpose to game enemyDamagedBehaviour enum value
+                        if (bReadingEnemyDamagedBehaviour) {
+                            if (reader.Value == "aggressive") {
+                                this.enemyDamagedBehaviour = EnemyDamagedBehaviour.aggressive;
+                            } else if (reader.Value == "normal") {
+                                this.enemyDamagedBehaviour = EnemyDamagedBehaviour.normal;
+                            } else if (reader.Value == "thief") {
+                                this.enemyDamagedBehaviour = EnemyDamagedBehaviour.thief;
+                            }
+                        }
+                        break;
+
+                    case XmlNodeType.EndElement:
+                        // check for end of xml element
+                        if (reader.Name == "EnemyDamagedBehaviour") { bReadingEnemyDamagedBehaviour = false; }
+                        break;
+                }
+            }
+        }
     }
 }

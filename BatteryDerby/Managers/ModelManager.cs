@@ -106,7 +106,7 @@ namespace BatteryDerby {
                 ((Game1)Game).camera,
                 new Vector3(rnd.Next(MapBuilder.MINX, MapBuilder.MAXX), 0, MapBuilder.MAXY),
                 playerModel,
-                uiManager);
+                (Game1)game);
             models.Add(enemy);
             
             /*
@@ -249,8 +249,7 @@ namespace BatteryDerby {
                 ((Game1)Game).camera,
                 GetEnemySpawnLocation(),
                 playerModel,
-                uiManager
-                ));
+                (Game1)game));
             }
         }
 

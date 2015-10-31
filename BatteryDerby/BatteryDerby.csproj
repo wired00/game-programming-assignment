@@ -107,6 +107,9 @@
     <Content Include="Content\Models\Splashscreen\StartBackGround.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\behaviour.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icon.ico" />
     <Content Include="Content\Models\Vehicles\BuggyDmg.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -1,0 +1,4 @@
+﻿<BatteryDerby>
+  <!--Valid damaged behaviours are - aggressive, normal, thief -->
+  <EnemyDamagedBehaviour>thief</EnemyDamagedBehaviour>
+</BatteryDerby>
