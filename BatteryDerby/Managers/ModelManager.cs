@@ -136,7 +136,7 @@ namespace BatteryDerby {
             }
 
             // use modulus to calculate if divisible by 10, and such spawn a monster every 10 enemy kills
-            if (score.enemiesDefeatedCount > 0 && score.enemiesDefeatedCount % 10 == 0) {
+            if (score.enemiesDefeatedCount > 0 && score.enemiesDefeatedCount % 10 == 0 || score.survivalTime > 30) {
 
                 // only spawn one monster truck / boss at a time.
                 if (monsterTruckCount == 0) {

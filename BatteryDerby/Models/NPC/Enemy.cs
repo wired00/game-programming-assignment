@@ -28,6 +28,8 @@ namespace BatteryDerby {
         float jumpVelocity = 0f;
         static float JUMP_HEIGHT = 35f;
         private BasicModel knockbackModelPosition;
+        Random rng;
+        Vector3 randomPoint;
 
         /// <summary>
         /// List of a* found paths updated from the ModelManager
@@ -61,7 +63,8 @@ namespace BatteryDerby {
 
 			this.playerModel = playerModel;
             health = MAX_HEALTH;
-            Random rng = new Random();
+            rng = new Random();
+            randomPoint = new Vector3(rng.Next(96, 1440), 30, rng.Next(96, 1056));
 
             aStarPaths = new List<Vector2>();
             seekLocation = null;
@@ -73,8 +76,13 @@ namespace BatteryDerby {
             Vector3 currentPosition = translation.Translation;
             Vector3? targetItem = GetNearestEnergyItem();
 
-            // if damaged, then seek health box
-            if (health < MAX_HEALTH) {
+            if (!targetItem.HasValue)
+            {
+                targetItem = randomPoint;
+            }
+
+                // if damaged, then seek health box
+                if (health < MAX_HEALTH) {
 
                 // first clear previous player seek path.
                 if (!bClearedPlayerSeekPaths) {
@@ -86,9 +94,8 @@ namespace BatteryDerby {
                 if (targetItem.HasValue) {
 
                     HandleAStarSeek(targetItem.Value, currentPosition, gameTime);
-                    HandleRotation(targetItem.Value, currentPosition);
+                    HandleRotation(seekLocation.Value, currentPosition);
                     currentSeekState = seekState.EnergyItem;
-
                 } else {
                     currentSeekState = seekState.Flee;
                 }
@@ -226,17 +233,6 @@ namespace BatteryDerby {
 
                 HandleSeek(seekLocation.Value, currentModelPosition, gameTime);
             } else if (this.isMoving() || this.isJumping() && seekLocation.HasValue) {
-
-                if (health < MAX_HEALTH) {
-
-                    if (aStarPaths.Count() > 0) {
-
-                        seekLocation = new Vector3(aStarPaths.First().X, this.translation.Translation.Y, aStarPaths.First().Y);
-                        aStarPaths.RemoveAt(0);
-                       
-                    }
-                }
-
                 HandleSeek(seekLocation.Value, currentModelPosition, gameTime);
             }
 
