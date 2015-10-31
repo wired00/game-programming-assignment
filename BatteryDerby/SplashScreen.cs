@@ -111,13 +111,7 @@ namespace BatteryDerby
                                                     (secondaryTextToDraw).X / 2,
                                                     Game.Window.ClientBounds.Height / 2
                                                     + TitleSize.Y - 10), Color.Black);
-
-
             }  
-
-
-
-
 
             spriteBatch.End();
 
@@ -133,7 +127,7 @@ namespace BatteryDerby
             {
                 case Game1.GameState.START:
                 case Game1.GameState.LEVEL_CHANGE:
-                    secondaryTextToDraw = "Space bar to boost and damage enemies.\n\n Press ENTER to begin";
+                    secondaryTextToDraw = "WASD to move, Space bar to boost.\n\n Press ENTER to begin";
                     break;
                 case Game1.GameState.END:
                     secondaryTextToDraw = "Press ENTER to quit";
