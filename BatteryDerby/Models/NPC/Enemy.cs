@@ -251,8 +251,7 @@ namespace BatteryDerby {
         }
 
         /// <summary>
-        /// Knockback the enemy when it hits a target. Use similar to flee mechanic
-        /// TODO: Convert this to do a jump mechanic at same time.
+        /// Knockback the enemy when it hits a target
         /// </summary>
         /// <param name=""></param>
         internal void KnockBackFrom(BasicModel model) {

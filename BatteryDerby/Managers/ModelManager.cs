@@ -7,7 +7,7 @@ using System;
 /// A model manager will handle all models
 /// </summary>
 namespace BatteryDerby {
-    class ModelManager : DrawableGameComponent {
+    public class ModelManager : DrawableGameComponent {
         List<BasicModel> models = new List<BasicModel>();
 
         Player playerModel;
@@ -17,10 +17,12 @@ namespace BatteryDerby {
         float secondsSinceLastItem = 0;
         float secondsSinceLastEnemy = 0;
         int enemySpawnCount = 0;
+        public int monsterTruckCount { get; set; }
 
         UIManager uiManager;
         Game game;
         SplashScreen splashScreen;
+        Score score;
         
         VertexDeclaration vertexDeclaration;
         Matrix View, Projection;
@@ -35,9 +37,11 @@ namespace BatteryDerby {
 
         int seekIndicatorCount = 0;
 
-        public ModelManager(Game game, SplashScreen splashScreen) : base(game) {
+        public ModelManager(Game1 game) : base(game) {
             this.game = game;
-            this.splashScreen = splashScreen;
+            this.splashScreen = game.splashScreen;
+            this.score = game.score;
+
             rnd = new Random();
         }
 
@@ -104,36 +108,16 @@ namespace BatteryDerby {
                 playerModel,
                 uiManager);
             models.Add(enemy);
-
+            
             /*
             MonsterTruck enemyTruck = new MonsterTruck(
                 Game.Content.Load<Model>(@"Models/Vehicles/MonsterTruckFull"),
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
-                new Vector3(rnd.Next(MINX, MAXX), 0, MAXY),
+                new Vector3(rnd.Next(MapBuilder.MINX, MapBuilder.MAXX), 0, MapBuilder.MAXY),
                 playerModel,
                 uiManager);
             models.Add(enemyTruck);
-            */
-
-            /*
-            enemy = new Enemy(
-                Game.Content.Load<Model>(@"Models/Car/Enemy/CarModel2"),
-                ((Game1)Game).GraphicsDevice,
-                ((Game1)Game).camera,
-                new Vector3(-300, 0, 150),
-                playerModel,
-                uiManager);
-            models.Add(enemy);
-
-            enemy = new Enemy(
-                Game.Content.Load<Model>(@"Models/Car/Enemy/CarModel2"),
-                ((Game1)Game).GraphicsDevice,
-                ((Game1)Game).camera,
-                new Vector3(-200, 0, -200),
-                playerModel,
-                uiManager);
-            models.Add(enemy);
             */
 
             base.LoadContent();
@@ -149,6 +133,25 @@ namespace BatteryDerby {
             //partition.detectPartition(models);
             if (models.Count > 0) {
                 collisionHandler.detectCollisions(models);
+            }
+
+            // use modulus to calculate if divisible by 10, and such spawn a monster every 10 enemy kills
+            if (score.enemiesDefeatedCount > 0 && score.enemiesDefeatedCount % 10 == 0) {
+
+                // only spawn one monster truck / boss at a time.
+                if (monsterTruckCount == 0) {
+                    MonsterTruck enemyTruck = new MonsterTruck(
+                        Game.Content.Load<Model>(@"Models/Vehicles/MonsterTruckFull"),
+                        ((Game1)Game).GraphicsDevice,
+                        ((Game1)Game).camera,
+                        new Vector3(rnd.Next(MapBuilder.MINX, MapBuilder.MAXX), 0, MapBuilder.MAXY),
+                        playerModel,
+                        uiManager);
+                    models.Add(enemyTruck);
+                    monsterTruckCount++;
+
+                }
+
             }
 
             // remove any objects flagged for deletion from the collision handler
@@ -223,10 +226,6 @@ namespace BatteryDerby {
 
         }
 
-        public Player getPlayerModel() {
-            return this.playerModel;
-        }
-
         /// <summary>
         /// Spawn item if the coordinate is walkable. problems with random in C# m
         /// </summary>
@@ -299,7 +298,7 @@ namespace BatteryDerby {
 
                 if (model.GetType() == typeof(MonsterTruck) && ((MonsterTruck)model).aStarPaths.Count == 0) {
                     List<Vector2> pathToTarget = FindPath(mapBuilder.GetQuantisation(model.translation.Translation), mapBuilder.GetQuantisation(playerModel.translation.Translation));
-                    ((Enemy)model).aStarPaths.Clear();
+                    ((MonsterTruck)model).aStarPaths.Clear();
                     ((MonsterTruck)model).aStarPaths.AddRange(pathToTarget);
                     seekIndicatorCount = 0;
                 }

@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Content;
 namespace BatteryDerby {
     class MonsterTruck : BasicModel {
 
-        public static int MAX_HEALTH = 100;
+        public static int MAX_HEALTH = 200;
 
         Player playerModel;
 
@@ -24,10 +24,7 @@ namespace BatteryDerby {
         state currentState = state.Resting;
         seekState currentSeekState = seekState.Player;
 
-        float moveSpeed = 30f;
-        float jumpVelocity = 0f;
-        static float JUMP_HEIGHT = 35f;
-        private BasicModel knockbackModelPosition;
+        float moveSpeed = 20f;
 
         /// <summary>
         /// List of a* found paths updated from the ModelManager
@@ -35,22 +32,17 @@ namespace BatteryDerby {
         public List<Vector2> aStarPaths { get; set; }
 
         public Vector3? seekLocation { get; set; }
-
-
-        bool bClearedPlayerSeekPaths = false;
-
-
+        
         enum state {
             Moving,
             Resting,
-            Rotating,
-            Jumping,
-            Falling
+            Rotating
         }
 
         enum seekState {
             EnergyItem,
-            Player
+            Player,
+            Flee
         }
 
         public MonsterTruck(Model model, GraphicsDevice device, Camera camera, Vector3 position, Player playerModel, UIManager uiManager)
@@ -62,8 +54,6 @@ namespace BatteryDerby {
             health = MAX_HEALTH;
             Random rng = new Random();
 
-            base.tintColour = BasicModel.TINT_BLUE;
-
             aStarPaths = new List<Vector2>();
             seekLocation = null;
         }
@@ -72,10 +62,11 @@ namespace BatteryDerby {
             float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             Vector3 currentPosition = translation.Translation;
-
+            
+            // seek player, Unlike standard enemies (buggy) this big guy always seeks player regardless of dmg.
 
             Vector3? targetPlayer = GetNearestPlayer();
-            bClearedPlayerSeekPaths = false;
+
             if (targetPlayer.HasValue) {
                 HandleAStarSeek(targetPlayer.Value, currentPosition, gameTime);
             }
@@ -85,11 +76,6 @@ namespace BatteryDerby {
                 currentSeekState = seekState.Player;
 
             }
-               
-
-            if (this.knockbackModelPosition != null) {
-                HandleJump(false);
-            }
 
             MovementClamp();
 
@@ -97,7 +83,7 @@ namespace BatteryDerby {
             if (health < MAX_HEALTH) {
                 base.tintColour = BasicModel.TINT_RED;
             } else {
-                //base.tintColour = BasicModel.TINT_BLUE;
+                base.tintColour = BasicModel.TINT_TRANSPARENT;
             }
 
             base.Update(gameTime);
@@ -121,34 +107,8 @@ namespace BatteryDerby {
             return foundModel;
         }
 
-        public Vector3? GetNearestEnergyItem() {
-            float? shortestPathDistance = null;
-            Vector3? closestModel = null;
-
-            if (models != null) {
-                foreach (BasicModel model in models) {
-
-                    // if energy pickup item
-                    if (model.GetType() == typeof(Pickup)) {
-                        if (!shortestPathDistance.HasValue) {
-                            shortestPathDistance = Vector3.Distance(((Pickup)model).translation.Translation, this.translation.Translation);
-                            closestModel = ((Pickup)model).translation.Translation;
-                        } else if (Vector3.Distance(((Pickup)model).translation.Translation, this.translation.Translation) < shortestPathDistance) {
-                            shortestPathDistance = Vector3.Distance(((Pickup)model).translation.Translation, this.translation.Translation);
-                            closestModel = ((Pickup)model).translation.Translation;
-                        }
-                    }
-
-                }
-
-            }
-
-            return closestModel;
-
-        }
-
         private void HandleRotation(Vector3 targetPosition, Vector3 currentModelPosition) {
-            rotation = RotateToFace((Vector3)targetPosition, currentModelPosition, Vector3.Up);
+            rotation = RotateToFace(targetPosition, currentModelPosition, Vector3.Up);
         }
 
         Matrix RotateToFace(Vector3 targetPosition, Vector3 currentPosition, Vector3 up) {
@@ -163,7 +123,6 @@ namespace BatteryDerby {
             return newRotation;
         }
 
-        // TODO: move to model manager.
         private void MovementClamp() {
             float currentX = translation.Translation.X;
             float currentZ = translation.Translation.Z;
@@ -200,18 +159,7 @@ namespace BatteryDerby {
                 aStarPaths.RemoveAt(0);
 
                 HandleSeek(seekLocation.Value, currentModelPosition, gameTime);
-            } else if (this.isMoving() || this.isJumping() && seekLocation.HasValue) {
-
-                if (health < MAX_HEALTH) {
-
-                    if (aStarPaths.Count() > 0) {
-                        seekLocation = new Vector3(aStarPaths.First().X, this.translation.Translation.Y, aStarPaths.First().Y);
-                        aStarPaths.RemoveAt(0);
-
-
-                    }
-                }
-
+            } else if (this.isMoving()) {
                 HandleSeek(seekLocation.Value, currentModelPosition, gameTime);
             }
 
@@ -222,56 +170,7 @@ namespace BatteryDerby {
         }
 
         public override Matrix GetWorld() {
-            return Matrix.CreateScale(6f) * rotation * translation;
-        }
-
-        /// <summary>
-        /// Knockback the enemy when it hits a target. Use similar to flee mechanic
-        /// TODO: Convert this to do a jump mechanic at same time.
-        /// </summary>
-        /// <param name=""></param>
-        internal void KnockBackFrom(BasicModel model) {
-            translation.Translation += Vector3.Normalize(translation.Translation - model.translation.Translation) * 30f;
-
-        }
-
-
-        /// 
-        /// jump model on collision
-        /// 
-        private void HandleJump(bool startJump) {
-
-            // store the current jump Y position and modify each frame/tick with the current velocity
-            float jumpPosition = translation.Translation.Y + jumpVelocity;
-
-            // jump model into air with an initial velocity
-            if (startJump && (isMoving() || isResting())) {
-                jumpPosition += 5f;
-                jumpVelocity += 5f;
-                currentState = state.Jumping;
-            }
-
-            // gravity emulation
-            // if jumping or falling, reduce the velocity 
-            if (isJumping() || isFalling()) {
-                jumpVelocity -= 0.15f;
-                translation.Translation += Vector3.Normalize(translation.Translation - this.knockbackModelPosition.translation.Translation) * 3f;
-            }
-            // if reached highest expected jump height then start falling
-            if (jumpPosition >= JUMP_HEIGHT) {
-                currentState = state.Falling;
-            }
-
-            // clamp above ground, falling through ground!
-            if (jumpPosition < Matrix.Identity.Translation.Y) {
-                jumpVelocity = 0f;
-                jumpPosition = Matrix.Identity.Translation.Y;
-                currentState = state.Moving;
-            }
-
-            // set the camera position based on Y jump position which was altered
-            translation.Translation = new Vector3(translation.Translation.X, jumpPosition, translation.Translation.Z);
-
+            return Matrix.CreateScale(2.5f) * rotation * translation;
         }
 
         internal void FullHealth() {
@@ -290,17 +189,5 @@ namespace BatteryDerby {
         public bool isSeekingPlayer() {
             return currentSeekState == seekState.Player;
         }
-        public bool isSeekingEnergyItem() {
-            return currentSeekState == seekState.EnergyItem;
-        }
-
-        private bool isFalling() {
-            return currentState == state.Falling;
-        }
-
-        private bool isJumping() {
-            return currentState == state.Jumping;
-        }
-
     }
 }

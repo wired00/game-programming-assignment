@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Audio;
 /// Players model
 /// </summary>
 namespace BatteryDerby {
-    class Player : BasicModel {
+    public class Player : BasicModel {
 
         static int MAX_HEALTH = 100;
         public static float MAX_ENERGY = 100;
@@ -350,12 +350,14 @@ namespace BatteryDerby {
         public void KnockBackFrom(BasicModel model) {
             float knockbackDistance = 5f;
 
-            if (model.GetType() == typeof(Enemy) || model.GetType() == typeof(MonsterTruck)) {
+            if (model.GetType() == typeof(Enemy)) {
                 knockbackDistance = 50f;
+            } else if (model.GetType() == typeof(MonsterTruck)) {
+                knockbackDistance = 100f;
             } else {
                 // knockback further if boosting
                 if (isBoosting()) {
-                    knockbackDistance = 15f;
+                    knockbackDistance = 12f;
                 }
             }
 

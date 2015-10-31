@@ -12,7 +12,7 @@ namespace BatteryDerby {
 
         public GraphicsDeviceManager graphics { get; set; }
 
-        ModelManager modelManager;
+        public ModelManager modelManager;
         public UIManager uiManager;
         public AudioManager audioManager;
         public Score score;
@@ -79,22 +79,24 @@ namespace BatteryDerby {
             camera = new Camera(this, new Vector3(770, 1200, 1090), new Vector3(770, -2800, -500), Vector3.Up);
             Components.Add(camera);
 
+            uiManager = new UIManager(this);
+
+            audioManager = new AudioManager(this);
+
+            score = new Score();
+
+
             // Splash screen component
             splashScreen = new SplashScreen(this);
             Components.Add(splashScreen);
             splashScreen.SetData("Welcome to Battery Derby!", currentGameState);
 
-            modelManager = new ModelManager(this, splashScreen);
+            modelManager = new ModelManager(this);
             modelManager.Enabled = false; // for when splash screen is enabled
             modelManager.Visible = false; // for when splash screen is enabled
             Components.Add(modelManager);
 
 
-            uiManager = new UIManager(this);
-            
-            audioManager = new AudioManager(this);
-
-            score = new Score();
 
             this.IsMouseVisible = true;
 

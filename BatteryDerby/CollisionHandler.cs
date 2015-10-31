@@ -16,6 +16,8 @@ namespace BatteryDerby {
 
         SplashScreen splashScreen;
 
+        ModelManager modelManager;
+
         Game1 game;
 
         Score score;
@@ -30,6 +32,7 @@ namespace BatteryDerby {
         public CollisionHandler(Game1 game) {
             this.audioManager = game.audioManager;
             this.splashScreen = game.splashScreen;
+            this.modelManager = game.modelManager;
             this.game = game;
             this.score = game.score;
         }
@@ -183,6 +186,56 @@ namespace BatteryDerby {
                     score.enemiesDefeatedCount++;
                 }
 
+            } else if (typeModelA == typeof(MonsterTruck) && typeModelB == typeof(Player)) {
+                ///
+                /// COLLISION - MONSTER TRUCK (BOSS) AND PLAYER
+                ///
+                MonsterTruck monsterTruckModel = (MonsterTruck)modelA;
+                Player playerModel = (Player)modelB;
+
+                //monsterTruckModel.KnockBackFrom(playerModel); // knockback player from enemy
+
+                if (playerModel.isBoosting()) {
+                    playerModel.KnockBackFrom(monsterTruckModel); // knockback player from monstertruck
+
+                    playerModel.energy -= playerModel.energy / 2;
+                    monsterTruckModel.health -= 35;
+                    playerModel.health -= 5;
+                } else {
+                    playerModel.KnockBackFrom(monsterTruckModel); // knockback player from monstertruck
+
+                    playerModel.health -= 5;
+                    if (audioManager.crash.State != SoundState.Playing) {
+                        audioManager.crash.Play();
+                    }
+                    if (playerModel.energy <= 0) {
+                        playerModel.health -= 20;
+                    }
+                }
+
+                if (monsterTruckModel.health <= 0) {
+                    audioManager.enemyDeath.Play();
+                    monsterTruckModel.currentDrawState = BasicModel.drawState.remove;
+                    score.monsterTruckDefeatedCount++;
+
+                    if (modelManager.monsterTruckCount > 0) {
+                        modelManager.monsterTruckCount--;
+                    }
+
+                }
+
+                if (playerModel.health <= 0) {
+                    audioManager.enemyDeath.Play();
+                    audioManager.accelerate.Stop();
+                    audioManager.boost.Stop();
+                    audioManager.charge.Stop();
+                    audioManager.idleLoop.Stop();
+                    playerModel.health = 0;
+                    playerModel.currentDrawState = BasicModel.drawState.remove;
+                    splashScreen.SetData("TODO - enemy wins", Game1.GameState.END); // change splash state
+                    this.game.ChangeGameState(Game1.GameState.END, 1); // change game state
+                }
+
             } else if (typeModelA == typeof(Enemy) && typeModelB == typeof(Player)) {
                 ///
                 /// COLLISION - ENEMY AND PLAYER
@@ -191,14 +244,14 @@ namespace BatteryDerby {
                 Enemy enemyModel = (Enemy)modelA;
                 Player playerModel = (Player)modelB;
 
-                enemyModel.KnockBackFrom(playerModel); // knockback player from enemy
+                enemyModel.KnockBackFrom(playerModel); // knockback enemy from player
 
                 if (playerModel.isBoosting()) {
-                    playerModel.energy -= playerModel.energy / 3;
+                    playerModel.energy -= playerModel.energy / 5;
                     enemyModel.health = enemyModel.health - enemyModel.health;
                     playerModel.health -= 5;
                 } else {
-                    playerModel.KnockBackFrom(enemyModel); // knockback enemy from player
+                    playerModel.KnockBackFrom(enemyModel); // knockback player from enemy
                     enemyModel.health -= 35;
 
                     playerModel.health -= 5;
