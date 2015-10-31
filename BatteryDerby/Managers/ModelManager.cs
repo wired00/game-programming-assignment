@@ -237,12 +237,10 @@ namespace BatteryDerby {
             Vector3 itemLocation = new Vector3(rnd.Next(MINX, MAXX), 30, rnd.Next(MINY, MAXY));
 
             Point tilePoint = mapBuilder.GetQuantisation(itemLocation);
-            Console.WriteLine("GetQuantisation X: " + tilePoint.X + " Z: " + tilePoint.Y);
             if (mapBuilder.isWalkable(tilePoint)) {
                 //Console.WriteLine("OK NO COLLISION X: " + itemLocation.X + " Z: " + itemLocation.Z);
                 models.Add(new Pickup(Game.Content.Load<Model>(@"Models/Battery/BatteryModel"), itemLocation));
             } else {
-                Console.WriteLine("OK NO COLLISION X: " + itemLocation.X + " Z: " + itemLocation.Z);
                 SpawnItems();
             }
 
@@ -292,23 +290,29 @@ namespace BatteryDerby {
 
                     if (seekTarget.HasValue) {
                         List<Vector2> pathToTarget = FindPath(mapBuilder.GetQuantisation(model.translation.Translation), mapBuilder.GetQuantisation(seekTarget));
+                        ((Enemy)model).aStarPaths.Clear();
                         ((Enemy)model).aStarPaths.AddRange(pathToTarget);
+
                     }
 
                 } else if (model.GetType() == typeof(Enemy) && ((Enemy)model).aStarPaths.Count > 0) {
-                    // add token indicating where enemy seeking
-                    if (((Enemy)model).seekLocation.HasValue && !seekTokenAlreadyExists(((Enemy)model).seekLocation.Value)) {
-                        Console.WriteLine("SDFSDFSDFSD");
-                        Pickup seekToken = new Pickup(
-                            Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
-                            ((Enemy)model).seekLocation.Value);
-                        seekToken.tintColour = BasicModel.TINT_BLUE;
-                        models.Add(seekToken);
+                    // Add token indicating where enemy seeking. One indicator arrow for each astar coordinate
+                    // Also, first verify that the token doesnt already exist at the location
+                    foreach (Vector2 seekLocation in ((Enemy)model).aStarPaths) {
+                        if (!seekTokenAlreadyExists(new Vector3(seekLocation.X, 0, seekLocation.Y))) {
+                            SeekIndicator seekIndicator = new SeekIndicator(
+                                Game.Content.Load<Model>(@"Models/ArrowPointer/ArrowPointerModel"),
+                                new Vector3(seekLocation.X, 0, seekLocation.Y));
+                            models.Add(seekIndicator);
+                        }
+
                     }
+                   
                 }
 
                 if (model.GetType() == typeof(MonsterTruck) && ((MonsterTruck)model).aStarPaths.Count == 0) {
                     List<Vector2> pathToTarget = FindPath(mapBuilder.GetQuantisation(model.translation.Translation), mapBuilder.GetQuantisation(playerModel.translation.Translation));
+                    ((Enemy)model).aStarPaths.Clear();
                     ((MonsterTruck)model).aStarPaths.AddRange(pathToTarget);
                 }
             }
@@ -318,7 +322,7 @@ namespace BatteryDerby {
             for (int i = 0; i < models.Count; i++) {
                 BasicModel model = models[i];
 
-                if (model.GetType() == typeof(Pickup) && model.translation.Translation == location) {
+                if (model.GetType() == typeof(SeekIndicator) && model.translation.Translation == location) {
                     return true;
                 }
             }

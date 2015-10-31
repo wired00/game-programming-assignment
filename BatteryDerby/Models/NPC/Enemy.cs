@@ -75,14 +75,14 @@ namespace BatteryDerby {
 
             // if damaged, then seek health box
             if (health < MAX_HEALTH) {
-                
+
                 // first clear previous player seek path.
                 if (!bClearedPlayerSeekPaths) {
-                    Console.WriteLine("CLEARING1");
-                    aStarPaths.Clear();
+                    this.aStarPaths.Clear();
                     bClearedPlayerSeekPaths = true;
+
                 }
-                
+
                 Vector3? targetItem = GetNearestEnergyItem();
 
                 if (targetItem.HasValue) {
@@ -215,20 +215,29 @@ namespace BatteryDerby {
         private void HandleAStarSeek(Vector3 targetPlayer, Vector3 currentModelPosition, GameTime gameTime) {
             // Implement a quasi queue. Issue a move command to enemy, wait for the enemy to become resting again, then issue another command.
             // this way we process through the path list
+
             if (this.isResting() && aStarPaths.Count() > 0) {
+
                 if (health < MAX_HEALTH) {
-                    Console.WriteLine("aStarPath First = X: " + aStarPaths.First().X + ", Y" + aStarPaths.First().Y);
+
+                    //Console.WriteLine("aStarPath First = X: " + aStarPaths.First().X + ", Y" + aStarPaths.First().Y);
                 }
                 seekLocation = new Vector3(aStarPaths.First().X, this.translation.Translation.Y, aStarPaths.First().Y);
                 aStarPaths.RemoveAt(0);
 
                 HandleSeek(seekLocation.Value, currentModelPosition, gameTime);
-            } else if (this.isMoving() && seekLocation.HasValue) {
+            } else if (this.isMoving() || this.isJumping() && seekLocation.HasValue) {
+
                 if (health < MAX_HEALTH) {
+
                     if (aStarPaths.Count() > 0) {
-                        Console.WriteLine("aStarPath Firstzzzzzzzz = X: " + aStarPaths.First().X + ", Y" + aStarPaths.First().Y);
+                        seekLocation = new Vector3(aStarPaths.First().X, this.translation.Translation.Y, aStarPaths.First().Y);
+                        aStarPaths.RemoveAt(0);
+
+                       
                     }
                 }
+
                 HandleSeek(seekLocation.Value, currentModelPosition, gameTime);
             }
 

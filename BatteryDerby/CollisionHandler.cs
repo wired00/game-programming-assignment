@@ -121,18 +121,20 @@ namespace BatteryDerby {
                 ((Enemy)modelA).FullHealth();
                 modelB.currentDrawState = BasicModel.drawState.remove;
 
+            }  else if (modelA.GetType() == typeof(Enemy) && modelB.GetType() == typeof(SeekIndicator)) {
+                ///
+                /// COLLISION - ENEMY AND SEEK INDICATOR DEBUG ITEM
+                ///
+                modelB.currentDrawState = BasicModel.drawState.remove;
 
             } else if (modelA.GetType() == typeof(Player) && modelB.GetType() == typeof(Pickup)) {
                 ///
                 /// COLLISION - PLAYER AND PICKUP ITEM
                 ///
                 audioManager.charge.Play();
-                if (((Player)modelA).energy + 25 >= Player.MAX_ENERGY)
-                {
+                if (((Player)modelA).energy + 25 >= Player.MAX_ENERGY) {
                     ((Player)modelA).energy = Player.MAX_ENERGY;
-                }
-                else
-                {
+                } else {
                     ((Player)modelA).energy += 25;
                 }
                 modelB.currentDrawState = BasicModel.drawState.remove;
@@ -163,20 +165,16 @@ namespace BatteryDerby {
                 Player playerModel = (Player)modelB;
 
                 enemyModel.KnockBackFrom(playerModel); // knockback player from enemy
-                
-                if (playerModel.isBoosting())
-                {
-                    playerModel.energy -= playerModel.energy/3;
+
+                if (playerModel.isBoosting()) {
+                    playerModel.energy -= playerModel.energy / 3;
                     enemyModel.health = enemyModel.health - enemyModel.health;
                     playerModel.health -= 5;
-                }
-                else
-                {
+                } else {
                     playerModel.KnockBackFrom(enemyModel); // knockback enemy from player
                     enemyModel.health -= 35;
                     playerModel.health -= 5;
-                    if (audioManager.crash.State != SoundState.Playing)
-                    {
+                    if (audioManager.crash.State != SoundState.Playing) {
                         audioManager.crash.Play();
                     }
                     if (playerModel.energy <= 0) {

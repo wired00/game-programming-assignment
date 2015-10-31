@@ -43,6 +43,7 @@
     <Compile Include="Models\NPC\MonsterTruck.cs" />
     <Compile Include="MapBuilder.cs" />
     <Compile Include="Models\MapTile.cs" />
+    <Compile Include="Models\SeekIndicator.cs" />
     <Compile Include="PathfindAStar.cs" />
     <Compile Include="Models\Barrier.cs" />
     <Compile Include="Models\Tire.cs" />
@@ -189,6 +190,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Models\Obstacles\WallOVertTexture_0.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Models\ArrowPointer\ArrowPointerModel.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Models\ArrowPointer\ArrowPointerTexture.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Models\ArrowPointer\ArrowPointerTexture_0.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
