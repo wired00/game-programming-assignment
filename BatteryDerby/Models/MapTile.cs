@@ -20,7 +20,7 @@ namespace BatteryDerby {
             this.walkable = (tileIndex == 1) ? false : true;
 
         }
-   
+
         public override void Draw(GraphicsDevice device, Camera camera) {
             device.SamplerStates[0] = SamplerState.LinearWrap;
             base.Draw(device, camera);

@@ -8,10 +8,8 @@ using Microsoft.Xna.Framework.Audio;
 /// <summary>
 /// Audio manager handles all audio
 /// </summary>
-namespace BatteryDerby
-{
-    public class AudioManager
-    {
+namespace BatteryDerby {
+    public class AudioManager {
         Game game;
         private SoundEffect soundFX;
         public SoundEffectInstance music;
@@ -25,18 +23,15 @@ namespace BatteryDerby
         public SoundEffectInstance revving;
         public SoundEffectInstance charge;
 
-        public AudioManager(Game game)
-        {
+        public AudioManager(Game game) {
             this.game = game;
             LoadContent();
         }
 
-        public  void Initialize()
-        {
+        public void Initialize() {
         }
 
-        protected void LoadContent()
-        {
+        protected void LoadContent() {
             soundFX = game.Content.Load<SoundEffect>(@"Audio/bgm");
             music = soundFX.CreateInstance();
             music.Volume = 0.2f;
@@ -74,8 +69,7 @@ namespace BatteryDerby
             charge.Volume = 0.5f;
         }
 
-        public void Update(GameTime gametime)
-        {
+        public void Update(GameTime gametime) {
         }
 
     }

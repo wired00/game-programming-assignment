@@ -42,7 +42,7 @@ namespace BatteryDerby {
 
         float turboSpeed = 1f;
         float velocity = 0f; // need to track velocity so the car naturally slows down
-        
+
         enum state {
             Moving,
             Resting,
@@ -65,7 +65,7 @@ namespace BatteryDerby {
         public Player(Model model, GraphicsDevice device, Camera camera, Game1 game)
             : base(model) {
 
-            this.MAX_HEALTH = (int) game.playerHealth;
+            this.MAX_HEALTH = (int)game.playerHealth;
             this.MOVE_SPEED = game.playerMoveSpeed;
 
             graphicsDeviceManager = game.graphics;
@@ -95,7 +95,7 @@ namespace BatteryDerby {
             if (newPosition != currentPlayerPosition) {
                 playerRotation = RotateToFace(newPosition, currentPlayerPosition, Vector3.Up); // rotate to the future position
             }
-            
+
             uiManager.playerHealth = this.health;
             uiManager.playerEnergy = this.energy;
 
@@ -104,11 +104,9 @@ namespace BatteryDerby {
                 audioManager.accelerate.Pause();
                 audioManager.idleLoop.Play();
             }
-            if (isBoosting() && audioManager.boost.State != SoundState.Playing)
-            {
+            if (isBoosting() && audioManager.boost.State != SoundState.Playing) {
                 audioManager.boost.Play();
-            }
-            else if(!isBoosting()){
+            } else if (!isBoosting()) {
                 audioManager.boost.Pause();
             }
 
@@ -139,15 +137,13 @@ namespace BatteryDerby {
             return newRotation;
         }
 
-		///
-		/// move left / right
-		/// 
-		private void HandleMovement(float elapsedTime) {
+        ///
+        /// move left / right
+        /// 
+        private void HandleMovement(float elapsedTime) {
             newPosition = translation.Translation;
-            if (energy > 0)
-            {
-                if (Keyboard.GetState().IsKeyDown(Keys.A) && Keyboard.GetState().IsKeyDown(Keys.W))
-                {
+            if (energy > 0) {
+                if (Keyboard.GetState().IsKeyDown(Keys.A) && Keyboard.GetState().IsKeyDown(Keys.W)) {
                     currentState = state.Moving;
                     HandleAcceleration();
 
@@ -155,9 +151,7 @@ namespace BatteryDerby {
                     newPosition.Z -= velocity * turboSpeed;
 
                     currentDirection = direction.left_up;
-                }
-                else if (Keyboard.GetState().IsKeyDown(Keys.A) && Keyboard.GetState().IsKeyDown(Keys.S))
-                {
+                } else if (Keyboard.GetState().IsKeyDown(Keys.A) && Keyboard.GetState().IsKeyDown(Keys.S)) {
                     currentState = state.Moving;
                     HandleAcceleration();
 
@@ -166,9 +160,7 @@ namespace BatteryDerby {
 
                     currentDirection = direction.left_down;
 
-                }
-                else if (Keyboard.GetState().IsKeyDown(Keys.D) && Keyboard.GetState().IsKeyDown(Keys.W))
-                {
+                } else if (Keyboard.GetState().IsKeyDown(Keys.D) && Keyboard.GetState().IsKeyDown(Keys.W)) {
                     currentState = state.Moving;
                     HandleAcceleration();
 
@@ -177,9 +169,7 @@ namespace BatteryDerby {
 
                     currentDirection = direction.right_up;
 
-                }
-                else if (Keyboard.GetState().IsKeyDown(Keys.D) && Keyboard.GetState().IsKeyDown(Keys.S))
-                {
+                } else if (Keyboard.GetState().IsKeyDown(Keys.D) && Keyboard.GetState().IsKeyDown(Keys.S)) {
                     currentState = state.Moving;
                     HandleAcceleration();
 
@@ -188,9 +178,7 @@ namespace BatteryDerby {
 
                     currentDirection = direction.right_down;
 
-                }
-                else if (Keyboard.GetState().IsKeyDown(Keys.A))
-                {
+                } else if (Keyboard.GetState().IsKeyDown(Keys.A)) {
                     currentState = state.Moving;
                     HandleAcceleration();
 
@@ -198,58 +186,46 @@ namespace BatteryDerby {
 
                     currentDirection = direction.left;
 
-                }
-                else if (Keyboard.GetState().IsKeyDown(Keys.D))
-                {
+                } else if (Keyboard.GetState().IsKeyDown(Keys.D)) {
                     currentState = state.Moving;
                     HandleAcceleration();
 
                     newPosition.X += velocity * turboSpeed;
                     currentDirection = direction.right;
 
-                }
-                else if (Keyboard.GetState().IsKeyDown(Keys.W))
-                {
+                } else if (Keyboard.GetState().IsKeyDown(Keys.W)) {
                     currentState = state.Moving;
                     HandleAcceleration();
 
                     newPosition.Z -= velocity * turboSpeed;
                     currentDirection = direction.up;
 
-                }
-                else if (Keyboard.GetState().IsKeyDown(Keys.S))
-                {
+                } else if (Keyboard.GetState().IsKeyDown(Keys.S)) {
                     currentState = state.Moving;
                     HandleAcceleration();
 
                     newPosition.Z += velocity * turboSpeed;
                     currentDirection = direction.back;
 
-                }
-                else
-                {
+                } else {
                     currentState = state.Slowing;
                 }
 
                 // turbo boost if space bar held down
-                if (Keyboard.GetState().IsKeyDown(Keys.Space))
-                {
+                if (Keyboard.GetState().IsKeyDown(Keys.Space)) {
                     turboSpeed = 2f;
                     currentState = state.Boosting;
-                }
-                else
-                {
+                } else {
                     turboSpeed = 1f;
                     //currentState = state.Moving;
                 }
-            }
-            else {
+            } else {
                 currentState = state.Slowing;
                 energy = 0f;
                 audioManager.boost.Pause();
                 audioManager.accelerate.Pause();
                 audioManager.idleLoop.Pause();
-           }
+            }
         }
 
         private void MovementClamp() {
@@ -263,26 +239,21 @@ namespace BatteryDerby {
             newPosition = new Vector3(currentX, 0, currentZ);
         }
 
-        private void HandleAcceleration()
-        {
+        private void HandleAcceleration() {
 
-            if (isMoving())
-            {
+            if (isMoving()) {
                 currentDirection = direction.unset;
                 // set initial velocity of car
-                if (this.velocity <= 0)
-                {
+                if (this.velocity <= 0) {
                     this.velocity = MOVE_SPEED;
                 }
 
                 // increase acceleration & clamp under max speed
-                if (this.velocity < MAX_MOVE_SPEED)
-                {
+                if (this.velocity < MAX_MOVE_SPEED) {
                     this.velocity += VELOCITY_INCREMENTOR;
                 }
                 energy -= .11f;
-                if (audioManager.accelerate.State != SoundState.Playing)
-                {
+                if (audioManager.accelerate.State != SoundState.Playing) {
                     audioManager.accelerate.Play();
                     audioManager.idleLoop.Pause();
                 }
@@ -299,7 +270,7 @@ namespace BatteryDerby {
                         switch (this.currentDirection) {
                             case direction.right_up:
                                 newPosition.X += velocity;
-                                newPosition.Z -= velocity;                         
+                                newPosition.Z -= velocity;
                                 break;
                             case direction.left_up:
                                 newPosition.Z -= velocity;
@@ -328,7 +299,7 @@ namespace BatteryDerby {
                         }
                     }
 
-                }  else if (this.velocity <= 0.01f ) {
+                } else if (this.velocity <= 0.01f) {
                     this.velocity = 0;
 
                     currentState = state.Resting;

@@ -10,10 +10,8 @@ using Microsoft.Xna.Framework.Graphics;
 /// <summary>
 /// Handles UI elements such as player health and remaining energy
 /// </summary>
-namespace BatteryDerby
-{
-    public class UIManager
-    {
+namespace BatteryDerby {
+    public class UIManager {
         Game game;
         SpriteBatch spriteBatch;
         SpriteFont font;
@@ -22,26 +20,22 @@ namespace BatteryDerby
         public string debug1 = "1";
         public string debug2 = "2";
 
-        public UIManager(Game game)
-        {
+        public UIManager(Game game) {
             this.game = game;
             LoadContent();
         }
 
-        public  void Initialize()
-        {
+        public void Initialize() {
             //base.Initialize();
         }
 
-        protected void LoadContent()
-        {
+        protected void LoadContent() {
             spriteBatch = new SpriteBatch(game.GraphicsDevice);
             font = game.Content.Load<SpriteFont>("Fonts/myFont");
             //base.LoadContent();
         }
 
-        public void Update(GameTime gametime)
-        {
+        public void Update(GameTime gametime) {
 
             //base.Update(gametime);
         }

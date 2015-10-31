@@ -7,11 +7,9 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using System.IO;
 
-namespace BatteryDerby
-{
+namespace BatteryDerby {
 
-    public class MapBuilder : DrawableGameComponent
-    {
+    public class MapBuilder : DrawableGameComponent {
 
         public const int TILE_SIZE = 96;
         private List<String> textures = new List<String>();
@@ -26,18 +24,15 @@ namespace BatteryDerby
         public const int MINY = 96;
         public const int MAXY = 1056;
 
-        public int Width
-        {
+        public int Width {
             get { return layout.GetLength(1); }
         }
 
-        public int Height
-        {
+        public int Height {
             get { return layout.GetLength(0); }
         }
         public MapBuilder(Game game)
-            : base(game)
-        {
+            : base(game) {
 
             /// keep list of all loaded tile textures.
             textures.Add(@"Models/Tiles/TileDirt"); // index 0
@@ -48,37 +43,31 @@ namespace BatteryDerby
             //load the map
             string[] tileLines = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + @"/Content/Map1.txt");
 
-            for (int j = 0; j < tileLines.Length; j++) 
-            {
+            for (int j = 0; j < tileLines.Length; j++) {
                 string[] tileLine = tileLines[j].Split(',');
 
-                for (int i = 0; i < tileLine.Length; i++)
-                {
-                    layout[j,i] = int.Parse(tileLine[i]);
+                for (int i = 0; i < tileLine.Length; i++) {
+                    layout[j, i] = int.Parse(tileLine[i]);
                 }
             }
-            
+
             string[] modelLines = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + @"/Content/Map1Obs.txt");
 
-            for (int j = 0; j < modelLines.Length; j++) 
-            {
+            for (int j = 0; j < modelLines.Length; j++) {
                 string[] modelLine = modelLines[j].Split(',');
 
-                for (int i = 0; i < modelLine.Length; i++)
-                {
-                    layoutObstacleModels[j,i] = int.Parse(modelLine[i]);
+                for (int i = 0; i < modelLine.Length; i++) {
+                    layoutObstacleModels[j, i] = int.Parse(modelLine[i]);
                 }
             }
 
         }
 
-        public int GetIndex(int cellX, int cellY)
-        {
+        public int GetIndex(int cellX, int cellY) {
             return layout[cellX, cellY];
         }
 
-        public int GetObstacleIndex(int cellX, int cellY)
-        {
+        public int GetObstacleIndex(int cellX, int cellY) {
             return layoutObstacleModels[cellX, cellY];
         }
 
@@ -94,25 +83,21 @@ namespace BatteryDerby
             return (tileMapIndex != 1);
         }
 
-        public Point GetQuantisation(Vector3? vector)
-        {
+        public Point GetQuantisation(Vector3? vector) {
             double tileX = Math.Abs(Math.Floor(Math.Abs(vector.Value.X + 2) / MapBuilder.TILE_SIZE));
             double tileY = Math.Abs(Math.Floor(Math.Abs(vector.Value.Z + 2) / MapBuilder.TILE_SIZE));
-            
-            if (tileX > Width - 1)
-            {
+
+            if (tileX > Width - 1) {
                 tileX = Width - 1;
             }
-            if (tileY > Height - 1)
-            {
+            if (tileY > Height - 1) {
                 tileY = Height - 1;
             }
-            
+
             return new Point((int)tileX, (int)tileY);
         }
 
-        public List<BasicModel> Render()
-        {
+        public List<BasicModel> Render() {
 
             List<BasicModel> mapModels = new List<BasicModel>();
 
@@ -125,14 +110,11 @@ namespace BatteryDerby
             return mapModels;
         }
 
-        private List<MapTile> RenderTiles()
-        {
+        private List<MapTile> RenderTiles() {
             List<MapTile> tiles = new List<MapTile>();
 
-            for (int i = 0; i < Width; i++)
-            {
-                for (int j = 0; j < Height; j++)
-                {
+            for (int i = 0; i < Width; i++) {
+                for (int j = 0; j < Height; j++) {
                     int tileIndex = GetIndex(j, i);
 
                     // dynamically load tile from "textures" list based on map index
@@ -149,14 +131,11 @@ namespace BatteryDerby
             return tiles;
         }
 
-        private List<BasicModel> RenderObstacles()
-        {
+        private List<BasicModel> RenderObstacles() {
             List<BasicModel> obstacleModels = new List<BasicModel>();
 
-            for (int i = 0; i < Width; i++)
-            {
-                for (int j = 0; j < Height; j++)
-                {
+            for (int i = 0; i < Width; i++) {
+                for (int j = 0; j < Height; j++) {
 
                     int modelIndex = GetObstacleIndex(j, i);
 

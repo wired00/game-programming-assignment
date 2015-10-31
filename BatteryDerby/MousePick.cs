@@ -15,7 +15,7 @@ namespace BatteryDerby {
         GraphicsDevice device;
         Camera camera;
 
-        public MousePick(GraphicsDevice device, Camera  camera) {
+        public MousePick(GraphicsDevice device, Camera camera) {
             this.device = device;
             this.camera = camera;
         }
@@ -27,9 +27,9 @@ namespace BatteryDerby {
             Vector3 farSource = new Vector3(mouseState.X, mouseState.Y, 1f);
 
             Vector3 nearPoint = device.Viewport.Unproject(
-                nearSource, 
-                camera.projection, 
-                camera.view, 
+                nearSource,
+                camera.projection,
+                camera.view,
                 Matrix.Identity);
 
             Vector3 farPoint = device.Viewport.Unproject(

@@ -8,8 +8,8 @@ using Microsoft.Xna.Framework.Graphics;
 /// <summary>
 /// Basic model is inherited by all other models
 /// </summary>
-namespace BatteryDerby { 
-   public class BasicModel {
+namespace BatteryDerby {
+    public class BasicModel {
 
         public static Vector3 TINT_RED = Color.Firebrick.ToVector3();
         public static Vector3 TINT_TRANSPARENT = Color.Transparent.ToVector3();
@@ -26,7 +26,7 @@ namespace BatteryDerby {
         protected Matrix world = Matrix.Identity;
 
         public drawState currentDrawState { get; set; }
-    
+
         public Vector3 tintColour { get; set; }
 
         public enum drawState {
@@ -54,7 +54,7 @@ namespace BatteryDerby {
         }
 
         public virtual void Draw(GraphicsDevice device, Camera camera) {
-            
+
             Matrix[] transformation = new Matrix[model.Bones.Count];
 
             model.CopyAbsoluteBoneTransformsTo(transformation);
@@ -62,7 +62,7 @@ namespace BatteryDerby {
             foreach (ModelMesh mesh in model.Meshes) {
                 //effects and matricies go here
                 foreach (BasicEffect effect in mesh.Effects) {
-                    
+
                     Matrix matrix = GetWorld();
                     effect.World = mesh.ParentBone.Transform * matrix;
                     effect.View = camera.view;

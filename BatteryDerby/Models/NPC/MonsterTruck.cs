@@ -32,7 +32,7 @@ namespace BatteryDerby {
         public List<Vector2> aStarPaths { get; set; }
 
         public Vector3? seekLocation { get; set; }
-        
+
         enum state {
             Moving,
             Resting,
@@ -48,7 +48,7 @@ namespace BatteryDerby {
         public MonsterTruck(Model model, GraphicsDevice device, Camera camera, Vector3 position, Player playerModel, Game1 game)
             : base(model) {
 
-            this.MAX_HEALTH = (int) game.truckHealth;
+            this.MAX_HEALTH = (int)game.truckHealth;
             this.moveSpeed = game.truckMoveSpeed;
 
             base.translation.Translation = position;
@@ -65,7 +65,7 @@ namespace BatteryDerby {
             float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             Vector3 currentPosition = translation.Translation;
-            
+
             // seek player, Unlike standard enemies (buggy) this big guy always seeks player regardless of dmg.
 
             Vector3? targetPlayer = GetNearestPlayer();

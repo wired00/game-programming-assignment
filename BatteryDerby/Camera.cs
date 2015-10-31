@@ -18,9 +18,9 @@ namespace BatteryDerby {
         public Vector3 cameraPosition { get; protected set; }
         Vector3 cameraDirection;
         Vector3 cameraUp;
-        
+
         MouseState prevMouseState;
-       
+
 
         public Camera(Game game, Vector3 pos, Vector3 target, Vector3 up)
                 : base(game) {
@@ -31,12 +31,12 @@ namespace BatteryDerby {
             cameraDirection.Normalize();
             cameraUp = up;
             CreateLookAt();
-            
+
 
             projection = Matrix.CreatePerspectiveFieldOfView(
-                MathHelper.PiOver4, 
-                (float)Game.Window.ClientBounds.Width / 
-                (float)Game.Window.ClientBounds.Height, 
+                MathHelper.PiOver4,
+                (float)Game.Window.ClientBounds.Width /
+                (float)Game.Window.ClientBounds.Height,
                 1, 2000);
         }
 
@@ -56,7 +56,7 @@ namespace BatteryDerby {
 
             base.Update(gameTime);
         }
-		
+
 
         private void CreateLookAt() {
             view = Matrix.CreateLookAt(
@@ -64,7 +64,7 @@ namespace BatteryDerby {
                 cameraPosition + cameraDirection,
                 cameraUp);
         }
-       
+
 
     }
 

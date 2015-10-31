@@ -23,10 +23,10 @@ namespace BatteryDerby {
         Game game;
         SplashScreen splashScreen;
         Score score;
-        
+
         VertexDeclaration vertexDeclaration;
         Matrix View, Projection;
-        
+
         bool bBuiltMap = false;
 
         PathfindAStar pathfindAStar;
@@ -46,7 +46,7 @@ namespace BatteryDerby {
         }
 
         public override void Initialize() {
-            collisionHandler = new CollisionHandler((Game1) game);
+            collisionHandler = new CollisionHandler((Game1)game);
             uiManager = new UIManager(game);
 
             View = Matrix.CreateLookAt(new Vector3(0, 0, 2), Vector3.Zero,
@@ -96,8 +96,8 @@ namespace BatteryDerby {
                   ((Game1)Game).GraphicsDevice,
                   ((Game1)Game).camera,
                   (Game1)game);
-			models.Add(playerModel);
-            
+            models.Add(playerModel);
+
             Enemy enemy = new Enemy(
                 Game.Content.Load<Model>(@"Models/Vehicles/BuggyFullHP"),
                 ((Game1)Game).GraphicsDevice,
@@ -106,7 +106,7 @@ namespace BatteryDerby {
                 playerModel,
                 (Game1)game);
             models.Add(enemy);
-            
+
             /*
             MonsterTruck enemyTruck = new MonsterTruck(
                 Game.Content.Load<Model>(@"Models/Vehicles/MonsterTruckFull"),
@@ -122,12 +122,12 @@ namespace BatteryDerby {
         }
 
         public override void Update(GameTime gameTime) {
-                        
+
             SpawnModels(gameTime);
 
             /// handle manage A* movement Queues for NPCs
             HandleAStarMovement(gameTime);
-            
+
             //partition.detectPartition(models);
             if (models.Count > 0) {
                 collisionHandler.detectCollisions(models);
@@ -144,7 +144,7 @@ namespace BatteryDerby {
                         ((Game1)Game).camera,
                         new Vector3(rnd.Next(MapBuilder.MINX, MapBuilder.MAXX), 0, MapBuilder.MAXY),
                         playerModel,
-                        (Game1) game);
+                        (Game1)game);
                     models.Add(enemyTruck);
                     monsterTruckCount++;
 
@@ -172,7 +172,7 @@ namespace BatteryDerby {
         private int PickupCount() {
             int count = 0;
             foreach (BasicModel i in models) {
-                if(i.GetType() == typeof(Pickup)) count++;
+                if (i.GetType() == typeof(Pickup)) count++;
             }
 
             return count;
@@ -181,10 +181,10 @@ namespace BatteryDerby {
 
         private void SpawnModels(GameTime gameTime) {
 
-            float elapsedTime = (float) gameTime.ElapsedGameTime.TotalSeconds;
+            float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            float spawnModifier = (float) Math.Ceiling(enemySpawnCount / 2f);
-            
+            float spawnModifier = (float)Math.Ceiling(enemySpawnCount / 2f);
+
             // Spawn 
             //items every 2.5 seconds
             if (secondsSinceLastItem >= 2.5f && PickupCount() < 10) {
@@ -213,7 +213,7 @@ namespace BatteryDerby {
         }
 
         public override void Draw(GameTime gameTime) {
-            
+
             foreach (BasicModel model in models) {
                 model.Draw(((Game1)Game).device, ((Game1)Game).camera);
             }
@@ -306,7 +306,7 @@ namespace BatteryDerby {
         /// When debug mode show path from enemy to target of a*
         /// </summary>
         private void HandleDebugMode(BasicModel model) {
-            
+
             if (((Game1)game).debugMode) {
                 // Add token indicating where enemy seeking. One indicator arrow for each astar coordinate
                 // Also, first verify that the token doesnt already exist at the location
@@ -326,7 +326,7 @@ namespace BatteryDerby {
                 // clear all astar debug tokens if not debug mode
                 ClearSeekTokens();
             }
-           
+
         }
 
         private bool SeekTokenAlreadyExists(Vector3 location) {
@@ -341,7 +341,7 @@ namespace BatteryDerby {
             return false;
         }
 
-       private void ClearSeekTokens() {
+        private void ClearSeekTokens() {
             for (int i = 0; i < models.Count; i++) {
                 BasicModel model = models[i];
 

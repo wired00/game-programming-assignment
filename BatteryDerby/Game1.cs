@@ -71,6 +71,7 @@ namespace BatteryDerby {
                 case GameState.END:
                     splashScreen.SetData("Game Over.\n" +
                         "\n Enemies Defeated: " + score.enemiesDefeatedCount +
+                        "\n Monster Trucks Defeated: " + score.monsterTruckDefeatedCount +
                         "\n You picked up " + score.playerBatteryCount + " Batteries" +
                         "\n The enemies picked up " + score.enemyBatteryCount + " Batteries" +
                         "\n You survived " + Math.Round(score.survivalTime, 2) + " seconds", GameState.END);
@@ -133,7 +134,8 @@ namespace BatteryDerby {
 
             this.gameTime = gameTime;
             if (modelManager.Enabled == true) {
-                score.survivalTime += (float)gameTime.ElapsedGameTime.TotalSeconds; }
+                score.survivalTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            }
 
             HandleKeyboardInput();
 

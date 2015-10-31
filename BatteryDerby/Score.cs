@@ -9,18 +9,15 @@ using Microsoft.Xna.Framework.Input;
 /// <summary>
 /// Class to keep track of the players score
 /// </summary>
-namespace BatteryDerby
-{
-    public class Score
-    {
+namespace BatteryDerby {
+    public class Score {
         public int enemyBatteryCount;
         public int playerBatteryCount;
         public int enemiesDefeatedCount;
         public int monsterTruckDefeatedCount;
         public float survivalTime;
-  
-        public Score()
-        {
+
+        public Score() {
             enemyBatteryCount = 0;
             playerBatteryCount = 0;
             enemiesDefeatedCount = 0;

@@ -27,7 +27,7 @@ namespace BatteryDerby {
             originalRotation = rotation;
 
         }
-   
+
         public override void Draw(GraphicsDevice device, Camera camera) {
             device.SamplerStates[0] = SamplerState.LinearWrap;
             base.Draw(device, camera);
@@ -47,7 +47,7 @@ namespace BatteryDerby {
 
         private void HandleRotate(float elapsedTime) {
             float rotationValue = elapsedTime * ROTATION_SPEED;
-        
+
             Matrix newRotation = Matrix.CreateRotationY(rotationValue);
             this.rotation = newRotation * originalRotation;
         }

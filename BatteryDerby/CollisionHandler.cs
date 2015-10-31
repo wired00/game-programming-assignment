@@ -28,7 +28,7 @@ namespace BatteryDerby {
             C,
             D
         };
-    
+
         public CollisionHandler(Game1 game) {
             this.audioManager = game.audioManager;
             this.splashScreen = game.splashScreen;
@@ -61,7 +61,7 @@ namespace BatteryDerby {
         private bool isValidCheck(BasicModel modelA, BasicModel modelB) {
             if (modelA.GetType() == typeof(SeekIndicator) && modelB.GetType() != typeof(Enemy)) {
                 return false;
-            }else if (modelB.GetType() == typeof(SeekIndicator) && modelA.GetType() != typeof(Enemy)) {
+            } else if (modelB.GetType() == typeof(SeekIndicator) && modelA.GetType() != typeof(Enemy)) {
                 return false;
             }
 
@@ -132,10 +132,10 @@ namespace BatteryDerby {
                 ///
                 score.enemyBatteryCount++;
                 ((Enemy)modelA).FullHealth();
-                
+
                 modelB.currentDrawState = BasicModel.drawState.remove;
 
-            }  else if (typeModelA == typeof(Enemy) && typeModelB == typeof(SeekIndicator)) {
+            } else if (typeModelA == typeof(Enemy) && typeModelB == typeof(SeekIndicator)) {
                 ///
                 /// COLLISION - ENEMY AND SEEK INDICATOR DEBUG ITEM
                 ///
@@ -308,7 +308,7 @@ namespace BatteryDerby {
         /// <param name="modelA"></param>
         /// <param name="modelB"></param>
         /// <returns></returns>
-        public bool collidesWith (BasicModel modelA, BasicModel modelB) {
+        public bool collidesWith(BasicModel modelA, BasicModel modelB) {
             // get the position of each model
             Matrix modelATranslation = modelA.GetWorld();
             Matrix modelBTranslation = modelB.GetWorld();
