@@ -35,6 +35,9 @@ namespace BatteryDerby {
         MapBuilder mapBuilder = null;
         Random rnd;
 
+        public Vector3? aStarSeekTarget { get; set; }
+
+
         public ModelManager(Game game, SplashScreen splashScreen) : base(game) {
             this.game = game;
             this.splashScreen = splashScreen;
@@ -100,21 +103,21 @@ namespace BatteryDerby {
                 Game.Content.Load<Model>(@"Models/Vehicles/BuggyFullHP"),
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
-                //new Vector3(500, 0, -400),
-                new Vector3(500, 0, 400),
+                new Vector3(rnd.Next(MINX, MAXX), 0, MAXY),
                 playerModel,
                 uiManager);
             models.Add(enemy);
 
+            /*
             MonsterTruck enemyTruck = new MonsterTruck(
                 Game.Content.Load<Model>(@"Models/Vehicles/MonsterTruckFull"),
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
-                //new Vector3(500, 0, -400),
-                new Vector3(400, 0, 100),
+                new Vector3(rnd.Next(MINX, MAXX), 0, MAXY),
                 playerModel,
                 uiManager);
             models.Add(enemyTruck);
+            */
 
             /*
             enemy = new Enemy(
@@ -143,23 +146,9 @@ namespace BatteryDerby {
                         
             SpawnModels(gameTime);
 
-            for (int i = 0; i < models.Count; i++) {
-                BasicModel model = models[i];
-
-                model.Update(gameTime);
-                model.models = models;
-
-                if (model.GetType() == typeof(Enemy) && ((Enemy)model).aStarPaths.Count == 0) {
-                    List<Vector2> pathToTarget = FindPath(mapBuilder.GetQuantisation(model.translation.Translation), mapBuilder.GetQuantisation(playerModel.translation.Translation));
-                    ((Enemy)model).aStarPaths.AddRange(pathToTarget);
-                }
-
-                if (model.GetType() == typeof(MonsterTruck) && ((MonsterTruck)model).aStarPaths.Count == 0) {
-                    List<Vector2> pathToTarget = FindPath(mapBuilder.GetQuantisation(model.translation.Translation), mapBuilder.GetQuantisation(playerModel.translation.Translation));
-                    ((MonsterTruck)model).aStarPaths.AddRange(pathToTarget);
-                }
-            }
-
+            /// handle manage A* movement Queues for NPCs
+            HandleAStarMovement(gameTime);
+            
             //partition.detectPartition(models);
             if (models.Count > 0) {
                 collisionHandler.detectCollisions(models);
@@ -282,5 +271,59 @@ namespace BatteryDerby {
             }
         }
 
+        /// <summary>
+        /// Handle manage A* movement Queues for NPCs
+        /// </summary>
+        /// <param name="gameTime"></param>
+        private void HandleAStarMovement(GameTime gameTime) {
+            for (int i = 0; i < models.Count; i++) {
+                BasicModel model = models[i];
+
+                model.Update(gameTime);
+                model.models = models;
+
+                if (model.GetType() == typeof(Enemy) && ((Enemy)model).aStarPaths.Count == 0) {
+                    Vector3? seekTarget;
+                    if (((Enemy)model).isSeekingPlayer()) {
+                        seekTarget = playerModel.translation.Translation;
+                    } else {
+                        seekTarget = ((Enemy)model).GetNearestEnergyItem().Value;
+                    }
+
+                    if (seekTarget.HasValue) {
+                        List<Vector2> pathToTarget = FindPath(mapBuilder.GetQuantisation(model.translation.Translation), mapBuilder.GetQuantisation(seekTarget));
+                        ((Enemy)model).aStarPaths.AddRange(pathToTarget);
+                    }
+
+                } else if (model.GetType() == typeof(Enemy) && ((Enemy)model).aStarPaths.Count > 0) {
+                    // add token indicating where enemy seeking
+                    if (((Enemy)model).seekLocation.HasValue && !seekTokenAlreadyExists(((Enemy)model).seekLocation.Value)) {
+                        Console.WriteLine("SDFSDFSDFSD");
+                        Pickup seekToken = new Pickup(
+                            Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
+                            ((Enemy)model).seekLocation.Value);
+                        seekToken.tintColour = BasicModel.TINT_BLUE;
+                        models.Add(seekToken);
+                    }
+                }
+
+                if (model.GetType() == typeof(MonsterTruck) && ((MonsterTruck)model).aStarPaths.Count == 0) {
+                    List<Vector2> pathToTarget = FindPath(mapBuilder.GetQuantisation(model.translation.Translation), mapBuilder.GetQuantisation(playerModel.translation.Translation));
+                    ((MonsterTruck)model).aStarPaths.AddRange(pathToTarget);
+                }
+            }
+        }
+
+        private bool seekTokenAlreadyExists(Vector3 location) {
+            for (int i = 0; i < models.Count; i++) {
+                BasicModel model = models[i];
+
+                if (model.GetType() == typeof(Pickup) && model.translation.Translation == location) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }

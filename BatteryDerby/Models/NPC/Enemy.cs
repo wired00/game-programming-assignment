@@ -15,34 +15,45 @@ namespace BatteryDerby {
 
         public static int MAX_HEALTH = 100;
 
-		Player playerModel;
-        
+        Player playerModel;
+
         public int health { get; set; }
 
         Matrix rotation = Matrix.Identity;
 
         state currentState = state.Resting;
-        
+        seekState currentSeekState = seekState.Player;
+
         float moveSpeed = 50f;
         float jumpVelocity = 0f;
         static float JUMP_HEIGHT = 35f;
         private BasicModel knockbackModelPosition;
 
+        /// <summary>
+        /// List of a* found paths updated from the ModelManager
+        /// </summary>
         public List<Vector2> aStarPaths { get; set; }
 
-        Vector3? seekLocation = null;
-        
+        public Vector3? seekLocation { get; set; }
+
+
+        bool bClearedPlayerSeekPaths = false;
+
+
         enum state {
             Moving,
             Resting,
             Rotating,
-            SeekingEnergyItem,
-            SeekingPlayer,
             Jumping,
             Falling
         }
 
-		public Enemy(Model model, GraphicsDevice device, Camera camera, Vector3 position, Player playerModel, UIManager uiManager)
+        enum seekState {
+            EnergyItem,
+            Player
+        }
+
+        public Enemy(Model model, GraphicsDevice device, Camera camera, Vector3 position, Player playerModel, UIManager uiManager)
             : base(model) {
 
 			base.translation.Translation = position;
@@ -54,7 +65,7 @@ namespace BatteryDerby {
             base.tintColour = BasicModel.TINT_BLUE;
 
             aStarPaths = new List<Vector2>();
-
+            seekLocation = null;
         }
 
         public override void Update(GameTime gameTime) {
@@ -62,40 +73,41 @@ namespace BatteryDerby {
 
             Vector3 currentPosition = translation.Translation;
 
-            Vector3? targetPlayer = GetNearestPlayer();
-
-            if (targetPlayer.HasValue) {
-                // if damaged, first flee from player then seek health box
-                /*
-                if (health < MAX_HEALTH) {
-                    Vector3? targetItem = GetNearestEnergyItem();
-
-                    // if safe distance from player then seek health, otherwise flee
-                    if (Vector3.Distance((Vector3)targetPlayer, currentPosition) > 200f && targetItem.HasValue) {
-                        HandleRotation((Vector3)targetItem, currentPosition);
-                        HandleSeek((Vector3)targetItem, currentPosition, gameTime);
-                    } else {
-                        HandleFlee((Vector3)targetPlayer, currentPosition, gameTime);
-                    }
-                } else {
-                    HandleRotation((Vector3)targetPlayer, currentPosition);
-
-                    HandleAStarSeek((Vector3)targetPlayer, currentPosition, gameTime);
-
-                    //HandleSeek((Vector3)targetPlayer, currentModelPosition, gameTime);
+            // if damaged, then seek health box
+            if (health < MAX_HEALTH) {
+                
+                // first clear previous player seek path.
+                if (!bClearedPlayerSeekPaths) {
+                    Console.WriteLine("CLEARING1");
+                    aStarPaths.Clear();
+                    bClearedPlayerSeekPaths = true;
                 }
-                */
+                
+                Vector3? targetItem = GetNearestEnergyItem();
 
+                if (targetItem.HasValue) {
+                    HandleAStarSeek(targetItem.Value, currentPosition, gameTime);
+                }
+
+                if (seekLocation.HasValue) {
+                    HandleRotation(seekLocation.Value, currentPosition);
+                    currentSeekState = seekState.EnergyItem;
+                }
+
+            } else {
+                Vector3? targetPlayer = GetNearestPlayer();
+                bClearedPlayerSeekPaths = false;
                 if (targetPlayer.HasValue) {
                     HandleAStarSeek(targetPlayer.Value, currentPosition, gameTime);
                 }
 
                 if (seekLocation.HasValue) {
                     HandleRotation(seekLocation.Value, currentPosition);
-                }
-                
+                    currentSeekState = seekState.Player;
 
-            }
+                }
+
+            }              
 
             if (this.knockbackModelPosition != null) {
                 HandleJump(false);
@@ -131,7 +143,7 @@ namespace BatteryDerby {
             return foundModel;
         }
 
-        private Vector3? GetNearestEnergyItem() {
+        public Vector3? GetNearestEnergyItem() {
             float? shortestPathDistance = null;
             Vector3? closestModel = null;
 
@@ -204,20 +216,25 @@ namespace BatteryDerby {
             // Implement a quasi queue. Issue a move command to enemy, wait for the enemy to become resting again, then issue another command.
             // this way we process through the path list
             if (this.isResting() && aStarPaths.Count() > 0) {
-                seekLocation = new Vector3(aStarPaths.First().X, playerModel.translation.Translation.Y, aStarPaths.First().Y);
-                aStarPaths.RemoveAt(0);              
+                if (health < MAX_HEALTH) {
+                    Console.WriteLine("aStarPath First = X: " + aStarPaths.First().X + ", Y" + aStarPaths.First().Y);
+                }
+                seekLocation = new Vector3(aStarPaths.First().X, this.translation.Translation.Y, aStarPaths.First().Y);
+                aStarPaths.RemoveAt(0);
 
                 HandleSeek(seekLocation.Value, currentModelPosition, gameTime);
             } else if (this.isMoving() && seekLocation.HasValue) {
+                if (health < MAX_HEALTH) {
+                    if (aStarPaths.Count() > 0) {
+                        Console.WriteLine("aStarPath Firstzzzzzzzz = X: " + aStarPaths.First().X + ", Y" + aStarPaths.First().Y);
+                    }
+                }
                 HandleSeek(seekLocation.Value, currentModelPosition, gameTime);
             }
 
-        }
+            //Console.WriteLine("zzzzzzzzaStarPath First = X: " + aStarPaths.First().X + ", Y" + aStarPaths.First().Y);
 
-        private void HandleFlee(Vector3 targetPosition, Vector3 currentModelPosition, GameTime gameTime) {
-            float elapsedTime = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 80f;
 
-            translation.Translation += Vector3.Normalize(currentModelPosition - targetPosition) * moveSpeed * elapsedTime;
         }
 
         public override void Draw(GraphicsDevice device, Camera camera) {
@@ -303,11 +320,11 @@ namespace BatteryDerby {
         private bool isRotating() {
             return currentState == state.Rotating;
         }
-        private bool iSeekingPlayer() {
-            return currentState == state.SeekingPlayer;
+        public bool isSeekingPlayer() {
+            return currentSeekState == seekState.Player;
         }
-        private bool isSeekingEnergyItem() {
-            return currentState == state.SeekingEnergyItem;
+        public bool isSeekingEnergyItem() {
+            return currentSeekState == seekState.EnergyItem;
         }
 
         private bool isFalling() {
@@ -317,6 +334,6 @@ namespace BatteryDerby {
         private bool isJumping() {
             return currentState == state.Jumping;
         }
-
+               
     }
 }

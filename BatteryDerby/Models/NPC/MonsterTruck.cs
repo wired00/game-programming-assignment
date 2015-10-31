@@ -28,6 +28,9 @@ namespace BatteryDerby {
         static float JUMP_HEIGHT = 35f;
         private BasicModel knockbackModelPosition;
 
+        /// <summary>
+        /// List of a* found paths updated from the ModelManager
+        /// </summary>
         public List<Vector2> aStarPaths { get; set; }
 
         Vector3? seekLocation = null;
@@ -204,7 +207,7 @@ namespace BatteryDerby {
             // Implement a quasi queue. Issue a move command to enemy, wait for the enemy to become resting again, then issue another command.
             // this way we process through the path list
             if (this.isResting() && aStarPaths.Count() > 0) {
-                seekLocation = new Vector3(aStarPaths.First().X, playerModel.translation.Translation.Y, aStarPaths.First().Y);
+                seekLocation = new Vector3(aStarPaths.First().X, this.translation.Translation.Y, aStarPaths.First().Y);
                 aStarPaths.RemoveAt(0);              
 
                 HandleSeek(seekLocation.Value, currentModelPosition, gameTime);

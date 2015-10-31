@@ -72,7 +72,7 @@ namespace BatteryDerby {
             health = MAX_HEALTH;
             energy = MAX_ENERGY;
 
-            base.translation.Translation = new Vector3(150f, 0f, 150f);
+            base.translation.Translation = new Vector3(500f, 0f, 500f);
         }
 
         public override void Update(GameTime gameTime) {
