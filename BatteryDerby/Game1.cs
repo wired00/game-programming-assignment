@@ -17,15 +17,17 @@ namespace BatteryDerby {
         public AudioManager audioManager;
         public Score score;
         public SplashScreen splashScreen;
-        public GameTime gameTime; 
-     
-        Matrix world = Matrix.CreateTranslation(0, 0, 0);     
+        public GameTime gameTime;
+
+        Matrix world = Matrix.CreateTranslation(0, 0, 0);
         Matrix view = Matrix.CreateLookAt(new Vector3(0, 2, 3), new Vector3(0, 0, 0), new Vector3(0, 1, 0));
         Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), 800f / 480f, 0.01f, 100f);
 
         // Splash Screen
-        public enum GameState { START, PLAY, LEVEL_CHANGE, END}
+        public enum GameState { START, PLAY, LEVEL_CHANGE, END }
         public GameState currentGameState = GameState.START;
+
+        public bool debugMode { get; set; }
 
         public void ChangeGameState (GameState state, int level)
         {
@@ -68,6 +70,7 @@ namespace BatteryDerby {
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            this.debugMode = false;
         }
 
         protected override void Initialize() {
@@ -91,8 +94,6 @@ namespace BatteryDerby {
 
             score = new Score();
 
-            //world.Translation = new Vector3(world)
-
             this.IsMouseVisible = true;
 
             base.Initialize();
@@ -113,18 +114,22 @@ namespace BatteryDerby {
             this.gameTime = gameTime;
             score.survivalTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
+            HandleKeyboardInput();
+
             base.Update(gameTime);
         }
         
         protected override void Draw(GameTime gameTime) {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // fix issue with spriteBatch above changing render states which messex
-            //GraphicsDevice.BlendState = BlendState.Opaque;
-            //GraphicsDevice.DepthStencilState = DepthStencilState.Default;
-
             base.Draw(gameTime);
             device.DepthStencilState = DepthStencilState.Default;
+        }
+
+        private void HandleKeyboardInput() {
+            if (Keyboard.GetState().IsKeyDown(Keys.F1)) {
+                this.debugMode = !debugMode; // switch debugmode
+            }
         }
 
     }

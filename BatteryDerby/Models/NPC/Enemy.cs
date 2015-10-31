@@ -62,8 +62,6 @@ namespace BatteryDerby {
             health = MAX_HEALTH;
             Random rng = new Random();
 
-            base.tintColour = BasicModel.TINT_BLUE;
-
             aStarPaths = new List<Vector2>();
             seekLocation = null;
         }
@@ -72,6 +70,7 @@ namespace BatteryDerby {
             float elapsedTime = (float) gameTime.ElapsedGameTime.TotalSeconds;
 
             Vector3 currentPosition = translation.Translation;
+            Vector3? targetItem = GetNearestEnergyItem();
 
             // if damaged, then seek health box
             if (health < MAX_HEALTH) {
@@ -83,20 +82,21 @@ namespace BatteryDerby {
 
                 }
 
-                Vector3? targetItem = GetNearestEnergyItem();
-
                 if (targetItem.HasValue) {
-                    HandleAStarSeek(targetItem.Value, currentPosition, gameTime);
-                }
 
-                if (seekLocation.HasValue) {
-                    HandleRotation(seekLocation.Value, currentPosition);
+                    HandleAStarSeek(targetItem.Value, currentPosition, gameTime);
+                    HandleRotation(targetItem.Value, currentPosition);
                     currentSeekState = seekState.EnergyItem;
+
                 }
 
             } else {
+
+                // if not damaged then seek player
+
                 Vector3? targetPlayer = GetNearestPlayer();
                 bClearedPlayerSeekPaths = false;
+
                 if (targetPlayer.HasValue) {
                     HandleAStarSeek(targetPlayer.Value, currentPosition, gameTime);
                 }
@@ -119,7 +119,7 @@ namespace BatteryDerby {
             if (health < MAX_HEALTH) {
                 base.tintColour = BasicModel.TINT_RED;
             } else {
-                //base.tintColour = BasicModel.TINT_BLUE;
+                base.tintColour = BasicModel.TINT_TRANSPARENT;
             }
 
             base.Update(gameTime);
@@ -218,10 +218,6 @@ namespace BatteryDerby {
 
             if (this.isResting() && aStarPaths.Count() > 0) {
 
-                if (health < MAX_HEALTH) {
-
-                    //Console.WriteLine("aStarPath First = X: " + aStarPaths.First().X + ", Y" + aStarPaths.First().Y);
-                }
                 seekLocation = new Vector3(aStarPaths.First().X, this.translation.Translation.Y, aStarPaths.First().Y);
                 aStarPaths.RemoveAt(0);
 
@@ -231,18 +227,15 @@ namespace BatteryDerby {
                 if (health < MAX_HEALTH) {
 
                     if (aStarPaths.Count() > 0) {
+
                         seekLocation = new Vector3(aStarPaths.First().X, this.translation.Translation.Y, aStarPaths.First().Y);
                         aStarPaths.RemoveAt(0);
-
                        
                     }
                 }
 
                 HandleSeek(seekLocation.Value, currentModelPosition, gameTime);
             }
-
-            //Console.WriteLine("zzzzzzzzaStarPath First = X: " + aStarPaths.First().X + ", Y" + aStarPaths.First().Y);
-
 
         }
 
@@ -260,17 +253,22 @@ namespace BatteryDerby {
         /// </summary>
         /// <param name=""></param>
         internal void KnockBackFrom(BasicModel model) {
-            //translation.Translation += Vector3.Normalize(translation.Translation - model.translation.Translation) * 50f;
+            
+            // if knockback from player, then throw into the air, if another car, then small knockback
+            if (model.GetType() == typeof(Player)) {
+                this.knockbackModelPosition = model;
 
-            this.knockbackModelPosition = model;
+                if (this.knockbackModelPosition != null) {
+                    HandleJump(true);
+                }
 
-            if (this.knockbackModelPosition != null) {
-                HandleJump(true);
-            }
+                // make sure Y always at identity Y
+                if (translation.Translation.Y < Matrix.Identity.Translation.Y) {
+                    translation.Translation = new Vector3(translation.Translation.X, Matrix.Identity.Translation.Y, translation.Translation.Z);
+                }
 
-            // make sure Y always at identity Y
-            if (translation.Translation.Y < Matrix.Identity.Translation.Y) {
-                translation.Translation = new Vector3(translation.Translation.X, Matrix.Identity.Translation.Y, translation.Translation.Z);
+            } else {
+                translation.Translation += Vector3.Normalize(translation.Translation - model.translation.Translation) * 50f;
             }
 
         }
@@ -287,9 +285,8 @@ namespace BatteryDerby {
             
             // jump model into air with an initial velocity
             if (startJump && (isMoving() || isResting())) {
-                //Console.WriteLine("JUMPING INITIALISE");
-                jumpPosition += 10f;
-                jumpVelocity += 10f;
+                jumpPosition += 5f;
+                jumpVelocity += 5f;
                 currentState = state.Jumping;
             }
 

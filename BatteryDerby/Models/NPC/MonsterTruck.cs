@@ -15,14 +15,15 @@ namespace BatteryDerby {
 
         public static int MAX_HEALTH = 100;
 
-		Player playerModel;
-        
+        Player playerModel;
+
         public int health { get; set; }
 
         Matrix rotation = Matrix.Identity;
 
         state currentState = state.Resting;
-        
+        seekState currentSeekState = seekState.Player;
+
         float moveSpeed = 30f;
         float jumpVelocity = 0f;
         static float JUMP_HEIGHT = 35f;
@@ -33,72 +34,58 @@ namespace BatteryDerby {
         /// </summary>
         public List<Vector2> aStarPaths { get; set; }
 
-        Vector3? seekLocation = null;
-        
+        public Vector3? seekLocation { get; set; }
+
+
+        bool bClearedPlayerSeekPaths = false;
+
+
         enum state {
             Moving,
             Resting,
             Rotating,
-            SeekingEnergyItem,
-            SeekingPlayer,
             Jumping,
             Falling
         }
 
-		public MonsterTruck(Model model, GraphicsDevice device, Camera camera, Vector3 position, Player playerModel, UIManager uiManager)
+        enum seekState {
+            EnergyItem,
+            Player
+        }
+
+        public MonsterTruck(Model model, GraphicsDevice device, Camera camera, Vector3 position, Player playerModel, UIManager uiManager)
             : base(model) {
 
-			base.translation.Translation = position;
+            base.translation.Translation = position;
 
-			this.playerModel = playerModel;
+            this.playerModel = playerModel;
             health = MAX_HEALTH;
             Random rng = new Random();
 
             base.tintColour = BasicModel.TINT_BLUE;
 
             aStarPaths = new List<Vector2>();
-
+            seekLocation = null;
         }
 
         public override void Update(GameTime gameTime) {
-            float elapsedTime = (float) gameTime.ElapsedGameTime.TotalSeconds;
+            float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             Vector3 currentPosition = translation.Translation;
 
+
             Vector3? targetPlayer = GetNearestPlayer();
-
+            bClearedPlayerSeekPaths = false;
             if (targetPlayer.HasValue) {
-                // if damaged, first flee from player then seek health box
-                /*
-                if (health < MAX_HEALTH) {
-                    Vector3? targetItem = GetNearestEnergyItem();
+                HandleAStarSeek(targetPlayer.Value, currentPosition, gameTime);
+            }
 
-                    // if safe distance from player then seek health, otherwise flee
-                    if (Vector3.Distance((Vector3)targetPlayer, currentPosition) > 200f && targetItem.HasValue) {
-                        HandleRotation((Vector3)targetItem, currentPosition);
-                        HandleSeek((Vector3)targetItem, currentPosition, gameTime);
-                    } else {
-                        HandleFlee((Vector3)targetPlayer, currentPosition, gameTime);
-                    }
-                } else {
-                    HandleRotation((Vector3)targetPlayer, currentPosition);
-
-                    HandleAStarSeek((Vector3)targetPlayer, currentPosition, gameTime);
-
-                    //HandleSeek((Vector3)targetPlayer, currentModelPosition, gameTime);
-                }
-                */
-
-                if (targetPlayer.HasValue) {
-                    HandleAStarSeek(targetPlayer.Value, currentPosition, gameTime);
-                }
-
-                if (seekLocation.HasValue) {
-                    HandleRotation(seekLocation.Value, currentPosition);
-                }
-                
+            if (seekLocation.HasValue) {
+                HandleRotation(seekLocation.Value, currentPosition);
+                currentSeekState = seekState.Player;
 
             }
+               
 
             if (this.knockbackModelPosition != null) {
                 HandleJump(false);
@@ -121,12 +108,12 @@ namespace BatteryDerby {
 
             if (models != null) {
                 foreach (BasicModel model in models) {
-                    
+
                     // if player
                     if (model.GetType() == typeof(Player)) {
                         foundModel = ((Player)model).translation.Translation;
                     }
-                    
+
                 }
 
             }
@@ -134,7 +121,7 @@ namespace BatteryDerby {
             return foundModel;
         }
 
-        private Vector3? GetNearestEnergyItem() {
+        public Vector3? GetNearestEnergyItem() {
             float? shortestPathDistance = null;
             Vector3? closestModel = null;
 
@@ -159,7 +146,7 @@ namespace BatteryDerby {
             return closestModel;
 
         }
-        
+
         private void HandleRotation(Vector3 targetPosition, Vector3 currentModelPosition) {
             rotation = RotateToFace((Vector3)targetPosition, currentModelPosition, Vector3.Up);
         }
@@ -199,28 +186,35 @@ namespace BatteryDerby {
                 } else {
                     currentState = state.Resting;
                 }
-            } 
+            }
 
         }
 
         private void HandleAStarSeek(Vector3 targetPlayer, Vector3 currentModelPosition, GameTime gameTime) {
             // Implement a quasi queue. Issue a move command to enemy, wait for the enemy to become resting again, then issue another command.
             // this way we process through the path list
+
             if (this.isResting() && aStarPaths.Count() > 0) {
+
                 seekLocation = new Vector3(aStarPaths.First().X, this.translation.Translation.Y, aStarPaths.First().Y);
-                aStarPaths.RemoveAt(0);              
+                aStarPaths.RemoveAt(0);
 
                 HandleSeek(seekLocation.Value, currentModelPosition, gameTime);
-            } else if (this.isMoving() && seekLocation.HasValue) {
+            } else if (this.isMoving() || this.isJumping() && seekLocation.HasValue) {
+
+                if (health < MAX_HEALTH) {
+
+                    if (aStarPaths.Count() > 0) {
+                        seekLocation = new Vector3(aStarPaths.First().X, this.translation.Translation.Y, aStarPaths.First().Y);
+                        aStarPaths.RemoveAt(0);
+
+
+                    }
+                }
+
                 HandleSeek(seekLocation.Value, currentModelPosition, gameTime);
             }
 
-        }
-
-        private void HandleFlee(Vector3 targetPosition, Vector3 currentModelPosition, GameTime gameTime) {
-            float elapsedTime = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 80f;
-
-            translation.Translation += Vector3.Normalize(currentModelPosition - targetPosition) * moveSpeed * elapsedTime;
         }
 
         public override void Draw(GraphicsDevice device, Camera camera) {
@@ -228,7 +222,7 @@ namespace BatteryDerby {
         }
 
         public override Matrix GetWorld() {
-            return Matrix.CreateScale(1.5f) * rotation * translation;
+            return Matrix.CreateScale(6f) * rotation * translation;
         }
 
         /// <summary>
@@ -237,18 +231,7 @@ namespace BatteryDerby {
         /// </summary>
         /// <param name=""></param>
         internal void KnockBackFrom(BasicModel model) {
-            //translation.Translation += Vector3.Normalize(translation.Translation - model.translation.Translation) * 50f;
-
-            this.knockbackModelPosition = model;
-
-            if (this.knockbackModelPosition != null) {
-                HandleJump(true);
-            }
-
-            // make sure Y always at identity Y
-            if (translation.Translation.Y < Matrix.Identity.Translation.Y) {
-                translation.Translation = new Vector3(translation.Translation.X, Matrix.Identity.Translation.Y, translation.Translation.Z);
-            }
+            translation.Translation += Vector3.Normalize(translation.Translation - model.translation.Translation) * 30f;
 
         }
 
@@ -260,13 +243,11 @@ namespace BatteryDerby {
 
             // store the current jump Y position and modify each frame/tick with the current velocity
             float jumpPosition = translation.Translation.Y + jumpVelocity;
-            
-            
+
             // jump model into air with an initial velocity
             if (startJump && (isMoving() || isResting())) {
-                //Console.WriteLine("JUMPING INITIALISE");
-                jumpPosition += 10f;
-                jumpVelocity += 10f;
+                jumpPosition += 5f;
+                jumpVelocity += 5f;
                 currentState = state.Jumping;
             }
 
@@ -306,11 +287,11 @@ namespace BatteryDerby {
         private bool isRotating() {
             return currentState == state.Rotating;
         }
-        private bool iSeekingPlayer() {
-            return currentState == state.SeekingPlayer;
+        public bool isSeekingPlayer() {
+            return currentSeekState == seekState.Player;
         }
-        private bool isSeekingEnergyItem() {
-            return currentState == state.SeekingEnergyItem;
+        public bool isSeekingEnergyItem() {
+            return currentSeekState == seekState.EnergyItem;
         }
 
         private bool isFalling() {

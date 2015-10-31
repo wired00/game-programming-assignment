@@ -348,10 +348,15 @@ namespace BatteryDerby {
         /// </summary>
         /// <param name=""></param>
         public void KnockBackFrom(BasicModel model) {
-            // knockback further if boosting
             float knockbackDistance = 5f;
-            if (isBoosting()) {
-                knockbackDistance = 15f;
+
+            if (model.GetType() == typeof(Enemy) || model.GetType() == typeof(MonsterTruck)) {
+                knockbackDistance = 50f;
+            } else {
+                // knockback further if boosting
+                if (isBoosting()) {
+                    knockbackDistance = 15f;
+                }
             }
 
             translation.Translation += Vector3.Normalize(translation.Translation - model.translation.Translation) * knockbackDistance;

@@ -56,6 +56,13 @@ namespace BatteryDerby {
         /// </summary>
         /// <returns></returns>
         private bool isValidCheck(BasicModel modelA, BasicModel modelB) {
+            if (modelA.GetType() == typeof(SeekIndicator) && modelB.GetType() != typeof(Enemy)) {
+                return false;
+            }else if (modelB.GetType() == typeof(SeekIndicator) && modelA.GetType() != typeof(Enemy)) {
+                return false;
+            }
+
+
             if (modelA.uniqueId != modelB.uniqueId && (validModelType(modelA)) && (validModelType(modelB))) {
                 if (isMatchingMapQuadrant(modelA, modelB)) {
                     return true;
@@ -113,21 +120,25 @@ namespace BatteryDerby {
         /// <param name="modelA"></param>
         /// <param name="modelB"></param>
         private void HandleCollision(BasicModel modelA, BasicModel modelB) {
-            if (modelA.GetType() == typeof(Enemy) && modelB.GetType() == typeof(Pickup)) {
+            Type typeModelA = modelA.GetType();
+            Type typeModelB = modelB.GetType();
+
+            if (typeModelA == typeof(Enemy) && typeModelB == typeof(Pickup)) {
                 ///
                 /// COLLISION - ENEMY AND PICKUP ITEM
                 ///
                 score.enemyBatteryCount++;
                 ((Enemy)modelA).FullHealth();
+                
                 modelB.currentDrawState = BasicModel.drawState.remove;
 
-            }  else if (modelA.GetType() == typeof(Enemy) && modelB.GetType() == typeof(SeekIndicator)) {
+            }  else if (typeModelA == typeof(Enemy) && typeModelB == typeof(SeekIndicator)) {
                 ///
                 /// COLLISION - ENEMY AND SEEK INDICATOR DEBUG ITEM
                 ///
                 modelB.currentDrawState = BasicModel.drawState.remove;
 
-            } else if (modelA.GetType() == typeof(Player) && modelB.GetType() == typeof(Pickup)) {
+            } else if (typeModelA == typeof(Player) && typeModelB == typeof(Pickup)) {
                 ///
                 /// COLLISION - PLAYER AND PICKUP ITEM
                 ///
@@ -140,7 +151,7 @@ namespace BatteryDerby {
                 modelB.currentDrawState = BasicModel.drawState.remove;
                 score.playerBatteryCount++;
 
-            } else if (modelA.GetType() == typeof(Enemy) && modelB.GetType() == typeof(Enemy)) {
+            } else if (typeModelA == typeof(Enemy) && typeModelB == typeof(Enemy)) {
                 ///
                 /// COLLISION - ENEMY AI WITH ENEMY AI
                 ///
@@ -152,11 +163,27 @@ namespace BatteryDerby {
                 enemyModelA.KnockBackFrom(enemyModelB);
                 enemyModelB.KnockBackFrom(enemyModelA);
 
+                // reduce limited amount of health
+                enemyModelA.health -= 5;
+                enemyModelB.health -= 5;
+
                 if (audioManager.crash.State != SoundState.Playing) {
                     audioManager.crash.Play();
                 }
 
-            } else if (modelA.GetType() == typeof(Enemy) && modelB.GetType() == typeof(Player)) {
+
+                if (enemyModelA.health <= 0) {
+                    audioManager.enemyDeath.Play();
+                    enemyModelA.currentDrawState = BasicModel.drawState.remove;
+                    score.enemiesDefeatedCount++;
+                }
+                if (enemyModelB.health <= 0) {
+                    audioManager.enemyDeath.Play();
+                    enemyModelB.currentDrawState = BasicModel.drawState.remove;
+                    score.enemiesDefeatedCount++;
+                }
+
+            } else if (typeModelA == typeof(Enemy) && typeModelB == typeof(Player)) {
                 ///
                 /// COLLISION - ENEMY AND PLAYER
                 ///
@@ -173,6 +200,7 @@ namespace BatteryDerby {
                 } else {
                     playerModel.KnockBackFrom(enemyModel); // knockback enemy from player
                     enemyModel.health -= 35;
+
                     playerModel.health -= 5;
                     if (audioManager.crash.State != SoundState.Playing) {
                         audioManager.crash.Play();
@@ -198,10 +226,9 @@ namespace BatteryDerby {
                     playerModel.currentDrawState = BasicModel.drawState.remove;
                     splashScreen.SetData("TODO - enemy wins", Game1.GameState.END); // change splash state
                     this.game.ChangeGameState(Game1.GameState.END, 1); // change game state
-                    //score.survivalTime = game.gameTime.TotalGameTime.Seconds;
                 }
 
-            } else if (modelA.GetType() == typeof(Player) && modelB.GetType() == typeof(Tire)) {
+            } else if (typeModelA == typeof(Player) && typeModelB == typeof(Tire)) {
                 ///
                 /// COLLISION - PLAYER AND TIRE OBSTACLE
                 ///
@@ -214,7 +241,7 @@ namespace BatteryDerby {
 
                 playerModel.KnockBackFrom(tireModel); // knockback player from obstacle
 
-            } else if (modelA.GetType() == typeof(Player) && modelB.GetType() == typeof(Barrier)) {
+            } else if (typeModelA == typeof(Player) && typeModelB == typeof(Barrier)) {
                 ///
                 /// COLLISION - PLAYER AND BARRIER OBSTACLE
                 ///

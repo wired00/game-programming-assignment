@@ -38,7 +38,7 @@
   <ItemGroup>
     <Compile Include="Managers\AudioManager.cs" />
     <Compile Include="Camera.cs" />
-    <Compile Include="BasicModel.cs" />
+    <Compile Include="Models\BasicModel.cs" />
     <Compile Include="CollisionHandler.cs" />
     <Compile Include="Models\NPC\MonsterTruck.cs" />
     <Compile Include="MapBuilder.cs" />

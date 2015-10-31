@@ -21,6 +21,11 @@ namespace BatteryDerby
 
         private int[,] layoutObstacleModels = new int[13, 17];
 
+        public const int MINX = 96;
+        public const int MAXX = 1440;
+        public const int MINY = 96;
+        public const int MAXY = 1056;
+
         public int Width
         {
             get { return layout.GetLength(1); }
@@ -135,12 +140,6 @@ namespace BatteryDerby
                             Game.Content.Load<Model>(textures[tileIndex]),
                             new Vector3((TILE_SIZE * i), 3, (TILE_SIZE * j)),
                             tileIndex);
-
-                    // TODO: ran out of time building unmovable tile/model, instead if 1 tile index, then just tint red, to indicate cannot move.
-                    if (tileIndex == 1)
-                    {
-                        tile.tintColour = BasicModel.TINT_RED;
-                    }
 
                     tiles.Add(tile);
 

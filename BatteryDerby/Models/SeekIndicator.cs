@@ -20,6 +20,8 @@ namespace BatteryDerby {
         public SeekIndicator(Model model, Vector3 position)
             : base(model) {
 
+            position = new Vector3(position.X, 20f, position.Z);
+
             translation.Translation = position;
 
             originalRotation = rotation;

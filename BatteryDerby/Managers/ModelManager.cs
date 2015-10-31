@@ -14,10 +14,6 @@ namespace BatteryDerby {
 
         CollisionHandler collisionHandler;// = new CollisionHandler(((Game1)Game).audioManager);
 
-        public const int MINX = 96;
-        public const int MAXX = 1440;
-        public const int MINY = 96;
-        public const int MAXY = 1056;
         float secondsSinceLastItem = 0;
         float secondsSinceLastEnemy = 0;
         int enemySpawnCount = 0;
@@ -72,11 +68,11 @@ namespace BatteryDerby {
 
             models.Add(new Pickup(
                 Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
-                new Vector3(rnd.Next(MINX, MAXX), 30, rnd.Next(MINY, MAXY))));
+                new Vector3(rnd.Next(MapBuilder.MINX, MapBuilder.MAXX), 30, rnd.Next(MapBuilder.MINY, MapBuilder.MAXY))));
 
             models.Add(new Pickup(
                 Game.Content.Load<Model>(@"Models/Battery/BatteryModel"),
-                new Vector3(rnd.Next(MINX, MAXX), 30, rnd.Next(MINY, MAXY))));
+                new Vector3(rnd.Next(MapBuilder.MINX, MapBuilder.MAXX), 30, rnd.Next(MapBuilder.MINY, MapBuilder.MAXY))));
 
             ///
             /// Build a map using tiles
@@ -103,7 +99,7 @@ namespace BatteryDerby {
                 Game.Content.Load<Model>(@"Models/Vehicles/BuggyFullHP"),
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
-                new Vector3(rnd.Next(MINX, MAXX), 0, MAXY),
+                new Vector3(rnd.Next(MapBuilder.MINX, MapBuilder.MAXX), 0, MapBuilder.MAXY),
                 playerModel,
                 uiManager);
             models.Add(enemy);
@@ -205,7 +201,7 @@ namespace BatteryDerby {
             }
 
             if (secondsSinceLastEnemy >= timeToSpawnEnemy) {
-                //SpawnEnemys();
+                SpawnEnemys();
                 enemySpawnCount++;
                 secondsSinceLastEnemy = 0;
             } else {
@@ -234,11 +230,10 @@ namespace BatteryDerby {
         /// Spawn item if the coordinate is walkable. problems with random in C# m
         /// </summary>
         private void SpawnItems() {
-            Vector3 itemLocation = new Vector3(rnd.Next(MINX, MAXX), 30, rnd.Next(MINY, MAXY));
+            Vector3 itemLocation = new Vector3(rnd.Next(MapBuilder.MINX, MapBuilder.MAXX), 30, rnd.Next(MapBuilder.MINY, MapBuilder.MAXY));
 
             Point tilePoint = mapBuilder.GetQuantisation(itemLocation);
             if (mapBuilder.isWalkable(tilePoint)) {
-                //Console.WriteLine("OK NO COLLISION X: " + itemLocation.X + " Z: " + itemLocation.Z);
                 models.Add(new Pickup(Game.Content.Load<Model>(@"Models/Battery/BatteryModel"), itemLocation));
             } else {
                 SpawnItems();
@@ -247,26 +242,22 @@ namespace BatteryDerby {
         }
 
         private void SpawnEnemys() {
-            models.Add(new Enemy(
-                Game.Content.Load<Model>(@"Models/Car/Enemy/CarModel2"),
+            if (!((Game1)game).debugMode) {
+                models.Add(new Enemy(
+                Game.Content.Load<Model>(@"Models/Vehicles/BuggyFullHP"),
                 ((Game1)Game).GraphicsDevice,
                 ((Game1)Game).camera,
                 GetEnemySpawnLocation(),
                 playerModel,
                 uiManager
                 ));
+            }
         }
 
-        // get random enemy spawn location. Will spawn at a random y coord to the outside of either the left or right of map
+        // get random enemy spawn location. Will spawn at a random y coord at bottom of map
         private Vector3 GetEnemySpawnLocation() {
-            Random rnd = new Random();
+            return new Vector3(rnd.Next(MapBuilder.MINX, MapBuilder.MAXX), 30, MapBuilder.MAXY);
 
-            // Spawn left or right of map?
-            if (rnd.Next(1, 10) > 5) {
-                return new Vector3(50, 30, rnd.Next(50, 400));
-            } else {
-                return new Vector3(700, 30, rnd.Next(50, 400));
-            }
         }
 
         /// <summary>
@@ -281,33 +272,28 @@ namespace BatteryDerby {
                 model.models = models;
 
                 if (model.GetType() == typeof(Enemy) && ((Enemy)model).aStarPaths.Count == 0) {
-                    Vector3? seekTarget;
+                    Vector3? seekTarget = null;
                     if (((Enemy)model).isSeekingPlayer()) {
                         seekTarget = playerModel.translation.Translation;
                     } else {
-                        seekTarget = ((Enemy)model).GetNearestEnergyItem().Value;
+                        if (((Enemy)model).GetNearestEnergyItem().HasValue) {
+                            seekTarget = ((Enemy)model).GetNearestEnergyItem().Value;
+                        } else {
+                            // flee if damaged but no batteries left!
+                            seekTarget = new Vector3(rnd.Next(MapBuilder.MINX, MapBuilder.MAXX), 0, rnd.Next(MapBuilder.MINY, MapBuilder.MAXY));
+                        }
                     }
 
                     if (seekTarget.HasValue) {
                         List<Vector2> pathToTarget = FindPath(mapBuilder.GetQuantisation(model.translation.Translation), mapBuilder.GetQuantisation(seekTarget));
+                        ClearSeekTokens();
                         ((Enemy)model).aStarPaths.Clear();
                         ((Enemy)model).aStarPaths.AddRange(pathToTarget);
 
                     }
 
                 } else if (model.GetType() == typeof(Enemy) && ((Enemy)model).aStarPaths.Count > 0) {
-                    // Add token indicating where enemy seeking. One indicator arrow for each astar coordinate
-                    // Also, first verify that the token doesnt already exist at the location
-                    foreach (Vector2 seekLocation in ((Enemy)model).aStarPaths) {
-                        if (!seekTokenAlreadyExists(new Vector3(seekLocation.X, 0, seekLocation.Y))) {
-                            SeekIndicator seekIndicator = new SeekIndicator(
-                                Game.Content.Load<Model>(@"Models/ArrowPointer/ArrowPointerModel"),
-                                new Vector3(seekLocation.X, 0, seekLocation.Y));
-                            models.Add(seekIndicator);
-                        }
-
-                    }
-                   
+                    HandleDebugMode(model);
                 }
 
                 if (model.GetType() == typeof(MonsterTruck) && ((MonsterTruck)model).aStarPaths.Count == 0) {
@@ -318,7 +304,33 @@ namespace BatteryDerby {
             }
         }
 
-        private bool seekTokenAlreadyExists(Vector3 location) {
+        /// <summary>
+        /// When debug mode show path from enemy to target of a*
+        /// </summary>
+        private void HandleDebugMode(BasicModel model) {
+            
+            if (((Game1)game).debugMode) {
+                // Add token indicating where enemy seeking. One indicator arrow for each astar coordinate
+                // Also, first verify that the token doesnt already exist at the location
+
+                foreach (Vector2 seekLocation in ((Enemy)model).aStarPaths) {
+
+                    if (!SeekTokenAlreadyExists(new Vector3(seekLocation.X, 0, seekLocation.Y))) {
+                        SeekIndicator seekIndicator = new SeekIndicator(
+                            Game.Content.Load<Model>(@"Models/ArrowPointer/ArrowPointerModel"),
+                            new Vector3(seekLocation.X, 0, seekLocation.Y));
+                        models.Add(seekIndicator);
+                    }
+
+                }
+            } else {
+                // clear all astar debug tokens if not debug mode
+                ClearSeekTokens();
+            }
+           
+        }
+
+        private bool SeekTokenAlreadyExists(Vector3 location) {
             for (int i = 0; i < models.Count; i++) {
                 BasicModel model = models[i];
 
@@ -328,6 +340,16 @@ namespace BatteryDerby {
             }
 
             return false;
+        }
+
+       private void ClearSeekTokens() {
+            for (int i = 0; i < models.Count; i++) {
+                BasicModel model = models[i];
+
+                if (model.GetType() == typeof(SeekIndicator)) {
+                    ((BasicModel)model).currentDrawState = BasicModel.drawState.remove;
+                }
+            }
         }
     }
 }
