@@ -40,10 +40,6 @@ namespace BatteryDerby
             textures.Add(@"Models/Tiles/TileSkid"); // index 2
             textures.Add(@"Models/Tiles/TileOil"); // index 3 - TODO: replace with tile representing base of barrier
 
-            /// keep list of all possible obstacle models
-            obstacleModels.Add(@"Models/Obstacles/WallSectionL");
-            obstacleModels.Add(@"Models/Obstacles/WallSectionS");
-
             //load the map
             string[] tileLines = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory + @"/Content/Map1.txt");
 
@@ -166,38 +162,28 @@ namespace BatteryDerby
                     int modelIndex = GetObstacleIndex(j, i);
 
                     switch (modelIndex) {
+                        case 1:
+                            Tire tireStack = new Tire(
+                                    Game.Content.Load<Model>(@"Models/Obstacles/TireStackModel"),
+                                    new Vector3((TILE_SIZE * i), 0, (TILE_SIZE * j)));
+
+                            obstacleModels.Add(tireStack);
+
+                            break;
+                        case 2:
+                            Barrier barrGHTop = new Barrier(
+                                    Game.Content.Load<Model>(@"Models/Obstacles/WallGreenHorizontalTopModel"),
+                                    new Vector3((TILE_SIZE * i), 0, (TILE_SIZE * j)));
+
+                            obstacleModels.Add(barrGHTop);
+
+                            break;
                         case 3:
-                            Barrier barrierObstacle = new Barrier(
-                                    Game.Content.Load<Model>(@"Models/Obstacles/ConcreteWallSectionL2"),
+                            Barrier barrOHTop = new Barrier(
+                                    Game.Content.Load<Model>(@"Models/Obstacles/WallOJHorizontalTopModel"),
                                     new Vector3((TILE_SIZE * i), 0, (TILE_SIZE * j)));
 
-                            obstacleModels.Add(barrierObstacle);
-
-                            break;
-                        case 4:
-                            Barrier barrierObstacle2 = new Barrier(
-                                    Game.Content.Load<Model>(@"Models/Obstacles/ConcreteWallSectionS3"),
-                                    new Vector3((TILE_SIZE * i), 0, (TILE_SIZE * j)));
-
-                            obstacleModels.Add(barrierObstacle2);
-
-                            break;
-                        case 5:
-                            // barrier corner LHS
-                            Barrier barrierObstacle5 = new Barrier(
-                                    Game.Content.Load<Model>(@"Models/Obstacles/ConcreteWallLHS"),
-                                    new Vector3((TILE_SIZE * i), 0, (TILE_SIZE * j)));
-
-                            obstacleModels.Add(barrierObstacle5);
-
-                            break;
-                        case 6:
-                            // barrier corner RHS
-                            Barrier barrierObstacle6 = new Barrier(
-                                    Game.Content.Load<Model>(@"Models/Obstacles/ConcreteWallRHS"),
-                                    new Vector3((TILE_SIZE * i), 0, (TILE_SIZE * j)));
-
-                            obstacleModels.Add(barrierObstacle6);
+                            obstacleModels.Add(barrOHTop);
 
                             break;
                     }
