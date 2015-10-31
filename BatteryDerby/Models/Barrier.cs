@@ -31,7 +31,7 @@ namespace BatteryDerby {
         }
 
         public override Matrix GetWorld() {
-            return Matrix.CreateScale(6f) * translation;
+            return Matrix.CreateScale(7.5f) * translation;
         }
         
     }

@@ -171,19 +171,35 @@ namespace BatteryDerby
 
                             break;
                         case 2:
-                            Barrier barrGHTop = new Barrier(
-                                    Game.Content.Load<Model>(@"Models/Obstacles/WallGreenHorizontalTopModel"),
+                            Barrier barrierGH = new Barrier(
+                                    Game.Content.Load<Model>(@"Models/Obstacles/WallGreenHorizontalModel"),
                                     new Vector3((TILE_SIZE * i), 0, (TILE_SIZE * j)));
 
-                            obstacleModels.Add(barrGHTop);
+                            obstacleModels.Add(barrierGH);
 
                             break;
                         case 3:
-                            Barrier barrOHTop = new Barrier(
-                                    Game.Content.Load<Model>(@"Models/Obstacles/WallOJHorizontalTopModel"),
+                            Barrier barrierOH = new Barrier(
+                                    Game.Content.Load<Model>(@"Models/Obstacles/WallOJHorModel"),
                                     new Vector3((TILE_SIZE * i), 0, (TILE_SIZE * j)));
 
-                            obstacleModels.Add(barrOHTop);
+                            obstacleModels.Add(barrierOH);
+
+                            break;
+                        case 4:
+                            Barrier barrierGV = new Barrier(
+                                    Game.Content.Load<Model>(@"Models/Obstacles/WallGreenVerticalModel"),
+                                    new Vector3((TILE_SIZE * i), 0, (TILE_SIZE * j)));
+
+                            obstacleModels.Add(barrierGV);
+
+                            break;
+                        case 5:
+                            Barrier barrierOV = new Barrier(
+                                    Game.Content.Load<Model>(@"Models/Obstacles/WallOJVertModel"),
+                                    new Vector3((TILE_SIZE * i), 0, (TILE_SIZE * j)));
+
+                            obstacleModels.Add(barrierOV);
 
                             break;
                     }
