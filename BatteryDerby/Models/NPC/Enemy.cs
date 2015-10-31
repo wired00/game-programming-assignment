@@ -50,7 +50,8 @@ namespace BatteryDerby {
 
         enum seekState {
             EnergyItem,
-            Player
+            Player,
+            Flee
         }
 
         public Enemy(Model model, GraphicsDevice device, Camera camera, Vector3 position, Player playerModel, UIManager uiManager)
@@ -88,6 +89,8 @@ namespace BatteryDerby {
                     HandleRotation(targetItem.Value, currentPosition);
                     currentSeekState = seekState.EnergyItem;
 
+                } else {
+                    currentSeekState = seekState.Flee;
                 }
 
             } else {
@@ -331,6 +334,9 @@ namespace BatteryDerby {
         }
         public bool isSeekingEnergyItem() {
             return currentSeekState == seekState.EnergyItem;
+        }
+        public bool isSeekingFlee() {
+            return currentSeekState == seekState.Flee;
         }
 
         private bool isFalling() {

@@ -29,6 +29,8 @@ namespace BatteryDerby {
 
         public bool debugMode { get; set; }
 
+        KeyboardState lastKeyboardState;
+
         public void ChangeGameState (GameState state, int level)
         {
             currentGameState = state;
@@ -127,9 +129,12 @@ namespace BatteryDerby {
         }
 
         private void HandleKeyboardInput() {
-            if (Keyboard.GetState().IsKeyDown(Keys.F1)) {
+
+            if (Keyboard.GetState().IsKeyDown(Keys.F1) && Keyboard.GetState() != lastKeyboardState) {
                 this.debugMode = !debugMode; // switch debugmode
+                
             }
+            lastKeyboardState = Keyboard.GetState();
         }
 
     }

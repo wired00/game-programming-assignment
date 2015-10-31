@@ -33,6 +33,7 @@ namespace BatteryDerby {
 
         public Vector3? aStarSeekTarget { get; set; }
 
+        int seekIndicatorCount = 0;
 
         public ModelManager(Game game, SplashScreen splashScreen) : base(game) {
             this.game = game;
@@ -280,7 +281,7 @@ namespace BatteryDerby {
                             seekTarget = ((Enemy)model).GetNearestEnergyItem().Value;
                         } else {
                             // flee if damaged but no batteries left!
-                            seekTarget = new Vector3(rnd.Next(MapBuilder.MINX, MapBuilder.MAXX), 0, rnd.Next(MapBuilder.MINY, MapBuilder.MAXY));
+                            seekTarget = new Vector3(rnd.Next(MapBuilder.MINX, MapBuilder.MAXX), ((Enemy)model).translation.Translation.Y, rnd.Next(MapBuilder.MINY, MapBuilder.MAXY));
                         }
                     }
 
@@ -289,7 +290,7 @@ namespace BatteryDerby {
                         ClearSeekTokens();
                         ((Enemy)model).aStarPaths.Clear();
                         ((Enemy)model).aStarPaths.AddRange(pathToTarget);
-
+                        seekIndicatorCount = 0;
                     }
 
                 } else if (model.GetType() == typeof(Enemy) && ((Enemy)model).aStarPaths.Count > 0) {
@@ -300,6 +301,7 @@ namespace BatteryDerby {
                     List<Vector2> pathToTarget = FindPath(mapBuilder.GetQuantisation(model.translation.Translation), mapBuilder.GetQuantisation(playerModel.translation.Translation));
                     ((Enemy)model).aStarPaths.Clear();
                     ((MonsterTruck)model).aStarPaths.AddRange(pathToTarget);
+                    seekIndicatorCount = 0;
                 }
             }
         }
@@ -320,6 +322,7 @@ namespace BatteryDerby {
                             Game.Content.Load<Model>(@"Models/ArrowPointer/ArrowPointerModel"),
                             new Vector3(seekLocation.X, 0, seekLocation.Y));
                         models.Add(seekIndicator);
+                        seekIndicatorCount++;
                     }
 
                 }
@@ -334,7 +337,7 @@ namespace BatteryDerby {
             for (int i = 0; i < models.Count; i++) {
                 BasicModel model = models[i];
 
-                if (model.GetType() == typeof(SeekIndicator) && model.translation.Translation == location) {
+                if (seekIndicatorCount >= 50) {
                     return true;
                 }
             }
