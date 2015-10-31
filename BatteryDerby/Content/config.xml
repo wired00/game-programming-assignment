@@ -9,10 +9,10 @@
   
 -->
 <BatteryDerby>
-  <EnemyMoveSpeed>200</EnemyMoveSpeed>
+  <EnemyMoveSpeed>50</EnemyMoveSpeed>
   <PlayerMoveSpeed>1</PlayerMoveSpeed>
   <TruckMoveSpeed>20</TruckMoveSpeed>
-  <EnemyHealth>10</EnemyHealth>
+  <EnemyHealth>100</EnemyHealth>
   <PlayerHealth>100</PlayerHealth>
   <TruckHealth>200</TruckHealth>
 </BatteryDerby>
