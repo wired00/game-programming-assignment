@@ -61,9 +61,3 @@
 /processorParam:Quality=Best
 /build:Audio/revving.wav
 
-#begin Audio/tirecrash.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:Audio/tirecrash.wav
-

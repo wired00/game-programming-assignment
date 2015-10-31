@@ -110,13 +110,14 @@ namespace BatteryDerby {
         protected override void UnloadContent() {
             // TODO: Unload any non ContentManager content here
         }
-        
+
         protected override void Update(GameTime gameTime) {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
             this.gameTime = gameTime;
-            score.survivalTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (modelManager.Enabled == true) { 
+            score.survivalTime += (float)gameTime.ElapsedGameTime.TotalSeconds; }
 
             HandleKeyboardInput();
 

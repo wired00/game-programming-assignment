@@ -287,10 +287,6 @@ namespace BatteryDerby {
                 ///
                 Player playerModel = (Player)modelA;
                 Tire tireModel = (Tire)modelB;
-                if (audioManager.tirecrash.State != SoundState.Playing)
-                {
-                    audioManager.tirecrash.Play();
-                }
 
                 playerModel.KnockBackFrom(tireModel); // knockback player from obstacle
 
